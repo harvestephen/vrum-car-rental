@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  	<link rel="stylesheet" type="text/css" href="/practice/styles/main.css">
-	<link rel="stylesheet" type="text/css" href="/practice/styles/content.css">
+	<link rel="stylesheet" type="text/css" href="/practice/styles/index.css">
   <title>Contact Us</title>
   <style>
     /* General Reset */
@@ -26,7 +25,7 @@
             text-align: center;
             color: #fff;
             padding: 100px 20px;
-            background: url('Contact.jpg') no-repeat center center/cover;
+            background: url('/practice/assets/images/Contacts/Contact.jpg') no-repeat center center/cover;
         }
 
         .contact-page header::before {
@@ -124,7 +123,7 @@
   </style>
 </head>
 <body class="contact-page">
-<?php include '../../navBar.php'; ?>
+<?php include 'navBar.php'; ?>
   <header>
     <h1>Contact Us</h1>
     <p>Protecting your data and ensuring transparency in our practices</p>
@@ -157,7 +156,7 @@
       </div>
     </div>
   </main>
-  	<?php include '../../footer.php'; ?>
-<script src="../../main.js"></script>
+  	<?php include 'footer.php'; ?>
+
 </body>
 </html>

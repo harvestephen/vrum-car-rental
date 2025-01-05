@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  	<link rel="stylesheet" type="text/css" href="/practice/styles/main.css">
-	<link rel="stylesheet" type="text/css" href="/practice/styles/content.css">
+	<link rel="stylesheet" type="text/css" href="/practice/styles/index.css">
     <title>Terms and Conditions | Vrum</title>
     <style>
         /* General styles for the terms page */
@@ -22,7 +21,7 @@
             text-align: center;
             color: #fff;
             padding: 100px 20px;
-            background: url('Terms.jfif') no-repeat center center/cover;
+            background: url('/practice/assets/images/TermsCondition/Terms.jfif') no-repeat center center/cover;
         }
 
         .terms-page header::before {
@@ -94,7 +93,7 @@
     </style>
 </head>
 <body class="terms-page">
-<?php include '../../navBar.php'; ?>
+<?php include 'navBar.php'; ?>
     <header>
         <h1>Terms and Conditions</h1>
         <p>Your guide to a safe and seamless car rental experience</p>
@@ -171,7 +170,7 @@
         <p>11.1. These terms and conditions are governed by the laws of the country or state where the rental agreement is executed.</p>
         <p>11.2. Any disputes arising under this agreement will be resolved through mediation or arbitration before resorting to legal proceedings.</p>
     </div>
-		<?php include '../../footer.php'; ?>
+		<?php include 'footer.php'; ?>
 <script src="../../main.js"></script>
 </body>
 </html>

@@ -6,13 +6,12 @@ header('Content-Type: text/html; charset=UTF-8');
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="/practice/styles/main.css">
-<link rel="stylesheet" type="text/css" href="/practice/styles/content.css">
+<link rel="stylesheet" type="text/css" href="/practice/styles/index.css">
 <title>Car Rental Selection Page</title>
 </head>
 <body>
-
 <?php include 'navBar.php'; ?>
+
 <div class="wrapper">
 	<div class="filter-buttons">
         <a href="#all.html" class="active">All</a>

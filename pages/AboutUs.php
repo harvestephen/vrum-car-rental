@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="/practice/styles/main.css">
-	<link rel="stylesheet" type="text/css" href="/practice/styles/content.css">
+	<link rel="stylesheet" type="text/css" href="/practice/styles/index.css">
     <title>About Us | Vrum</title>
     <style>
         /* Apply this only to the About Us page using the .about-page class */
@@ -23,7 +22,7 @@
             text-align: center;
             color: #fff;
             padding: 100px 20px;
-            background: url('AboutCar.jpg') no-repeat center center/cover;
+            background: url('/practice/assets/images/AboutUs/AboutCar.jpg') no-repeat center center/cover;
         }
 
         .about-page header::before {
@@ -123,12 +122,12 @@
     </style>
 </head>
 <body class="about-page">
-
+<?php include 'navBar.php'; ?>
     <header>
         <h1>About Vrum</h1>
         <p>Your Trusted Car Rental Partner</p>
     </header>
-<?php include '../../navBar.php'; ?>
+
     <!-- Intro Section -->
     <div class="intro">
         <p>Vrum is more than just a car rental service—we are your partner in creating stress-free travel experiences. Founded on a commitment to reliability and excellence, Vrum caters to a diverse range of mobility needs, from daily commutes to road trip adventures. Our extensive fleet includes everything from compact city cars to spacious SUVs, ensuring that you’ll find the perfect vehicle for your journey.</p>
@@ -138,7 +137,7 @@
     <div class="container">
         <!-- Section 1 -->
         <div class="section">
-            <img src="CarsFleet.jpg" alt="Car Fleet">
+            <img src="/practice/assets/images/AboutUs/CarsFleet.jpg" alt="Car Fleet">
             <div>
                 <h2>Who We Are</h2>
                 <p>Vrum is your partner in creating stress-free travel experiences. With a wide range of vehicles, from compact city cars to spacious SUVs, we’re here to meet all your travel needs.</p>
@@ -146,7 +145,7 @@
         </div>
         <!-- Section 2 -->
         <div class="section">
-            <img src="HappyCustomer.jpg" alt="Happy Customers">
+            <img src="/practice/assets/images/AboutUs/HappyCustomer.jpg" alt="Happy Customers">
             <div>
                 <h2>Why Choose Us</h2>
                 <ul>
@@ -159,7 +158,7 @@
         </div>
         <!-- Section 3 -->
         <div class="section">
-            <img src="CustomerSupport.jpg" alt="Customer Support">
+            <img src="/practice/assets/images/AboutUs/CustomerSupport.jpg" alt="Customer Support">
             <div>
                 <h2>Our Mission</h2>
                 <p>We aim to empower our customers with freedom of movement by providing exceptional service, high-quality vehicles, and a hassle-free rental experience. Your journey is our priority.</p>
@@ -167,8 +166,8 @@
         </div>
 		
     </div>
-	<?php include '../../footer.php'; ?>
-<script src="../../main.js"></script>
+	<?php include 'footer.php'; ?>
+
 
 </body>
 </html>

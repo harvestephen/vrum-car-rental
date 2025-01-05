@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  	<link rel="stylesheet" type="text/css" href="/practice/styles/main.css">
-	<link rel="stylesheet" type="text/css" href="/practice/styles/content.css">
+	<link rel="stylesheet" type="text/css" href="/practice/styles/index.css">
     <title>Privacy Policy | Vrum</title>
     <style>
         /* General styling for the privacy policy page */
@@ -22,7 +21,7 @@
             text-align: center;
             color: #fff;
             padding: 100px 20px;
-            background: url('Privacy.avif') no-repeat center center/cover;
+            background: url('/practice/assets/images/PrivacyPolicy/Privacy.avif') no-repeat center center/cover;
         }
 
         .privacy-policy-page header::before {
@@ -97,7 +96,7 @@
 </head>
 
 <body class="privacy-policy-page">
-<?php include '../../navBar.php'; ?>
+<?php include 'navBar.php'; ?>
     <header>
         <h1>Privacy Policy</h1>
         <p>Protecting your data and ensuring transparency in our practices</p>
@@ -225,7 +224,7 @@
 
 
     </div>
-		<?php include '../../footer.php'; ?>
+		<?php include 'footer.php'; ?>
 <script src="../../main.js"></script>
 </body>
 </html>
