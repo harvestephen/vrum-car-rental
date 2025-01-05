@@ -12,7 +12,7 @@ session_start();
 	<title>Vrum - Home</title>
 </head>
 <body>
-
+<p>"hello world"</p>
    <!-- Navigation Bar -->
     <?php include 'navBar.php'; ?>
     
