@@ -1,17 +1,16 @@
+<?php $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory ?>
 <div class="navBar navContent">
     <div class="pageTitle">
-        <p class="pageTitle" onclick="window.location.href='/practice/index.php'">Vrum</p>
+        <a class="pageTitle" href="<?php echo $rootDirectory?>">Vrum</a>
     </div>
     <div class="pageNav navContent">
         <div class="navOption navContent">
             <ul class="navOption">
                 <li class="navOption">
-                    <button class="navSelection"
-                        onclick="window.location.href='/practice/pages/CarRentalPage.php'">Car</button>
+                    <a class="navSelection" href=<?php echo $rootDirectory . "/cars"?>>Car</a>
                 </li>
                 <li class="navOption">
-                    <button class="navSelection"
-                        onclick="window.location.href='/practice/pages/AboutUs.php'">About</button>
+                    <a class="navSelection" href="<?php echo $rootDirectory . "/about"?>">About</a>
                 </li>
             </ul>
         </div>
@@ -57,7 +56,7 @@
                         <button class="formSubmit">Sign Up</button>
                     </div>
                     <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
-                        <p class="formSubmit"  style="margin-right: 5px;">Already Have an Account?</p>
+                        <p class="formSubmit" style="margin-right: 5px;">Already Have an Account?</p>
                         <a class="formSubmit" id="sign-up-alt">Sign up</a>
                     </div>
                 </div>
@@ -88,5 +87,4 @@
             </form>
         </div>
     </div>
-
 </div>

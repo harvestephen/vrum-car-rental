@@ -51,6 +51,14 @@ p.pageTitle {
   font-family: Kalam-Regular;
   color: #cfb284;
 }
+a.pageTitle{
+  text-decoration: none;
+  padding-top: 5px;
+  font-size: 48px;
+  font-family: Kalam-Regular;
+  color: #cfb284;
+  background-color: transparent;
+}
 div.pageNav {
   justify-content: space-between;
   width: 100%;
@@ -83,6 +91,21 @@ button.navSelection:hover {
   background-color: transparent;
   color: #c9b591;
 }
+a.navSelection {
+  text-decoration: none !important;
+  height: 81px;
+  padding: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  font-family: Abel-Regular;
+  color: #d3d3d3;
+  cursor: pointer;
+}
+a.navSelection:hover {
+  background-color: transparent;
+  color: #c9b591;
+}
 button.scrolled:hover {
   background-color: #1f7a8c;
   color: #d3d3d3;
@@ -111,7 +134,7 @@ button.scrolled:hover {
   background-color: #d3d3d3;
   border-radius: 20px;
   width: 280px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 1px 1px 2px grey, 0 0 25px black, 0 0 5px grey;
 }
 .modalHeader {
   padding-top: 20px;
@@ -669,4 +692,113 @@ body.faq-page {
 
 .see-all-link:hover {
   text-decoration: underline;
+}
+.about-page {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+
+}
+
+.about-page header {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;
+  background: url('/practice/assets/images/AboutUs/AboutCar.jpg') no-repeat center center/cover;
+}
+
+.about-page header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  z-index: 1;
+}
+
+.about-page header h1, .about-page header p {
+  position: relative;
+  z-index: 2; /* Ensures text stays above the overlay */
+}
+
+.about-page header h1 {
+padding-top:40px;
+  margin: 0;
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.about-page header p {
+  font-size: 1.2em;
+  margin-top: 1px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.about-page .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.about-page .intro {
+  text-align: center;
+  padding: 40px;
+}
+
+.about-page .intro p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.about-page .intro hr {
+  border: 0;
+  border-top: 2px solid #ccc;
+  width: 90%; /* Increased width for a longer separator */
+  margin: 40px auto;
+}
+
+.about-page .section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.about-page .section img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.about-page .section div {
+  flex: 1;
+}
+
+.about-page .section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.about-page .section:nth-child(even) img {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.about-page .section h2 {
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.about-page .section p {
+  margin-bottom: 10px;
+}
+
+.about-page .section ul {
+  padding-left: 20px;
+  list-style-type: disc;
 }
