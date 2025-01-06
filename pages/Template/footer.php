@@ -2,11 +2,11 @@
 	<div class="footer-links">
 		<a href="#">Reservations</a> |
 		<a href="/practice/index.php">Home</a> |
-		<a href="/practice/pages/AboutUs.php">About Us</a> |
+		<a href="<?php echo $rootDirectory . "/about"?>">About Us</a> |
 		<a href="#">Location</a> |
-		<a href="/practice/pages/Terms.php">Terms and Condition</a> |
-		<a href="/practice/pages/privacy.php">Privacy Policy</a> |
-		<a href="/practice/pages/contacts.php">Contacts</a>
+		<a href="<?php echo $rootDirectory . "/terms"?>">Terms and Condition</a> |
+		<a href="<?php echo $rootDirectory . "/privacy"?>">Privacy Policy</a> |
+		<a href="<?php echo $rootDirectory . "/contacts"?>">Contacts</a>
 	</div>
 
 	<div class="footer-bottom">

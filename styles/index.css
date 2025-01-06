@@ -851,6 +851,283 @@ padding-top:40px;
   padding-left: 20px;
   list-style-type: disc;
 }
+.terms-page {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header section */
+.terms-page header {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;
+  background: url('/practice/assets/images/TermsCondition/Terms.jfif') no-repeat center center/cover;
+}
+
+.terms-page header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+  z-index: 1;
+}
+
+.terms-page header h1 {
+padding-top:40px;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.terms-page header p {
+  position: relative;
+  z-index: 2;
+              margin-top: 1px;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Content section */
+.terms-page .content {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.terms-page .intro {
+text-align:center;
+  padding: 20px;
+
+  margin-bottom: 30px;
+}
+
+.terms-page .separator {
+  margin: 20px 0;
+  border-top: 2px solid #ccc;
+}
+
+.terms-page .content h2 {
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.terms-page .content p,
+.terms-page .content li {
+  margin-bottom: 15px;
+}
+
+.terms-page .content ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+/* Footer spacing */
+.terms-page .footer-space {
+  height: 50px;
+}
+.privacy-policy-page {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Header styling */
+.privacy-policy-page header {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;
+  background: url('/practice/assets/images/PrivacyPolicy/Privacy.avif') no-repeat center center/cover;
+}
+
+.privacy-policy-page header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+  z-index: 1;
+}
+
+.privacy-policy-page header h1 {
+padding-top:40px;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.privacy-policy-page header p {
+  position: relative;
+  z-index: 2;
+  margin-top: 1px;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Content section styling */
+.privacy-policy-page .content {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.privacy-policy-page .content h2 {
+  margin-bottom: 20px;
+  color: #222;
+
+  padding-bottom: 10px;
+}
+
+.privacy-policy-page .content p, 
+.privacy-policy-page .content li {
+  margin-bottom: 15px;
+}
+
+.privacy-policy-page .content ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+/* Footer spacing */
+.privacy-policy-page .footer-space {
+  height: 50px;
+}
+
+.privacy-policy-page .intro {
+text-align:center;
+  padding: 20px;
+
+  margin-bottom: 30px;
+}
+
+.privacy-policy-page .separator {
+  margin: 20px 0;
+  border-top: 2px solid #ccc;
+}
+
+body.contact-page {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+
+}
+
+/* Contact Header */
+    .contact-page header {
+        position: relative;
+        text-align: center;
+        color: #fff;
+        padding: 100px 20px;
+        background: url('/practice/assets/images/Contacts/Contact.jpg') no-repeat center center/cover;
+    }
+
+    .contact-page header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+        z-index: 1;
+    }
+
+    .contact-page header h1 {
+    padding-top:40px;
+        position: relative;
+        z-index: 2;
+        margin: 0;
+        font-size: 3em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .contact-page header p {
+        position: relative;
+        z-index: 2;
+        margin-top: 1px;
+  margin-bottom:18px;
+        font-size: 1.2em;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
+
+    .contact-page .intro {
+  text-align:center;
+        padding-top: 70px;
+        margin-bottom: 30px;
+    }
+/* Line Separator */
+.separator-unique {
+  width: 90%;
+  margin: 1.5rem auto;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+/* Contact Section */
+.contact-container-unique {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.contact-info-unique, .map-unique {
+  flex: 1;
+  max-width: 400px;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.contact-info-unique h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.contact-info-unique p {
+  margin-bottom: 0.5rem;
+}
+
+.contact-info-unique a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.contact-info-unique a:hover {
+  text-decoration: underline;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container-unique {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .card {
   background-color: #a5b4c2;
   height: 400px;

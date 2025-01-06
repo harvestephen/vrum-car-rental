@@ -1,99 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="/practice/styles/index.css">
-    <title>Terms and Conditions | Vrum</title>
-    <style>
-        /* General styles for the terms page */
-        .terms-page {
-            font-family: Arial, sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
 
-        /* Header section */
-        .terms-page header {
-            position: relative;
-            text-align: center;
-            color: #fff;
-            padding: 100px 20px;
-            background: url('/practice/assets/images/TermsCondition/Terms.jfif') no-repeat center center/cover;
-        }
-
-        .terms-page header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
-            z-index: 1;
-        }
-
-        .terms-page header h1 {
-		padding-top:40px;
-            position: relative;
-            z-index: 2;
-            margin: 0;
-            font-size: 3em;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .terms-page header p {
-            position: relative;
-            z-index: 2;
-                        margin-top: 1px;
-            font-size: 1.2em;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-        }
-
-        /* Content section */
-        .terms-page .content {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .terms-page .intro {
-			text-align:center;
-            padding: 20px;
-
-            margin-bottom: 30px;
-        }
-
-        .terms-page .separator {
-            margin: 20px 0;
-            border-top: 2px solid #ccc;
-        }
-
-        .terms-page .content h2 {
-            margin-bottom: 20px;
-            color: #222;
-        }
-
-        .terms-page .content p,
-        .terms-page .content li {
-            margin-bottom: 15px;
-        }
-
-        .terms-page .content ul {
-            padding-left: 20px;
-            list-style-type: disc;
-        }
-
-        /* Footer spacing */
-        .terms-page .footer-space {
-            height: 50px;
-        }
-    </style>
-</head>
 <body class="terms-page">
-<?php include 'navBar.php'; ?>
+
     <header>
         <h1>Terms and Conditions</h1>
         <p>Your guide to a safe and seamless car rental experience</p>
@@ -170,7 +77,6 @@
         <p>11.1. These terms and conditions are governed by the laws of the country or state where the rental agreement is executed.</p>
         <p>11.2. Any disputes arising under this agreement will be resolved through mediation or arbitration before resorting to legal proceedings.</p>
     </div>
-		<?php include 'footer.php'; ?>
-<script src="../../main.js"></script>
+
 </body>
 </html>

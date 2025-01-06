@@ -28,6 +28,18 @@
     case "{$rootDirectory}/about/":
       include './pages/Users/AboutUs.php';
       break;
+    case "{$rootDirectory}/terms":
+    case "{$rootDirectory}/terms/":
+      include './pages/Users/Terms.php';
+      break;
+    case "{$rootDirectory}/privacy":
+    case "{$rootDirectory}/privacy/":
+      include './pages/Users/privacy.php';
+      break;
+    case "{$rootDirectory}/contacts":
+    case "{$rootDirectory}/contacts/":
+      include './pages/Users/contacts.php';
+      break;
   }
   include './pages/Template/footer.php';
   ?>
