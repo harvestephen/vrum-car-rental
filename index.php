@@ -40,6 +40,10 @@
     case "{$rootDirectory}/contacts/":
       include './pages/Users/contacts.php';
       break;
+    case "{$rootDirectory}/":
+    case "{$rootDirectory}/index.php/":
+      include './pages/HomeDefault/userHome.php';
+      break;
   }
   include './pages/Template/footer.php';
   ?>

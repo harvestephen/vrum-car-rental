@@ -1,7 +1,7 @@
 <footer>
 	<div class="footer-links">
 		<a href="#">Reservations</a> |
-		<a href="<?php echo $rootDirectory . "/home"?>">Home</a> |
+		<a href="<?php echo $rootDirectory . "/"?>">Home</a> |
 		<a href="<?php echo $rootDirectory . "/about"?>">About Us</a> |
 		<a href="#">Location</a> |
 		<a href="<?php echo $rootDirectory . "/terms"?>">Terms and Condition</a> |
