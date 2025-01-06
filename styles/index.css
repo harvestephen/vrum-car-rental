@@ -1230,13 +1230,15 @@ button.slider-rightBtn, button.slider-leftBtn{
 }
 .admin-sidebar-card-container{
   width: 300px;
-  height: 100vh;
-  background: #fff;
+  height: 90vh;
+  background: #1f7a8c;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  padding: 20px;
-  margin:20px;
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding:20px;
 }
 ul.adminNavOption {
   list-style-type: none;
@@ -1246,4 +1248,6 @@ li.adminNavOption {
   font-size: 24px;
   font-family: Abel-Regular;
   color: #d3d3d3;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

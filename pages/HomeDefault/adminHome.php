@@ -1,6 +1,6 @@
 <?php $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory ?>
 
-<div class="wrapper">
+<div class="">
     <!-- Admin Sidebar Menu -->
     <div>
         <div class="admin-sidebar-card-container">
@@ -11,11 +11,11 @@
             <!-- Admin Menu List -->
             <div>
                 <ul>
-                    <li class="adminNavOption">Dashboard</li>
-                    <li class="adminNavOption">User Accounts</li>
-                    <li class="adminNavOption">Cars</li>
-                    <li class="adminNavOption">Rental Cars</li>
-                    <li class="adminNavOption">Sales Report</li>
+                    <li class="adminNavOption"><a class="navSelection" href=<?php echo $rootDirectory . "/cars"?>>Dashboard</a></li>
+                    <li class="adminNavOption"><a class="navSelection" href=<?php echo $rootDirectory . "/cars"?>>User Accounts</a></li>
+                    <li class="adminNavOption"><a class="navSelection" href=<?php echo $rootDirectory . "/cars"?>>Cars</a></li>
+                    <li class="adminNavOption"><a class="navSelection" href=<?php echo $rootDirectory . "/cars"?>>Rental Cars</a></li>
+                    <li class="adminNavOption"><a class="navSelection" href=<?php echo $rootDirectory . "/cars"?>>Sales Report</a></li>
                 </ul>
             </div>
         </div>
