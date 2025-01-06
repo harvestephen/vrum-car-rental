@@ -245,13 +245,14 @@ a.formSubmit {
 
 footer {
   background-color: #022b3a;
+  position: relative;
   color: #c9c9c9;
   text-align: center;
   padding: 20px 10px;
   font-size: 14px;
   width: 100%;
   font-family: Abel-Regular;
-  margin-top: auto;
+  bottom: 0 !important;
 }
 
 .footer-links {
@@ -514,64 +515,72 @@ footer {
   text-align: center;
 }
 
-.what-we-offer {
-  background-color: #f4f4f4;
-  padding: 40px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  color: #333;
-}
+
 
 .what-we-offer h2 {
-  font-size: 2rem;
+  font-size: 3rem;
+  position: relative;
   margin-bottom: 20px;
 }
 
 .offer-container {
+  display: grid;
+  position: relative;
+  place-content: center;
+  width: 100%;
+}
+
+.offer-wrap{
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
   flex-wrap: wrap;
+  width: 70vw;
 }
 
 .offer {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #f4f4f4;
   border-radius: 8px;
   padding: 20px;
-  width: 300px;
-  
-}
-
-.offer img {
-  width: 50px;
-  height: 50px;
+  width: 400px;
+  margin-top: 50px;
+  max-height: 700px;
   margin-bottom: 10px;
 }
 
+.offer img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+
+}
+
 .offer h3 {
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin: 10px 0;
 }
 
 .offer p {
-  font-size: 0.9rem;
+  position: relative;
+  margin-top: 40px;
+  font-size: 1.1rem;
   line-height: 1.5;
-}
-
-body.faq-page {
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9; /* Optional: To match FAQ container's aesthetic */
 }
 
 /* FAQ-Specific Container */
 .faq-container {
+  position: relative;
   font-family: Arial, sans-serif;
   background-color: white;
-  margin: 20px auto;
+  margin-top: 10px;
   padding: 20px;
-  max-width: 1000px; /* Center the FAQ container and set a max width */
-
+  width: 70vw;; /* Center the FAQ container and set a max width */ 
   border-radius: 10px; /* Rounded corners for a polished look */
   margin-top: 50px; /* Add space at the top */
 }
@@ -894,4 +903,29 @@ button.slider-rightBtn, button.slider-leftBtn{
   align-items: center;
   gap: 28%;
   margin-top: 10px;
+}
+.offer-grad {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to top,transparent, rgba(244, 244, 244, 0.7), #f4f4f4);
+  z-index: 1;
+}
+.what-we-offer {
+  position: relative;
+  background-image: url("../assets/images/offer-bg.png");
+  background-size: cover;
+  margin-top: 100px;
+  height: 100vh;
+  width: 100vw;
+  padding: 40px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+.what-we-offer-h2 {
+  position: relative;
+  z-index: 10;
 }

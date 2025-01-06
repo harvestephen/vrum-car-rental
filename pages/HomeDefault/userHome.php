@@ -532,61 +532,62 @@
 			</div>
 
 			<div class="what-we-offer">
-				<h2>What We Offer?</h2>
+				<div class="offer-grad"></div>
+				<h2 class="what-we-offer-h2">What We Offer?</h2>
 				<div class="offer-container">
-					<div class="offer">
-						<img src="./assets/icons/wide-vehicle-icon.png" alt="Wide Vehicle Selection">
-						<h3>Wide Vehicle Selection</h3>
-						<p>Offer a diverse range of vehicles, from economy cars and SUVs to luxury sedans and vans, catering to
-							every travel need.</p>
+					<div class="offer-wrap">
+						<div class="offer">
+							<img src="./assets/icons/wide-vehicle-icon.png" alt="Wide Vehicle Selection">
+							<h3>Wide Vehicle Selection</h3>
+							<p>We offer an extensive and varied selection of vehicles to meet all your transportation needs. Whether you're looking for an economical car for a solo trip or a spacious SUV for a family adventure, we have something for everyone. Our fleet includes a wide range of options, from compact economy cars perfect for city driving to spacious vans and versatile SUVs that can accommodate larger groups, families, or those with extra luggage. Whatever your travel plans may be, you can count on us to provide a vehicle that matches your preferences, ensuring a comfortable, reliable, and enjoyable journey.</p>
+						</div>
+						<div class="offer">
+							<img src="./assets/icons/flexible-rental-icon.png" alt="Flexible Rental Plans">
+							<h3>Flexible Rental Plans</h3>
+							<p>We offer flexible rental plans designed to cater to a wide range of customer needs and preferences. Whether you require a vehicle for just a few hours, a full day, an entire week, or even for a long-term period, we have the right plan for you. Our hourly rentals provide convenience for short trips or specific tasks, while daily and weekly options give you more freedom for extended travels. For those with ongoing needs, our long-term rental plans offer great value and flexibility. Whatever your rental duration, we ensure a seamless and tailored experience to fit your schedule and requirements.</p>
+						</div>
+						<div class="offer">
+							<img src="./assets/icons/insurance-icon.png" alt="Insurance Options">
+							<h3>Insurance Options</h3>
+							<p>We provide a variety of comprehensive insurance options, allowing customers to choose the level of coverage that best fits their needs and preferences. From basic coverage that offers essential protection to more extensive plans that ensure peace of mind on the road, we have something for every type of traveler. Whether you're looking for liability coverage, collision protection, or full coverage with roadside assistance, our insurance packages are designed to provide you with the right level of security and flexibility. You can select the coverage that suits your journey, ensuring you can drive with confidence and ease.</p>
+						</div>
 					</div>
-					<div class="offer">
-						<img src="./assets/icons/flexible-rental-icon.png" alt="Flexible Rental Plans">
-						<h3>Flexible Rental Plans</h3>
-						<p>Provide flexible options such as hourly, daily, weekly, or long-term rentals to meet various customer
-							preferences.</p>
-					</div>
-					<div class="offer">
-						<img src="./assets/icons/insurance-icon.png" alt="Insurance Options">
-						<h3>Insurance Options</h3>
-						<p>Include comprehensive insurance packages, so customers can select the level of coverage that best suits
-							their needs.</p>
-					</div>
+
 				</div>
-				<div class="faq-container">
-					<h2>FAQs</h2>
+			</div>
+			<div class="faq-container">
+				<h2>FAQs</h2>
 
-					<button class="accordion">What documents do I need to rent a car?</button>
-					<div class="panel">
-						<p>You will need a valid driver’s license, a government-issued ID (e.g., passport), and a credit or debit
-							card
-							in the renter’s name. Additional requirements may apply for international renters.</p>
-					</div>
+				<button class="accordion">What documents do I need to rent a car?</button>
+				<div class="panel">
+					<p>You will need a valid driver’s license, a government-issued ID (e.g., passport), and a credit or debit
+						card
+						in the renter’s name. Additional requirements may apply for international renters.</p>
+				</div>
 
-					<button class="accordion">Is there an age requirement for renting a car?</button>
-					<div class="panel">
-						<p>Yes, the minimum age to rent a car is typically 21 years old. Renters under 25 may be subject to a young
-							driver surcharge.</p>
-					</div>
+				<button class="accordion">Is there an age requirement for renting a car?</button>
+				<div class="panel">
+					<p>Yes, the minimum age to rent a car is typically 21 years old. Renters under 25 may be subject to a young
+						driver surcharge.</p>
+				</div>
 
-					<button class="accordion">Can I return the car to a different location?</button>
-					<div class="panel">
-						<p>Yes, we offer one-way rentals between select locations. Additional fees may apply. Contact us in advance
-							to
-							arrange a different drop-off point.</p>
-					</div>
+				<button class="accordion">Can I return the car to a different location?</button>
+				<div class="panel">
+					<p>Yes, we offer one-way rentals between select locations. Additional fees may apply. Contact us in advance
+						to
+						arrange a different drop-off point.</p>
+				</div>
 
-					<button class="accordion">What happens if I return the car late?</button>
-					<div class="panel">
-						<p>Late returns may incur additional charges. We recommend contacting us if you expect any delays to avoid
-							penalties.</p>
-					</div>
+				<button class="accordion">What happens if I return the car late?</button>
+				<div class="panel">
+					<p>Late returns may incur additional charges. We recommend contacting us if you expect any delays to avoid
+						penalties.</p>
+				</div>
 
-					<button class="accordion">Do you offer insurance coverage for rentals?</button>
-					<div class="panel">
-						<p>Yes, we provide optional insurance packages to cover damage, theft, and liability. You can select your
-							preferred coverage plan during booking or at pickup.</p>
-					</div>
+				<button class="accordion">Do you offer insurance coverage for rentals?</button>
+				<div class="panel">
+					<p>Yes, we provide optional insurance packages to cover damage, theft, and liability. You can select your
+						preferred coverage plan during booking or at pickup.</p>
 				</div>
 			</div>
 		</div>
