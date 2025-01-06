@@ -244,6 +244,7 @@ a.formSubmit {
 }
 
 footer {
+  display: block;
   background-color: #022b3a;
   position: relative;
   color: #c9c9c9;
@@ -518,6 +519,7 @@ footer {
 
 
 .what-we-offer h2 {
+  display: block;
   font-size: 3rem;
   position: relative;
   margin-bottom: 20px;
@@ -918,7 +920,6 @@ button.slider-rightBtn, button.slider-leftBtn{
   background-image: url("../assets/images/offer-bg.png");
   background-size: cover;
   margin-top: 100px;
-  height: 100vh;
   width: 100vw;
   padding: 40px;
   text-align: center;

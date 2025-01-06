@@ -539,20 +539,35 @@
 						<div class="offer">
 							<img src="./assets/icons/wide-vehicle-icon.png" alt="Wide Vehicle Selection">
 							<h3>Wide Vehicle Selection</h3>
-							<p>We offer an extensive and varied selection of vehicles to meet all your transportation needs. Whether you're looking for an economical car for a solo trip or a spacious SUV for a family adventure, we have something for everyone. Our fleet includes a wide range of options, from compact economy cars perfect for city driving to spacious vans and versatile SUVs that can accommodate larger groups, families, or those with extra luggage. Whatever your travel plans may be, you can count on us to provide a vehicle that matches your preferences, ensuring a comfortable, reliable, and enjoyable journey.</p>
+							<p>We offer an extensive and varied selection of vehicles to meet all your transportation needs. Whether
+								you're looking for an economical car for a solo trip or a spacious SUV for a family adventure, we have
+								something for everyone. Our fleet includes a wide range of options, from compact economy cars perfect
+								for city driving to spacious vans and versatile SUVs that can accommodate larger groups, families, or
+								those with extra luggage. Whatever your travel plans may be, you can count on us to provide a vehicle
+								that matches your preferences, ensuring a comfortable, reliable, and enjoyable journey.</p>
 						</div>
 						<div class="offer">
 							<img src="./assets/icons/flexible-rental-icon.png" alt="Flexible Rental Plans">
 							<h3>Flexible Rental Plans</h3>
-							<p>We offer flexible rental plans designed to cater to a wide range of customer needs and preferences. Whether you require a vehicle for just a few hours, a full day, an entire week, or even for a long-term period, we have the right plan for you. Our hourly rentals provide convenience for short trips or specific tasks, while daily and weekly options give you more freedom for extended travels. For those with ongoing needs, our long-term rental plans offer great value and flexibility. Whatever your rental duration, we ensure a seamless and tailored experience to fit your schedule and requirements.</p>
+							<p>We offer flexible rental plans designed to cater to a wide range of customer needs and preferences.
+								Whether you require a vehicle for just a few hours, a full day, an entire week, or even for a long-term
+								period, we have the right plan for you. Our hourly rentals provide convenience for short trips or
+								specific tasks, while daily and weekly options give you more freedom for extended travels. For those
+								with ongoing needs, our long-term rental plans offer great value and flexibility. Whatever your rental
+								duration, we ensure a seamless and tailored experience to fit your schedule and requirements.</p>
 						</div>
 						<div class="offer">
 							<img src="./assets/icons/insurance-icon.png" alt="Insurance Options">
 							<h3>Insurance Options</h3>
-							<p>We provide a variety of comprehensive insurance options, allowing customers to choose the level of coverage that best fits their needs and preferences. From basic coverage that offers essential protection to more extensive plans that ensure peace of mind on the road, we have something for every type of traveler. Whether you're looking for liability coverage, collision protection, or full coverage with roadside assistance, our insurance packages are designed to provide you with the right level of security and flexibility. You can select the coverage that suits your journey, ensuring you can drive with confidence and ease.</p>
+							<p>We provide a variety of comprehensive insurance options, allowing customers to choose the level of
+								coverage that best fits their needs and preferences. From basic coverage that offers essential
+								protection to more extensive plans that ensure peace of mind on the road, we have something for every
+								type of traveler. Whether you're looking for liability coverage, collision protection, or full coverage
+								with roadside assistance, our insurance packages are designed to provide you with the right level of
+								security and flexibility. You can select the coverage that suits your journey, ensuring you can drive
+								with confidence and ease.</p>
 						</div>
 					</div>
-
 				</div>
 			</div>
 			<div class="faq-container">
