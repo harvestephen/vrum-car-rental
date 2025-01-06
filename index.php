@@ -10,9 +10,9 @@
 <?php require './pages/Template/header.php'; ?>
 <body>
   <?php
-  include './pages/navBar.php';
+  include './pages/Template/navBar.php';
   $currentURL = $_SERVER['REQUEST_URI']; // Get current URL
-  $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory
+  $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory (RELATIVE)
 
   //Website Router
   switch ($currentURL) {
@@ -22,14 +22,14 @@
       break;
     case "{$rootDirectory}/cars":
     case "{$rootDirectory}/cars/":
-      include './pages/cars.php';
+      include './pages/Users/cars.php';
       break;
     case "{$rootDirectory}/about":
     case "{$rootDirectory}/about/":
-      include './pages/AboutUs.php';
+      include './pages/Users/AboutUs.php';
       break;
   }
-  include './pages/footer.php';
+  include './pages/Template/footer.php';
   ?>
   <script src="<?php echo $rootDirectory . "/main.js"?>"></script>
 </body>

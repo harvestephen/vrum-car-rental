@@ -1,9 +1,11 @@
 $(document).ready(function () {
+
 	$(".accordion").click(function() {
 		$(this).toggleClass("active");
 		let panel = $(this).next(".panel");
-		panel.slideToggle();
+		panel.slideToggle(100);
 	});
+
 	$("#registerModalBtn").on("click", function () {
 		if ($("#registerModal").css('display') == 'none') {
 			$("#registerModal").fadeIn(100);
@@ -31,5 +33,4 @@ $(document).ready(function () {
 		}
 	})
 
-	
 });

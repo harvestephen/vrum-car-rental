@@ -49,7 +49,7 @@
                     <input class="formInput" type="password" placeholder="Password" noautocomplete>
                 </div>
                 <div>
-                    <input class="formInput" type="passsword" placeholder="Confirm Password" noautocomplete>
+                    <input class="formInput" type="password" placeholder="Confirm Password" noautocomplete>
                 </div>
                 <div class="formSubmit">
                     <div style="display: flex; justify-content: center;">

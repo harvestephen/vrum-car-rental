@@ -28,7 +28,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  background-color: #f4f4f4;
+}
 .navBar {
   position: absolute;
   top: 0;
@@ -331,7 +333,7 @@ footer {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
   gap: 20px;
   width: 90%; /* Responsive width based on viewport */
-  max-width: 1200px; /* Max width for large screens */
+  max-width: 70vw; /* Max width for large screens */
   margin: 0 auto;
   justify-content: center;
   align-items: center;
@@ -463,17 +465,12 @@ footer {
 }
 
 .new-header {
-  /* Light background color for contrast */
-  color: #fff; /* Text color */
-  padding: 20px;
-  text-align: center;
-  background-color: #022b3a;
-  font-family: Inter_18pt-Regular;
-  text-decoration: underline;
-  font-size: 32px;
-  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
-    2px 2px 0 black;
-  letter-spacing: 10px;
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  color: #fff; 
+  background-image: linear-gradient(transparent, rgba(244, 244, 244, 0.7), #f4f4f4);
 }
 .homepageTitle h1 {
   font-family: Inter_28pt-Bold;
@@ -598,7 +595,15 @@ body.faq-page {
 .faq-container .accordion:hover {
   background-color: #f0f0f0;
 }
-
+.featured-header {
+  width: 70vw;
+  padding-left: 20px;
+  max-width: 70vw;
+  text-align: left;
+  font-size: 32px;
+  font-family: Kalam-Regular;
+  color: #c49a56;
+}
 .faq-container .accordion::after {
   content: '\25BA'; /* Unicode for right arrow */
   font-size: 14px;
@@ -611,6 +616,11 @@ body.faq-page {
 .faq-container .accordion.active::after {
   transform: rotate(90deg); /* Rotate arrow for expanded state */
 }
+.faq-container .accordion.active {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
 
 /* FAQ Panels */
 .faq-container .panel {
@@ -625,6 +635,10 @@ body.faq-page {
   margin: 0;
 }
 .featured-vehicles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: Inter_18pt-Regular;
   background-color: #f4f4f4;
   padding: 40px;

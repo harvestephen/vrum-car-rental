@@ -5,11 +5,14 @@
 				<h1>RENT TODAY, MAKE MEMORIES TOMORROW</h1>
 				<a class="rent">RENT NOW!</a>
 			</div>
+			<div class="new-header">
+			</div>
 		</div>
-		<div class="new-header">
-			<h3>FEATURED</h3>
-		</div>
+		<br /><br /><br />
 		<div class="featured-vehicles">
+			<div class="featured-header">
+				<h2>Featured Vehicles</h2>
+			</div>
 			<div class="car-grid">
 				<div class="car-card" style="background-image: url('./assets/images/cars/sedan/audi/q3.png');">
 					<div class="car-card-content">
