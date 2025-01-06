@@ -756,7 +756,7 @@ footer {
   text-align: center;
   color: #fff;
   padding: 100px 20px;
-  background: url('/practice/assets/images/AboutUs/AboutCar.jpg') no-repeat center center/cover;
+  background: url('/vrum-car-rental/assets/images/AboutUs/AboutCar.jpg') no-repeat center center/cover;
 }
 
 .about-page header::before {
@@ -865,7 +865,7 @@ padding-top:40px;
   text-align: center;
   color: #fff;
   padding: 100px 20px;
-  background: url('/practice/assets/images/TermsCondition/Terms.jfif') no-repeat center center/cover;
+  background: url('/vrum-car-rental/assets/images/TermsCondition/Terms.jfif') no-repeat center center/cover;
 }
 
 .terms-page header::before {
@@ -948,7 +948,7 @@ text-align:center;
   text-align: center;
   color: #fff;
   padding: 100px 20px;
-  background: url('/practice/assets/images/PrivacyPolicy/Privacy.avif') no-repeat center center/cover;
+  background: url('/vrum-car-rental/assets/images/PrivacyPolicy/Privacy.avif') no-repeat center center/cover;
 }
 
 .privacy-policy-page header::before {
@@ -1032,7 +1032,7 @@ body.contact-page {
         text-align: center;
         color: #fff;
         padding: 100px 20px;
-        background: url('/practice/assets/images/Contacts/Contact.jpg') no-repeat center center/cover;
+        background: url('/vrum-car-rental/assets/images/Contacts/Contact.jpg') no-repeat center center/cover;
     }
 
     .contact-page header::before {
@@ -1220,4 +1220,23 @@ button.slider-rightBtn, button.slider-leftBtn{
 .what-we-offer-h2 {
   position: relative;
   z-index: 10;
+}
+.admin-sidebar-card-container{
+  width: 300px;
+  height: 100vh;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 20px;
+  margin:20px;
+}
+ul.adminNavOption {
+  list-style-type: none;
+}
+li.adminNavOption {
+  display: block;
+  font-size: 24px;
+  font-family: Abel-Regular;
+  color: #d3d3d3;
 }

@@ -16,7 +16,7 @@
     <div class="container">
         <!-- Section 1 -->
         <div class="section">
-            <img src="/practice/assets/images/AboutUs/CarsFleet.jpg" alt="Car Fleet">
+            <img src="/vrum-car-rental/assets/images/AboutUs/CarsFleet.jpg" alt="Car Fleet">
             <div>
                 <h2>Who We Are</h2>
                 <p>Vrum is your partner in creating stress-free travel experiences. With a wide range of vehicles, from
@@ -25,7 +25,7 @@
         </div>
         <!-- Section 2 -->
         <div class="section">
-            <img src="/practice/assets/images/AboutUs/HappyCustomer.jpg" alt="Happy Customers">
+            <img src="/vrum-car-rental/assets/images/AboutUs/HappyCustomer.jpg" alt="Happy Customers">
             <div>
                 <h2>Why Choose Us</h2>
                 <ul>
@@ -39,7 +39,7 @@
         </div>
         <!-- Section 3 -->
         <div class="section">
-            <img src="/practice/assets/images/AboutUs/CustomerSupport.jpg" alt="Customer Support">
+            <img src="/vrum-car-rental/assets/images/AboutUs/CustomerSupport.jpg" alt="Customer Support">
             <div>
                 <h2>Our Mission</h2>
                 <p>We aim to empower our customers with freedom of movement by providing exceptional service,

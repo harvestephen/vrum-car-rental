@@ -16,10 +16,18 @@
 
   //Website Router
   switch ($currentURL) {
+
+    //Home Page Links
     case "{$rootDirectory}/":
     case "{$rootDirectory}/index.php":
       include './pages/HomeDefault/userHome.php';
       break;
+    case "{$rootDirectory}/adminHome":
+      case "{$rootDirectory}/adminHome/":
+        include './pages/HomeDefault/adminHome.php';
+        break;
+
+    //Footer Links
     case "{$rootDirectory}/cars":
     case "{$rootDirectory}/cars/":
       include './pages/Users/cars.php';
