@@ -792,6 +792,7 @@ padding-top:40px;
   width: 100%;
   display: grid;
   justify-content: center;
+  margin-bottom: 40px;
 }
 
 .about-page .intro {
@@ -821,25 +822,25 @@ padding-top:40px;
 }
 
 .about-page .section img {
-  width: 300px;
+  width: 200px;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  margin-right: 20px;
+  margin-right: 75px;
 }
 
 .about-page .section div {
   flex: 1;
 }
 
-.about-page .section:nth-child(even) {
+/* .about-page .section:nth-child(even) {
   flex-direction: row-reverse;
 }
 
 .about-page .section:nth-child(even) img {
   margin-right: 0;
   margin-left: 20px;
-}
+} */
 
 .about-page .section h2 {
   margin-bottom: 10px;
