@@ -33,4 +33,31 @@ $(document).ready(function () {
 		}
 	})
 
+	$(".slider-rightBtn").on('click', function() {
+		const cardWidth = $(".card").css('width');
+		const element = $('.slider').get(0);
+		console.log(element);
+		$(".slider").animate({scrollLeft: "+=" + String(parseInt(cardWidth) + 50)}, 400); 
+		setInterval(() => {
+			if (element.scrollLeft >= element.scrollWidth - element.clientWidth){
+				$(".slider-rightBtn").fadeOut(200);
+			} else {
+				$(".slider-rightBtn").fadeIn(200);
+			}
+		}, 300);
+	});
+
+	$(".slider-leftBtn").on('click', function() {
+		const cardWidth = $(".card").css('width');
+		$(".slider").animate({scrollLeft: "-=" + String(parseInt(cardWidth) + 50)}, 400); 
+		console.log($(".slider").scrollLeft());
+		setInterval(() => {
+			if ($(".slider").scrollLeft() === 0){
+				$(".slider-leftBtn").fadeOut(200);
+			} else {
+				$(".slider-leftBtn").fadeIn(200);
+			}
+		}, 300);
+	});
+	
 });
