@@ -594,8 +594,9 @@
 					<tabIndicator>
 				</div>
 			</div>
+
 			<!-- Car Selection Tab -->
-			<div class="car-rental-selection-container">
+			<!-- <div class="car-rental-selection-container">
 				<div class="car-selection-filter-Container">
 					<div class="car-selection-filter-buttons">
 						<button class="car-selection-filter-btn active" onclick="filterCars('all')">All</button>
@@ -626,7 +627,50 @@
 						</div>
 					</div>
 				</div>
+			</div> -->
+
+			<!-- Information Tab -->
+			<div class="car-rental-info-container">
+				<div class="car-rental-info-header">
+					<h1>Please fill the following</h1>
+				</div>	
+				<div class="car-rental-info-card">
+					<div class="car-rental-info-content">
+						<h2>Rent Period</h2>
+						<input class="formInput" type="text" placeholder="From: mm/dd/yyyy" noautocomplete>
+						<input class="formInput" type="text" placeholder="To: mm/dd/yyyy" noautocomplete>
+						<h2>Government Issued ID</h2>
+
+					</div>
+					<div class="car-rental-info-footer">
+						<button>Back</button>
+						<button>Next</button>
+					</div>
+				</div>
 			</div>
+
+			<!-- Checkout Tab -->
+			<div class="car-rental-info-container">
+				<div class="car-rental-info-header">
+					<h1>Payment Information</h1>
+				</div>	
+				<div class="car-rental-info-card">
+					<div class="car-rental-checkout-content">
+						<input class="formInput" type="text" placeholder="Cardholder Name" noautocomplete>
+						<input class="formInput" type="text" placeholder="Card Number" noautocomplete>
+						<input class="formInput" type="text" placeholder="Expiration Date" noautocomplete>
+						<input class="formInput" type="text" placeholder="CVV/CVC Code" noautocomplete>
+						<input class="formInput" type="text" placeholder="Billing Address" noautocomplete>
+					</div>
+					<div class="car-rental-checkout-footer">
+						<button>Back</button>
+						<button>Next</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Approval Tab -->
+			<div class="car-rental-approval-container"></div>
 		</div>
 	</div>
 
