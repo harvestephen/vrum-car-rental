@@ -61,3 +61,25 @@ $(document).ready(function () {
 	});
 	
 });
+
+$(document).ready(function () {
+    // Show the Terms Modal when "Sign Up" is clicked
+    $("#openTermsModalBtn").on("click", function (e) {
+        e.preventDefault(); // Prevent any default behavior like form submission
+        $("#registerModal").fadeOut(100); // Hide Register modal
+        $("#termsModal").fadeIn(100); // Show Terms modal
+    });
+
+    // Close the Terms Modal when "Cancel" is clicked
+    $(".cancelBtn").on("click", function () {
+        $("#termsModal").fadeOut(100);
+    });
+
+    // Close the Terms Modal when clicking outside the modal box
+    $(document).on("click", function (e) {
+        // Check if the click is outside the modal box
+        if ($(e.target).is("#termsModal")) {
+            $("#termsModal").fadeOut(100);
+        }
+    });
+});

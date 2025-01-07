@@ -142,6 +142,8 @@ button.scrolled:hover {
   width: 100%;
   height: 100%;
   overflow: auto;
+  justify-content: center;
+  display: flex;
 }
 .modalContent {
   position: relative;
@@ -1386,4 +1388,350 @@ tabIndicator.active{
   background: linear-gradient(rgba(115, 115, 115, 0.7), rgba(115, 115, 115, 0.7));
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* TERMS MODAL */
+#termsModal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 9999; /* Ensure it's on top of other elements */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  display: flex; /* Flexbox for centering */
+}
+
+/* Modal Box */
+.termsModalBox {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px; /* Adjust the width as needed */
+  width: 90%; /* Responsive width */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for a nice effect */
+  text-align: left; /* Align text to the left */
+}
+
+.termsModalHeader {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: Inter_28pt-Bold;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #022b3a;
+}
+
+/* Modal Body */
+.modalBody {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1A3636;
+  margin-bottom: 20px;
+}
+
+/* Ordered List Style */
+.modalBody ol {
+  padding-left: 20px;
+}
+
+.modalBody li {
+  margin-bottom: 15px;
+}
+
+/* Modal Footer */
+.modalFooter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.agreeBtn {
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Agree Button Style */
+.agreeBtn {
+  color: #333333;
+}
+
+.agreeBtn:hover {
+  background-color: #cfb284;
+  color: white;
+}
+
+.line {
+  border-bottom: 2px solid #1A3636; /* Line color */
+  margin: 10px 0; /* Spacing above and below the line */
+}
+
+/* CONFIRM MODAL */
+/* Confirm Modal Box */
+.confirmModalBox {
+  background-color: #d3d3d3;
+  width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Modal Body */
+.confirmModalBox .modalBody {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.confirmHeader {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: Inter_28pt-Bold;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: #022b3a;
+}
+
+/* Modal Footer */
+.confirmModalBox .modalFooter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.confirmBtn {
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cancelBtn{
+  color: #ffffff;
+  background-color: #FF5E57;
+  border: 2px solid #FF5E57;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Confirm Button Style */
+.confirmBtn {
+  color: #333333;
+}
+
+.confirmBtn:hover {
+  background-color: #cfb284;
+  color: white;
+}
+
+/* TERMS MODAL */
+#termsModal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 9999; /* Ensure it's on top of other elements */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  display: flex; /* Flexbox for centering */
+}
+
+/* Modal Box */
+.termsModalBox {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px; /* Adjust the width as needed */
+  width: 90%; /* Responsive width */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for a nice effect */
+  text-align: left; /* Align text to the left */
+}
+
+.termsModalHeader {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: Inter_28pt-Bold;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #022b3a;
+}
+
+/* Modal Body */
+.modalBody {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1A3636;
+  margin-bottom: 20px;
+}
+
+/* Ordered List Style */
+.modalBody ol {
+  padding-left: 20px;
+}
+
+.modalBody li {
+  margin-bottom: 15px;
+}
+
+/* Modal Footer */
+.modalFooter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.agreeBtn {
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Agree Button Style */
+.agreeBtn {
+  color: #333333;
+}
+
+.agreeBtn:hover {
+  background-color: #cfb284;
+  color: white;
+}
+
+.line {
+  border-bottom: 2px solid #1A3636; /* Line color */
+  margin: 10px 0; /* Spacing above and below the line */
+}
+
+/* CONFIRM MODAL */
+/* Confirm Modal Box */
+.confirmModalBox {
+  background-color: #d3d3d3;
+  width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Modal Body */
+.confirmModalBox .modalBody {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.confirmHeader {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: Inter_28pt-Bold;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: #022b3a;
+}
+
+/* Modal Footer */
+.confirmModalBox .modalFooter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.confirmBtn {
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cancelBtn{
+  color: #ffffff;
+  background-color: #FF5E57;
+  border: 2px solid #FF5E57;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Confirm Button Style */
+.confirmBtn {
+  color: #333333;
+}
+
+.confirmBtn:hover {
+  background-color: #cfb284;
+  color: white;
 }
