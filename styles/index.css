@@ -642,7 +642,7 @@ footer {
 .faq-container .accordion::after {
   content: '\25BA'; /* Unicode for right arrow */
   font-size: 14px;
-  color: #A5B4C2;
+  color: #c49a56;
   position: absolute;
   right: 20px;
   transition: transform 0.3s ease;
