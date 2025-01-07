@@ -1474,15 +1474,6 @@ tabIndicator.active{
   margin-bottom: 20px;
 }
 
-/* Ordered List Style */
-.modalBody ol {
-  padding-left: 20px;
-}
-
-.modalBody li {
-  margin-bottom: 15px;
-}
-
 /* Modal Footer */
 .modalFooter {
   display: flex;
