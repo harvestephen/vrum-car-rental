@@ -52,6 +52,17 @@
     case "{$rootDirectory}/index.php/":
       include './pages/HomeDefault/userHome.php';
       break;
+
+    //Modal Links
+    case "{$rootDirectory}/termsModal":
+      case "{$rootDirectory}/termsModal/":
+      include './pages/Modals/terms_modal.php';
+    break;
+
+    case "{$rootDirectory}/confirmModal":
+      case "{$rootDirectory}/confirmModal/":
+      include './pages/Modals/confirm_modal.php';
+    break;
   }
   include './pages/Template/footer.php';
   ?>
