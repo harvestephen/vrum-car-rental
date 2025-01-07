@@ -1372,22 +1372,61 @@ tabIndicator.active{
   object-fit: cover;
 }   
 
-.car-rental-info-container{
+.car-rental-container{
   display: block;
   justify-items: center;
 }
-.car-rental-info-header{
+.car-rental-header{
   display: flex;
   justify-content: center;
 }
-.car-rental-info-card{
+.car-rental-card{
   width: 100%;
-  max-width: 40vw;
-  display: flex;
-  justify-content: center;
+  max-width: 20vw;
   background: linear-gradient(rgba(115, 115, 115, 0.7), rgba(115, 115, 115, 0.7));
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px 25px;
+  display: block;
+
+}
+
+.car-rental-approval-container{
+  width: 100%;
+  max-width: 70vw; /* Container width is 70% of viewport */
+  margin: 50px 0px;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(115, 115, 115, 0.7), rgba(115, 115, 115, 0.7));
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+}
+.car-rental-approval-container img{
+  width: 150px;
+  height: 150px;
+  margin: 15px;
+}
+
+.car-rental-approval-container h3{
+  margin: 10px;
+  color: #fff;
+}
+.car-rental-approval-container a{
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* TERMS MODAL */

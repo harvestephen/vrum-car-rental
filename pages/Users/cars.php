@@ -630,31 +630,35 @@
 			</div> -->
 
 			<!-- Information Tab -->
-			<div class="car-rental-info-container">
-				<div class="car-rental-info-header">
+			<!-- <div class="car-rental-container">
+				<div class="car-rental-header">
 					<h1>Please fill the following</h1>
 				</div>	
-				<div class="car-rental-info-card">
+				<div class="car-rental-card">
 					<div class="car-rental-info-content">
 						<h2>Rent Period</h2>
-						<input class="formInput" type="text" placeholder="From: mm/dd/yyyy" noautocomplete>
-						<input class="formInput" type="text" placeholder="To: mm/dd/yyyy" noautocomplete>
+						<div>
+							<input class="formInput" type="text" placeholder="From: mm/dd/yyyy" noautocomplete>
+							<input class="formInput" type="text" placeholder="To: mm/dd/yyyy" noautocomplete>
+						</div>
 						<h2>Government Issued ID</h2>
-
+						<div>
+							<input type="file" placeholder="Choose a File">
+						</div>
 					</div>
-					<div class="car-rental-info-footer">
+					<div class="car-rental-footer">
 						<button>Back</button>
 						<button>Next</button>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<!-- Checkout Tab -->
-			<div class="car-rental-info-container">
-				<div class="car-rental-info-header">
+			<!-- <div class="car-rental-container">
+				<div class="car-rental-header">
 					<h1>Payment Information</h1>
 				</div>	
-				<div class="car-rental-info-card">
+				<div class="car-rental-card">
 					<div class="car-rental-checkout-content">
 						<input class="formInput" type="text" placeholder="Cardholder Name" noautocomplete>
 						<input class="formInput" type="text" placeholder="Card Number" noautocomplete>
@@ -662,15 +666,22 @@
 						<input class="formInput" type="text" placeholder="CVV/CVC Code" noautocomplete>
 						<input class="formInput" type="text" placeholder="Billing Address" noautocomplete>
 					</div>
-					<div class="car-rental-checkout-footer">
+					<div class="car-rental-footer">
 						<button>Back</button>
 						<button>Next</button>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<!-- Approval Tab -->
-			<div class="car-rental-approval-container"></div>
+			<div class="car-rental-approval-container">
+				<img src="./assets/icons/okay.png" alt="Done">
+				<h3>Your request has been processed.</h3>
+				<h3>Wait within 24 hours for your request to be approved. Thank you!</h3>
+				<a>Home</a>
+			</div>
+
+
 		</div>
 	</div>
 
