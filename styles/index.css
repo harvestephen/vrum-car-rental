@@ -1261,3 +1261,111 @@ li.adminNavOption {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.car-rental-page{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+.car-rental-tabContainer{
+  display: flex;
+  overflow: hidden;
+  width: 70vw;
+}
+.car-rental-tabs{
+  flex: 1;
+  color: #fff;
+  font-size: 1em;
+  margin: 0 10px;
+}
+tabIndicator{
+  border: none;
+  border-radius: 3px;
+  border-top: 5px solid #fff;
+  width: 100%; 
+  margin-top: 8px; 
+  display: block;
+}
+tabIndicator.active{
+  border: none;
+  border-radius: 3px;
+  border-top: 5px solid #cfb284;
+  width: 100%;  
+  margin-top: 8px;   
+  display: block;
+}
+.carpagebg{
+  position: relative; /* Ensures the pseudo-element is positioned relative to this container */
+  background-image: url("../assets/images/bg.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  z-index: 10; /* Keeps content on top */
+}
+.car-rental-selection-container{
+  width: 100%;
+  max-width: 70vw; /* Container width is 70% of viewport */
+  margin: 50px 0px;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.car-selection-filter-container {
+  padding: 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.car-selection-filter-buttons {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+  justify-content: start;
+  gap: 10px;
+}
+
+.car-selection-filter-btn {
+  padding: 0.5rem 1rem;
+  background-color: #d3d3d3;
+  border: 2px solid #cfb284 ;
+  border-radius: 8px;
+  color: #000000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.car-selection-filter-btn.active,
+.car-selection-filter-btn:hover {
+  background-color: #cfb284;
+}
+.car-rental-selection{
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.car-selection-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.car-selection-card{
+  width: 100%;
+  height: 150px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+.car-selection-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

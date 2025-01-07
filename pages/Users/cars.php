@@ -1,5 +1,5 @@
 <div class="wrapper">
-	<div class="filter-buttons">
+	<!-- <div class="filter-buttons">
 		<a href="#all.html" class="active">All</a>
 		<a href="#sedan.html">Sedans</a>
 		<a href="#van.html">Van</a>
@@ -568,6 +568,65 @@
 				<p class="price">₱1,120/Day</p>
 			</div>
 			<a href="#" class="more-btn">More..</a>
+		</div>
+	</div> -->
+
+	<!-- Header -->
+	<div></div>
+	<!-- Container -->
+	<div class="wrapper carpagebg">
+		<div class="car-rental-page">
+			<div class="car-rental-tabContainer">
+				<div class="car-rental-tabs">
+					<h2>Select a Car</h2>
+					<tabIndicator class="active">
+				</div>
+				<div class="car-rental-tabs">
+					<h2>Information</h2>
+					<tabIndicator>
+				</div>
+				<div class="car-rental-tabs">
+					<h2>Checkout</h2>
+					<tabIndicator>
+				</div>
+				<div class="car-rental-tabs">
+					<h2>Approval</h2>
+					<tabIndicator>
+				</div>
+			</div>
+			<!-- Car Selection Tab -->
+			<div class="car-rental-selection-container">
+				<div class="car-selection-filter-Container">
+					<div class="car-selection-filter-buttons">
+						<button class="car-selection-filter-btn active" onclick="filterCars('all')">All</button>
+						<button class="car-selection-filter-btn" onclick="filterCars('sedan')">Sedan</button>
+						<button class="car-selection-filter-btn" onclick="filterCars('suv')">SUV</button>
+						<button class="car-selection-filter-btn" onclick="filterCars('van')">Van</button>
+					</div>
+				</div>
+				<div class="car-rental-selection">
+					<div class="car-selection-grid">
+						<div class="car-selection-card sedan">
+							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="Sedan">
+						</div>
+						<div class="car-selection-card suv">
+							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="SUV">
+						</div>
+						<div class="car-selection-card van">
+							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="Van">
+						</div>
+						<div class="car-selection-card sedan">
+							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="Sedan">
+						</div>
+						<div class="car-selection-card suv">
+							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="SUV">
+						</div>
+						<div class="car-selection-card van">
+							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="Van">
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
