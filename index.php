@@ -1,31 +1,34 @@
-<?php 
+<?php
+include "./backend/database/init.php";
 /**
-   * Main entry point :)
-   * 
-   * Location: /E:/Workspace/XAMPP/Vrum/index.php
-   */
+ * Main entry point :)
+ * 
+ * Location: /E:/Workspace/XAMPP/Vrum/index.php
+ */
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php require './pages/Template/header.php'; ?>
+
 <body>
   <?php
   include './pages/Template/navBar.php';
-  $currentURL = $_SERVER['REQUEST_URI']; // Get current URL
+  $currentURL = parse_url($_SERVER['REQUEST_URI'])['path']; // Get current URL
   $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory (RELATIVE)
-
+  
   //Website Router
   switch ($currentURL) {
 
     //Home Page Links
     case "{$rootDirectory}/":
     case "{$rootDirectory}/index.php":
+      case "{$rootDirectory}/index.php":
       include './pages/HomeDefault/userHome.php';
       break;
     case "{$rootDirectory}/adminHome":
-      case "{$rootDirectory}/adminHome/":
-        include './pages/HomeDefault/adminHome.php';
-        break;
+    case "{$rootDirectory}/adminHome/":
+      include './pages/HomeDefault/adminHome.php';
+      break;
 
     //Footer Links
     case "{$rootDirectory}/cars":
@@ -55,18 +58,18 @@
 
     //Modal Links
     case "{$rootDirectory}/termsModal":
-      case "{$rootDirectory}/termsModal/":
+    case "{$rootDirectory}/termsModal/":
       include './pages/Modals/terms_modal.php';
-    break;
+      break;
 
     case "{$rootDirectory}/confirmModal":
-      case "{$rootDirectory}/confirmModal/":
+    case "{$rootDirectory}/confirmModal/":
       include './pages/Modals/confirm_modal.php';
-    break;
+      break;
   }
   include './pages/Template/footer.php';
   ?>
-  <script src="<?php echo $rootDirectory . "/main.js"?>"></script>
+  <script src="<?php echo $rootDirectory . "/main.js" ?>"></script>
 </body>
 
 </html>

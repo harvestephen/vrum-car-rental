@@ -84,7 +84,49 @@ $(document).ready(function () {
       $("#termsModal").fadeOut(100);
     }
   });
+
+	
 });
+
+const validateRegisterForm = async () => {
+	event.preventDefault();
+	//get form data
+	const formData = $("#registerForm").serializeArray();
+	const username = formData[0].value;
+	const email = formData[1].value;
+	const phoneNumber = formData[2].value;
+	const password = formData[3].value;
+	const confirmPassword = formData[4].value;
+
+	//validate password and confirm password
+	if (password !== confirmPassword) {
+
+	}
+
+	//Get all username from database
+  const fetchData = async () => {
+    const data = await fetch('./backend/database/queries/database/getUserInfo.php');
+    return data;
+  };
+  
+	fetchData()
+	.then((result) => {
+    if (result.status == 200) {
+      result.text().then((text) => {
+        console.log(text);  // Logs the raw JSON string
+      });
+    } else {
+      console.log('Error fetching data');
+    }
+  })
+
+	//check if username have a match
+
+	//check if email have a match
+
+	//if no match, send data to php controller.
+
+};
 
 
 /**

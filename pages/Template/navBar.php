@@ -35,25 +35,25 @@
             <h2 class="modalHeader">Register</h2>
         </div>
         <div>
-            <form class="modalForm">
+            <form class="modalForm" onsubmit="validateRegisterForm()" method="post" id="registerForm">    
                 <div>
-                    <input class="formInput" type="text" placeholder="Username" noautocomplete>
+                    <input class="formInput" type="text" placeholder="Username" noautocomplete required name="username">
                 </div>
                 <div>
-                    <input class="formInput" type="email" placeholder="Email" noautocomplete>
+                    <input class="formInput" type="email" placeholder="Email" noautocomplete required name="email">
                 </div>
                 <div>
-                    <input class="formInput" type="text" placeholder="Phone Number" noautocomplete>
+                    <input class="formInput" type="number" placeholder="Phone Number" noautocomplete required name="phone">
                 </div>
                 <div>
-                    <input class="formInput" type="password" placeholder="Password" noautocomplete>
+                    <input class="formInput" type="password" placeholder="Password" noautocomplete required name="password">
                 </div>
                 <div>
-                    <input class="formInput" type="password" placeholder="Confirm Password" noautocomplete>
+                    <input class="formInput" type="password" placeholder="Confirm Password" noautocomplete required name="confirm-password">
                 </div>
                 <div class="formSubmit">
                     <div style="display: flex; justify-content: center;">
-                        <button class="formSubmit">Submit</button>
+                        <button class="formSubmit" id="register-submit" name="register">Submit</button>
                     </div>
                     <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
                         <p class="formSubmit" style="margin-right: 5px;">Already Have an Account?</p>
@@ -75,10 +75,10 @@
         <div>
             <form class="modalForm">
                 <div>
-                    <input class="formInput" type="text" placeholder="Username" noautocomplete>
+                    <input class="formInput" type="text" placeholder="Username" noautocomplete required>
                 </div>
                 <div>
-                    <input class="formInput" type="password" placeholder="Password" noautocomplete>
+                    <input class="formInput" type="password" placeholder="Password" noautocomplete required>
                 </div>
                 <div class="formSubmit" id="login-bottom">
                     <button class="formSubmit" style="flex-shrink: 0">Log in</button>
