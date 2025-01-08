@@ -1,5 +1,6 @@
 <div class="wrapper">
-	<!-- <div class="filter-buttons">
+	<!-- 
+<div class="filter-buttons">
 		<a href="#all.html" class="active">All</a>
 		<a href="#sedan.html">Sedans</a>
 		<a href="#van.html">Van</a>
@@ -596,7 +597,8 @@
 			</div>
 
 			<!-- Car Selection Tab -->
-			<!-- <div class="car-rental-selection-container">
+			<!-- 
+			<div class="car-rental-selection-container">
 				<div class="car-selection-filter-Container">
 					<div class="car-selection-filter-buttons">
 						<button class="car-selection-filter-btn active" onclick="filterCars('all')">All</button>
@@ -627,10 +629,12 @@
 						</div>
 					</div>
 				</div>
-			</div> -->
+			</div> 
+			-->
 
 			<!-- Information Tab -->
-			<!-- <div class="car-rental-container">
+			<!-- 
+			<div class="car-rental-container">
 				<div class="car-rental-header">
 					<h1>Please fill the following</h1>
 				</div>	
@@ -651,10 +655,12 @@
 						<button>Next</button>
 					</div>
 				</div>
-			</div> -->
+			</div> 
+			-->
 
 			<!-- Checkout Tab -->
-			<!-- <div class="car-rental-container">
+			<!-- 
+			<div class="car-rental-container">
 				<div class="car-rental-header">
 					<h1>Payment Information</h1>
 				</div>	
@@ -671,7 +677,8 @@
 						<button>Next</button>
 					</div>
 				</div>
-			</div> -->
+			</div> 
+			-->
 
 			<!-- Approval Tab -->
 			<div class="car-rental-approval-container">
@@ -680,7 +687,6 @@
 				<h3>Wait within 24 hours for your request to be approved. Thank you!</h3>
 				<a>Home</a>
 			</div>
-
 
 		</div>
 	</div>

@@ -1,16 +1,16 @@
 <?php $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory ?>
 <div class="navBar navContent">
     <div class="pageTitle">
-    <a class="pageTitle" href="<?php echo $rootDirectory?>">Vrum</a>
+        <a class="pageTitle" href="<?php echo $rootDirectory?>">Vrum</a>
     </div>
     <div class="pageNav navContent">
         <div class="navOption navContent">
             <ul class="navOption">
                 <li class="navOption">
-                <a class="navSelection" href=<?php echo $rootDirectory . "/cars"?>>Car</a>
+                    <a class="navSelection" href=<?php echo $rootDirectory . "/cars"?>>Car</a>
                 </li>
                 <li class="navOption">
-                <a class="navSelection" href="<?php echo $rootDirectory . "/about"?>">About</a>
+                    <a class="navSelection" href="<?php echo $rootDirectory . "/about"?>">About</a>
                 </li>
             </ul>
         </div>
@@ -27,10 +27,8 @@
     </div>
 </div>
 
-<!-- Include Terms Modal -->
-<?php include __DIR__ . '/../Modal/terms_modal.php'; ?>
-
 <!-- Register Modal -->
+
 <div id="registerModal" class="modal">
     <div class="modalContent">
         <div>
@@ -55,7 +53,7 @@
                 </div>
                 <div class="formSubmit">
                     <div style="display: flex; justify-content: center;">
-                        <button class="formSubmit" id="openTermsModalBtn">Sign Up</button>
+                        <button class="formSubmit">Submit</button>
                     </div>
                     <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
                         <p class="formSubmit" style="margin-right: 5px;">Already Have an Account?</p>
@@ -68,6 +66,7 @@
 </div>
 
 <!-- Login Modal -->
+
 <div id="loginModal" class="modal">
     <div class="modalContent">
         <div>
@@ -89,4 +88,3 @@
         </div>
     </div>
 </div>
-
