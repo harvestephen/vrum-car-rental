@@ -1929,3 +1929,9 @@ tabIndicator.active {
 #emailRegister{
   display: none;
 }
+#loginusername {
+  display: none;
+}
+#loginpassword{
+  display: none;
+}

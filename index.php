@@ -1,5 +1,6 @@
 <?php
 include "./backend/database/init.php";
+
 /**
  * Main entry point :)
  * 

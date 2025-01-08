@@ -1,3 +1,4 @@
+//JQUERY EVENT HANDLERS
 $(document).ready(function () {
   $(".accordion").click(function () {
     $(this).toggleClass("active");
@@ -86,6 +87,10 @@ $(document).ready(function () {
   });
 });
 
+/**
+ * FORM VALIDATIONS
+ */
+
 const validateRegisterForm = async () => {
   event.preventDefault();
   //get form data
@@ -108,23 +113,28 @@ const validateRegisterForm = async () => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json; charset=UTF-8");
 
-    const request = new Request("./backend/database/queries/accounts/register.php", {
-      "headers": myHeaders,
-      "method": "POST",
-      "body": JSON.stringify({
-        'username': username,
-        'email': email,
-        'phone': phoneNumber,
-        'password': password,
-      }),
-    });
+    const request = new Request(
+      "./backend/database/queries/accounts/register.php",
+      {
+        headers: myHeaders,
+        method: "POST",
+        body: JSON.stringify({
+          username: username,
+          email: email,
+          phone: phoneNumber,
+          password: password,
+        }),
+      }
+    );
 
-    fetch(request).then((res)=>{
-      return res.text(); //buy time
-    }).then((data)=>{
-      console.log(data);
-      window.location.href = "./index.php";
-    });
+    fetch(request)
+      .then((res) => {
+        return res.text(); //buy time
+      })
+      .then((data) => {
+        console.log(data);
+        window.location.href = "./index.php";
+      });
   };
 
   //validate password and confirm password
@@ -185,7 +195,6 @@ const validateRegisterForm = async () => {
       }
       if (password === confirmPassword && !hasName && !hasEmail) {
         sendData();
-       
       }
     })
     .catch((error) => {
@@ -198,6 +207,66 @@ const validateRegisterForm = async () => {
   //check if email have a match
 
   //if no match, send data to php controller.
+};
+
+const validateLoginForm = async () => {
+  event.preventDefault();
+  const formData = $("#loginForm").serializeArray();
+  const username = formData[0].value;
+  const password = formData[1].value;
+
+  //get username
+  const fetchData = async () => {
+    const data = await fetch(
+      "./backend/database/queries/database/getUserInfo.php"
+    );
+    return data;
+  };
+
+  fetchData()
+    .then((result) => {
+      return result.text(); // Return the text response for further processing
+    })
+    .then((data) => {
+      const array = JSON.parse(data);
+      const hasName = array.some(
+        (databaseUsername) => databaseUsername.username === username
+      );
+      if (hasName) {
+        $("#loginusername").css("display", "none");
+        for (user of array) {
+          if (user.username === username && user.password === password) {
+            window.location.href = "./?username=" + username;
+            /**
+             * 
+             
+            fetch("./index.php", {
+              headers: {
+                "Content-Type": "application/json; charset=UTF-8",
+              },
+              method: "GET",
+              body: JSON.stringify({
+                'username': username,
+              }),
+            })
+              .then((res) => {
+                return res.text(); //buy time
+              })
+              .then((data) => {
+                console.log(data);
+                window.location.href = "./index.php";
+              });
+              */
+            $("#loginpassword").css("display", "none");
+            break;
+          } else {
+            $("#loginpassword").css("display", "block");
+          }
+        }
+      } else {
+        $("#loginusername").css("display", "block");
+      }
+    });
 };
 
 /**

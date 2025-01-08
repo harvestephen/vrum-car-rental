@@ -1,27 +1,38 @@
-<?php $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory ?>
+<?php
+$rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory 
+?>
 <div class="navBar navContent">
     <div class="pageTitle">
-        <a class="pageTitle" href="<?php echo $rootDirectory?>">Vrum</a>
+        <a class="pageTitle" href="<?php echo $rootDirectory ?>">Vrum</a>
     </div>
     <div class="pageNav navContent">
         <div class="navOption navContent">
             <ul class="navOption">
                 <li class="navOption">
-                    <a class="navSelection" href=<?php echo $rootDirectory . "/cars"?>>Car</a>
+                    <a class="navSelection" href=<?php echo $rootDirectory . "/cars" ?>>Car</a>
                 </li>
                 <li class="navOption">
-                    <a class="navSelection" href="<?php echo $rootDirectory . "/about"?>">About</a>
+                    <a class="navSelection" href="<?php echo $rootDirectory . "/about" ?>">About</a>
                 </li>
             </ul>
         </div>
         <div class="accountSection navContent">
             <ul class="navOption">
-                <li class="navOption">
-                    <button class="navSelection" id="registerModalBtn">Register</button>
-                </li>
-                <li class="navOption">
-                    <button class="navSelection" id="loginModalBtn">Login</button>
-                </li>
+            <?php if(isset($_GET['username'])) {
+                echo '<li class="navOption">';
+                echo '<button class="navSelection" id="registerModalBtn">' . $_GET['username'] . '</button>';
+                echo '</li>';
+            } else {
+                echo '<li class="navOption">';
+                echo '<button class="navSelection" id="registerModalBtn">Register</button>';
+                echo '</li>';
+                echo '<li class="navOption">';
+                echo '<button class="navSelection" id="loginModalBtn">Login</button>';
+                echo '</li>';
+            } ?>
+            </ul>
+        </div>
+                
             </ul>
         </div>
     </div>
@@ -35,7 +46,7 @@
             <h2 class="modalHeader">Register</h2>
         </div>
         <div>
-            <form class="modalForm" onsubmit="validateRegisterForm()" method="post" id="registerForm">    
+            <form class="modalForm" onsubmit="validateRegisterForm()" method="post" id="registerForm">
                 <div>
                     <input class="formInput" type="text" placeholder="Username" noautocomplete required name="username">
                     <p class="errormessage" id="usernameRegister">Username already exist</p>
@@ -45,13 +56,16 @@
                     <p class="errormessage" id="emailRegister">Email already xist</p>
                 </div>
                 <div>
-                    <input class="formInput" type="number" placeholder="Phone Number" noautocomplete required name="phone">
+                    <input class="formInput" type="number" placeholder="Phone Number" noautocomplete required
+                        name="phone">
                 </div>
                 <div>
-                    <input class="formInput" type="password" placeholder="Password" noautocomplete required name="password">
+                    <input class="formInput" type="password" placeholder="Password" noautocomplete required
+                        name="password">
                 </div>
                 <div>
-                    <input class="formInput" type="password" placeholder="Confirm Password" noautocomplete required name="confirm-password">
+                    <input class="formInput" type="password" placeholder="Confirm Password" noautocomplete required
+                        name="confirm-password">
                     <p class="errormessage" id="confirmPass">ulol di parehas password mo</p>
                 </div>
                 <div class="formSubmit">
@@ -76,12 +90,15 @@
             <h2 class="modalHeader">Log in</h2>
         </div>
         <div>
-            <form class="modalForm">
+            <form class="modalForm" id="loginForm" onsubmit="validateLoginForm()">
                 <div>
-                    <input class="formInput" type="text" placeholder="Username" noautocomplete required>
+                    <input class="formInput" type="text" placeholder="Username" noautocomplete required name="username">
+                    <p class="errormessage" id="loginusername">Username do not exist</p>
                 </div>
                 <div>
-                    <input class="formInput" type="password" placeholder="Password" noautocomplete required>
+                    <input class="formInput" type="password" placeholder="Password" noautocomplete required
+                        name="password">
+                    <p class="errormessage" id="loginpassword">Wrong password</p>
                 </div>
                 <div class="formSubmit" id="login-bottom">
                     <button class="formSubmit" style="flex-shrink: 0">Log in</button>
