@@ -1272,17 +1272,36 @@ li.adminNavOption {
 .car-rental-tabContainer{
   display: flex;
   overflow: hidden;
-  width: 70vw;
+  width: 85vw;
 }
 .car-rental-tabs{
   flex: 1;
-  color: #fff;
-  font-size: 1em;
   margin: 0 10px;
+}
+.car-rental-tabs div{
+  display: inline-flex;
+  align-items: center;
+}
+.car-rental-tabs h6{
+  width: 30px;
+  height: 30px;
+  background-color: #cfb284;
+  border-radius: 20px;
+  color: #fff;
+  font-family: Inter_18pt-Regular;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+}
+.car-rental-tabs p{
+  color: #fff;
+  font-family: Inter_18pt-Regular;
+  font-size: 20px;
 }
 tabIndicator{
   border: none;
-  border-radius: 3px;
   border-top: 5px solid #fff;
   width: 100%; 
   margin-top: 8px; 
@@ -1290,7 +1309,6 @@ tabIndicator{
 }
 tabIndicator.active{
   border: none;
-  border-radius: 3px;
   border-top: 5px solid #cfb284;
   width: 100%;  
   margin-top: 8px;   
@@ -1307,8 +1325,8 @@ tabIndicator.active{
   z-index: 10; /* Keeps content on top */
 }
 .car-rental-selection-container{
-  width: 100%;
-  max-width: 70vw; /* Container width is 70% of viewport */
+  width: 100%;    
+  max-width: 85vw;
   margin: 50px 0px;
   height: 75vh;
   display: flex;
@@ -1333,12 +1351,13 @@ tabIndicator.active{
 }
 
 .car-selection-filter-btn {
-  padding: 0.5rem 1rem;
+  padding: 4px 8px;
   background-color: #d3d3d3;
   border: 2px solid #cfb284 ;
   border-radius: 8px;
   color: #000000;
-  font-weight: bold;
+  font-family: Inter_18pt-Regular;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -1354,26 +1373,75 @@ tabIndicator.active{
 }
 .car-selection-grid{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 .car-selection-card{
   width: 100%;
-  height: 150px;
-  background-color: #e0e0e0;
-  border-radius: 8px;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  position: relative;
+  position: relative; 
+  display: block;
+  padding: 15px;
 }
-.car-selection-card img{
-  width: 100%;
-  height: 100%;
+.car-selection-carName h2{
+  font-family: Inter_28pt-Bold;
+  font-size: 24px;
+  color: #000;
+}
+.car-selection-carName h3{
+  font-family: Inter_18pt-Regular;
+  font-size: 18px;
+  font-weight: 100;
+  color: #000;
+}
+.car-selection-icons{
+  margin: 5px 0px;
+  display: inline-flex;
+  align-items: center;
+}
+.car-selection-icons img{
+  width: 16px;
+  height: 16px;
+}
+.car-selection-icons p{
+  margin: 0px 10px;
+  font-family: Inter_18pt-Regular;
+  font-size: 16px;
+  font-weight: 100;
+  color: #000;
+}
+.car-selection-img{
+  display: flex;
+  justify-content: center;
+  height: 150px;
+}
+.car-selection-img img{
   object-fit: cover;
 }   
+.car-selection-select{
+  margin: 0px 5px;
+  font-size: 20px;
+  color: #000;   
+}
+.car-selection-select button{ 
+  width: 100%;
+  margin: 5px 0px 0px 0px;
+  padding: 8px 0px;
+  background-color: #cfb284;
+  border: none;
+  font-family: Inter_18pt-Regular;
+  font-size: 16px;
+  color: #fff;
+}
 
-.car-rental-container{
-  display: block;
+.car-rental-info-container{
+  display: none;
+  justify-items: center;
+}
+.car-rental-checkout-container{
+  display: none;
   justify-items: center;
 }
 .car-rental-header{
@@ -1396,7 +1464,7 @@ tabIndicator.active{
   max-width: 70vw; /* Container width is 70% of viewport */
   margin: 50px 0px;
   height: 75vh;
-  display: flex;
+  display: none;
   flex-direction: column;
   background: linear-gradient(rgba(115, 115, 115, 0.7), rgba(115, 115, 115, 0.7));
   border-radius: 8px;
@@ -1410,18 +1478,16 @@ tabIndicator.active{
   height: 150px;
   margin: 15px;
 }
-
 .car-rental-approval-container h3{
   margin: 10px;
   color: #fff;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
 }
 .car-rental-approval-container a{
   background-color: #ffffff;
   border: 2px solid #cfb284;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 4px 8px;
   border-radius: 20px;
   font-family: Inter_28pt-Bold;
   font-size: 14px;
