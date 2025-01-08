@@ -7,7 +7,7 @@ $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root direc
 		<div class="homepage">
 			<div class="homepageTitle MainContent">
 				<h1>RENT TODAY, MAKE MEMORIES TOMORROW</h1>
-				<a class="rent">RENT NOW!</a>
+				<a href=<?php echo $rootDirectory . "/cars" ?> class="rent">RENT NOW!</a>
 			</div>
 			<div class="new-header">
 			</div>

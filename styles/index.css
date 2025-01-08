@@ -617,11 +617,10 @@ footer {
   position: relative;
   font-family: Arial, sans-serif;
   background-color: white;
-  margin-top: 10px;
   padding: 20px;
   width: 70vw; /* Center the FAQ container and set a max width */
   border-radius: 10px; /* Rounded corners for a polished look */
-  margin-top: 50px; /* Add space at the top */
+  margin: 40px 0px; 
 }
 
 /* FAQ Header */
@@ -661,6 +660,7 @@ footer {
   font-size: 40px;
   font-family: Kalam-Regular;
   color: #c49a56;
+  padding-top: 40px;
 }
 .faq-container .accordion::after {
   content: "\25BA"; /* Unicode for right arrow */
@@ -698,7 +698,6 @@ footer {
   flex-direction: column;
   font-family: Inter_18pt-Regular;
   background-color: #f4f4f4;
-  padding: 40px;
   text-align: center;
 }
 
@@ -1260,8 +1259,9 @@ button.slider-leftBtn {
   background-image: url("../assets/images/offer-bg.png");
   background-size: cover;
   margin-top: 100px;
-  width: 100vw;
+  width: 100%;
   padding: 40px;
+  margin-bottom: 40px;
   text-align: center;
   font-family: Arial, sans-serif;
   color: #333;
@@ -1294,11 +1294,8 @@ li.adminNavOption {
   padding-bottom: 10px;
 }
 .car-rental-page {
-  display: grid;
-  align-items: center;
-  justify-content: center;
+  display: block;
   margin-top: 90px;
-  height: fit-content;
 }
 .car-rental-tabContainer {
   display: flex;
@@ -1362,8 +1359,8 @@ tabIndicator.active {
 .car-rental-selection-container{
   width: 100%;    
   max-width: 85vw;
-  margin: 40px 0px;
-  height: 75vh;
+  height: calc(75vh - 60px);
+  margin: 50px 0px;
   display: flex;
   flex-direction: column;
   background: linear-gradient(
@@ -1373,6 +1370,7 @@ tabIndicator.active {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: auto;
+  box-sizing: border-box;
 }
 .car-selection-filter-container {
   padding: 1rem;
@@ -1424,12 +1422,12 @@ tabIndicator.active {
   padding: 15px;
 }
 .car-selection-carName h2{
-  font-family: Inter_28pt-Bold;
+  font-family: Inter_18pt-Regular;
   font-size: 24px;
   color: #000;
 }
 .car-selection-carName h3{
-  font-family: Inter_18pt-Regular;
+  font-family: Fustat-Light;
   font-size: 18px;
   font-weight: 100;
   color: #000;
@@ -1445,9 +1443,8 @@ tabIndicator.active {
 }
 .car-selection-icons p{
   margin: 0px 10px;
-  font-family: Inter_18pt-Regular;
+  font-family: Fustat-Light;
   font-size: 16px;
-  font-weight: 100;
   color: #000;
 }
 .car-selection-img{
@@ -1493,7 +1490,6 @@ tabIndicator.active {
 .car-rental-checkout-container{
   display: none;
   justify-items: center;
-  height: 75vh;
   padding-top: 80px;
 }
 .car-rental-header{ 
@@ -1540,8 +1536,8 @@ tabIndicator.active {
 .car-rental-approval-container {
   width: 100%;
   max-width: 85vw;
-  margin: 40px 0px;
-  height: 75vh;
+  margin: 50px 0px;
+  height: calc(75vh - 60px);
   display: none;
   flex-direction: column;
   background: linear-gradient(
@@ -1551,6 +1547,7 @@ tabIndicator.active {
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: auto;
+  box-sizing: border-box; 
   justify-content: center;
   align-items: center;
 }
@@ -1562,7 +1559,7 @@ tabIndicator.active {
 .car-rental-approval-container h3{
   margin: 10px;
   color: #fff;
-  font-family: Inter_18pt-Regular;
+  font-family: Fustat-Light;
   font-weight: 100;
   font-size: 20px;
 }
