@@ -1362,6 +1362,7 @@ tabIndicator.active {
   max-width: 85vw;
   margin: 50px 0px;
   height: 75vh;
+  display: flex;
   flex-direction: column;
   background: linear-gradient(
     rgba(115, 115, 115, 0.7),
@@ -1563,10 +1564,12 @@ tabIndicator.active {
 .car-rental-approval-container a {
   background-color: #ffffff;
   border: 2px solid #cfb284;
-  padding: 4px 8px;
+  padding: 6px 10px;
   border-radius: 20px;
   font-family: Inter_28pt-Bold;
   font-size: 18px;
+  color:#000;
+  text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
