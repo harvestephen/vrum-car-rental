@@ -36,6 +36,12 @@
   font-style: normal;
   font-weight: normal;
 }
+@font-face {
+  font-family: Fustat-Light;
+  src: url("../assets/fonts/Fustat/Fustat-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
 
 * {
   margin: 0;
@@ -1307,13 +1313,13 @@ li.adminNavOption {
   align-items: center;
 }
 .car-rental-tabs h6{
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background-color: #cfb284;
   border-radius: 20px;
   color: #fff;
   font-family: Inter_18pt-Regular;
-  font-size: 1em;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1321,7 +1327,8 @@ li.adminNavOption {
 }
 .car-rental-tabs p{
   color: #fff;
-  font-family: Inter_18pt-Regular;
+  font-family: Fustat-Light;
+  font-weight: 50;
   font-size: 20px;
 }
 tabIndicator {
