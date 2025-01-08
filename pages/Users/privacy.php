@@ -1,4 +1,4 @@
-
+<div class="wrapper">
 
 <body class="privacy-policy-page">
 
@@ -131,4 +131,4 @@
     </div>
 
 </body>
-</html>
+</div>

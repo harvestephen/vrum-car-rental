@@ -1,4 +1,4 @@
-
+<div class="wrapper">
 <body class="contact-page">
 
   <header>
@@ -34,6 +34,5 @@
     </div>
   </main>
 
-
 </body>
-</html>
+</div>

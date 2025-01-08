@@ -1,4 +1,4 @@
-
+<div class="wrapper">
 <body class="terms-page">
 
     <header>
@@ -79,4 +79,4 @@
     </div>
 
 </body>
-</html>
+</div>
