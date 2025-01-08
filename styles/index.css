@@ -1317,8 +1317,6 @@ tabIndicator.active{
 .carpagebg{
   position: relative; /* Ensures the pseudo-element is positioned relative to this container */
   background-image: url("../assets/images/bg.jpg");
-  background-color: rgba(0, 0, 0, 0.5); 
-  background-blend-mode: darken;
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -1331,7 +1329,7 @@ tabIndicator.active{
   max-width: 85vw;
   margin: 50px 0px;
   height: 75vh;
-  display: flex;
+  display: none;
   flex-direction: column;
   background: linear-gradient(rgba(115, 115, 115, 0.7), rgba(115, 115, 115, 0.7));
   border-radius: 8px;
@@ -1441,32 +1439,66 @@ tabIndicator.active{
 .car-rental-info-container{
   display: none;
   justify-items: center;
+  height: 75vh;
+  padding-top: 80px;
+}
+.car-rental-info-container h2{
+  margin: 0px 0px 10px 0px;
+  font-family: Inter_18pt-Regular;
+  font-size: 22px;
+  font-weight: 100;
+  color: #fff;
 }
 .car-rental-checkout-container{
   display: none;
   justify-items: center;
+  height: 75vh;
+  padding-top: 80px;
 }
-.car-rental-header{
+.car-rental-header{ 
   display: flex;
   justify-content: center;
 }
-.car-rental-card{
+.car-rental-header h1{
+  margin: 0px 0px 15px 0px;
+  font-family: Inter_18pt-Regular;
+  font-size: 32px;
+  font-weight: 100;
+  color: #fff;
+}
+.car-rental-footer{
+  display: flex;  
+  justify-content: center;
+  margin: 10px 0px 0px 0px;
+}
+.car-rental-footer button{
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0px 8px;
+}
+
+.car-rental-card{ 
   width: 100%;
   max-width: 20vw;
   background: linear-gradient(rgba(115, 115, 115, 0.7), rgba(115, 115, 115, 0.7));
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px 25px;
+  padding: 30px 25px 20px 25px;
   display: block;
-
 }
 
 .car-rental-approval-container{
   width: 100%;
-  max-width: 70vw; /* Container width is 70% of viewport */
+  max-width: 85vw;
   margin: 50px 0px;
   height: 75vh;
-  display: none;
+  display: flex;
   flex-direction: column;
   background: linear-gradient(rgba(115, 115, 115, 0.7), rgba(115, 115, 115, 0.7));
   border-radius: 8px;
@@ -1483,8 +1515,9 @@ tabIndicator.active{
 .car-rental-approval-container h3{
   margin: 10px;
   color: #fff;
-  font-family: Inter_28pt-Bold;
-  font-size: 14px;
+  font-family: Inter_18pt-Regular;
+  font-weight: 100;
+  font-size: 20px;
 }
 .car-rental-approval-container a{
   background-color: #ffffff;
@@ -1492,7 +1525,7 @@ tabIndicator.active{
   padding: 4px 8px;
   border-radius: 20px;
   font-family: Inter_28pt-Bold;
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
