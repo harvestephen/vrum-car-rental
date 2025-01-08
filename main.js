@@ -335,6 +335,41 @@ function filterCars(carType) {
       }
   });
 }
+
+const fromDate = document.getElementById('fromDate');
+    const toDate = document.getElementById('toDate');
+    const submitButton = document.getElementById('submit-button');
+    const errorMessage = document.getElementById('error-message');
+
+    // Set today's date as the minimum date
+    const today = new Date();
+    const todayString = today.toISOString().split('T')[0];
+    fromDate.setAttribute('min', todayString);
+    toDate.setAttribute('min', todayString);
+
+    function validateDates() {
+        const from = new Date(fromDate.value);
+        const to = new Date(toDate.value);
+
+        if (fromDate.value && toDate.value) {
+            if (to >= from) {
+                errorMessage.style.display = 'none';
+                submitButton.disabled = false;
+            } else {
+                errorMessage.style.display = 'block';
+                submitButton.disabled = true;
+            }
+        } else {
+            submitButton.disabled = true;
+        }
+    }
+
+    fromDate.addEventListener('input', validateDates);
+    toDate.addEventListener('input', validateDates);
+
+    submitButton.addEventListener('click', function () {
+        alert(`Rental period: From ${fromDate.value} to ${toDate.value}`);
+    });
 /**
  *
  * wag na gumawa bagong $(document).ready(function () {} kasi may isa na sa taas.

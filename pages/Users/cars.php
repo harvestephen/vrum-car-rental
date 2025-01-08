@@ -1,4 +1,4 @@
-<div class="wrapper">
+
 	<!-- Header -->
 	<div></div>
 	<!-- Container -->
@@ -191,14 +191,18 @@
 				<div class="car-rental-card">
 					<div class="car-rental-info-content">
 						<h2>Rent Period</h2>
-						<div class="car-rental-info-form">
-							<input class="formInput" type="text" placeholder="From: mm/dd/yyyy" noautocomplete>
-							<input class="formInput" type="text" placeholder="To: mm/dd/yyyy" noautocomplete>
+						<div>
+							<input class="formInput" id="fromDate" type="date" placeholder="From: mm/dd/yyyy" noautocomplete>
+							<input class="formInput" id="toDate" type="date" placeholder="To: mm/dd/yyyy" noautocomplete>
 						</div>
+						<p class="error" id="error-message" style="display: none;">The "To" date must be later than or equal to the "From" date.</p>
+
 						<h2>Government Issued ID</h2>
 						<div>
-							<input type="file" placeholder="Choose a File">
+							<input type="file" id="idFile" placeholder="Choose a File">
 						</div>
+
+
 					</div>
 					<div class="car-rental-footer">
 						<button id="returnCarSelection">Back</button>
