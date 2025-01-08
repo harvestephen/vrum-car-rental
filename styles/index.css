@@ -1919,3 +1919,16 @@ tabIndicator.active {
   background-color: #cfb284;
   color: white;
 }
+.errormessage{
+  color: rgb(230, 53, 53);
+  text-align: center;
+}
+#confirmPass {
+  display: none;
+}
+#usernameRegister{
+  display: none;
+}
+#emailRegister{
+  display: none;
+}

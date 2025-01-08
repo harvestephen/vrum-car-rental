@@ -18,7 +18,6 @@ include "./backend/database/init.php";
   
   //Website Router
   switch ($currentURL) {
-
     //Home Page Links
     case "{$rootDirectory}/":
     case "{$rootDirectory}/index.php":
@@ -66,6 +65,11 @@ include "./backend/database/init.php";
     case "{$rootDirectory}/confirmModal/":
       include './pages/Modals/confirm_modal.php';
       break;
+    case "{$rootDirectory}/submitRegister":
+      include './backend/database/queries/accounts/register.php';
+      break;
+    default:
+      echo "error 404";
   }
   include './pages/Template/footer.php';
   ?>

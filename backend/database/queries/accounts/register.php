@@ -1,25 +1,24 @@
 <?php
 
-//access all variables and functions in connection.php as if the connection.php is written here
 include "../../connection/connection.php";
-$rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
 
-if(isset($_POST["register"])){
+if(isset($_POST)){
+  $rawData = file_get_contents("php://input");
+  $data = json_decode($rawData, true);
 
-  // create variables from $_POST['name attribute']
-  $username = $_POST["username"];
-  $password = $_POST["password"];
-  $email = $_POST["email"];
-  $confirmPassword = $_POST["confirm-password"];
-  $phone = $_POST["phone"];
-
-  //password validation
-  if ($password === $confirmPassword) { 
-    $hasedPassword = password_hash($password, PASSWORD_BCRYPT);
-  }else {
-    $errorMsg = "passwrodnotmatch";
-    header("location: {$rootDirectory}/../../../../index.php?passwordMsg=" . $errorMsg);
+  $username = $data["username"];
+  $password = $data["password"];
+  $email = $data["email"];
+  $phone = $data["phone"];
+  $role = "role";
+  
+  $query = "INSERT INTO users (username, role, password, email, phone) VALUES (?, ?, ?, ?, ?)";
+  $stmt = $conn -> prepare($query);
+  $stmt -> bind_param("sssss", $username, $role, $password, $email, $phone);
+  
+  if($stmt -> execute()){
+    echo "Data inserted successfully";
+  } else {
+    echo "Error: " . $stmt -> error;
   }
-
-  //database logic to add items
 }
