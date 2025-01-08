@@ -579,26 +579,37 @@
 		<div class="car-rental-page">
 			<div class="car-rental-tabContainer">
 				<div class="car-rental-tabs">
-					<h2>Select a Car</h2>
-					<tabIndicator class="active">
+					<div>
+						<h6>1</h6>
+						<p>Select a Car</p>
+					</div>
+					<tabIndicator class="active" id="carSelectionTab">
 				</div>
 				<div class="car-rental-tabs">
-					<h2>Information</h2>
-					<tabIndicator>
+					<div>
+						<h6>2</h6>
+						<p>Information</p>
+					</div>
+					<tabIndicator id="carInfoTab">
 				</div>
 				<div class="car-rental-tabs">
-					<h2>Checkout</h2>
-					<tabIndicator>
+					<div>
+						<h6>3</h6>
+						<p>Checkout</p>
+					</div>
+					<tabIndicator id="carCheckoutTab">
 				</div>
 				<div class="car-rental-tabs">
-					<h2>Approval</h2>
-					<tabIndicator>
+					<div>
+						<h6>4</h6>
+						<p>Approval</p>
+					</div>
+					<tabIndicator id="carApprovalTab">
 				</div>
 			</div>
 
 			<!-- Car Selection Tab -->
-			<!-- 
-			<div class="car-rental-selection-container">
+			<div class="car-rental-selection-container" id="carSelection">
 				<div class="car-selection-filter-Container">
 					<div class="car-selection-filter-buttons">
 						<button class="car-selection-filter-btn active" onclick="filterCars('all')">All</button>
@@ -609,32 +620,45 @@
 				</div>
 				<div class="car-rental-selection">
 					<div class="car-selection-grid">
-						<div class="car-selection-card sedan">
-							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="Sedan">
+
+						<div class="car-selection-card">
+							<div class="car-selection-carName">
+								<h2>Car Name</h2>
+								<h3>Description</h3>
+							</div>
+							<div class="car-selection-icons">
+								<img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
+								<p>4</p>
+								<img src="./assets/icons/CarCards/luggage.png" alt="Luggage">
+								<p>1</p>
+								<img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
+								<p>Manual</p>
+							</div>
+							<div class="car-selection-img">
+								<img src="./assets/images/cars/sedan/toyota/gr86.png" alt="Sedan">
+							</div>
+							<div class="car-selection-select">
+								<p>₱10000.00</p>
+								<button>Select</button>
+							</div>
 						</div>
+
 						<div class="car-selection-card suv">
-							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="SUV">
 						</div>
 						<div class="car-selection-card van">
-							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="Van">
 						</div>
 						<div class="car-selection-card sedan">
-							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="Sedan">
 						</div>
 						<div class="car-selection-card suv">
-							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="SUV">
 						</div>
 						<div class="car-selection-card van">
-							<img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/new-year-background-736885_1280.jpg" alt="Van">
 						</div>
 					</div>
 				</div>
-			</div> 
-			-->
+			</div>
 
 			<!-- Information Tab -->
-			<!-- 
-			<div class="car-rental-container">
+			<div class="car-rental-info-container" id="carInfo">
 				<div class="car-rental-header">
 					<h1>Please fill the following</h1>
 				</div>	
@@ -655,12 +679,10 @@
 						<button>Next</button>
 					</div>
 				</div>
-			</div> 
-			-->
+			</div>
 
 			<!-- Checkout Tab -->
-			<!-- 
-			<div class="car-rental-container">
+			<div class="car-rental-checkout-container" id="carCheckout">
 				<div class="car-rental-header">
 					<h1>Payment Information</h1>
 				</div>	
@@ -677,11 +699,10 @@
 						<button>Next</button>
 					</div>
 				</div>
-			</div> 
-			-->
+			</div>
 
 			<!-- Approval Tab -->
-			<div class="car-rental-approval-container">
+			<div class="car-rental-approval-container" id="carApproval">
 				<img src="./assets/icons/okay.png" alt="Done">
 				<h3>Your request has been processed.</h3>
 				<h3>Wait within 24 hours for your request to be approved. Thank you!</h3>
