@@ -621,7 +621,7 @@
 				<div class="car-rental-selection">
 					<div class="car-selection-grid">
 
-						<div class="car-selection-card">
+						<div class="car-selection-card sedan">
 							<div class="car-selection-carName">
 								<h2>Car Name</h2>
 								<h3>Description</h3>
@@ -639,17 +639,36 @@
 							</div>
 							<div class="car-selection-select">
 								<p>₱10000.00</p>
-								<button id="carToRent">Select</button>
+								<button class="carToRent">Select</button>
 							</div>
 						</div>
 
 						<div class="car-selection-card suv">
+						<div class="car-selection-carName">
+								<h2>Car Name</h2>
+								<h3>Description</h3>
+							</div>
+							<div class="car-selection-icons">
+								<img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
+								<p>4</p>
+								<img src="./assets/icons/CarCards/luggage.png" alt="Luggage">
+								<p>1</p>
+								<img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
+								<p>Manual</p>
+							</div>
+							<div class="car-selection-img">
+								<img src="./assets/images/cars/sedan/toyota/gr86.png" alt="Sedan">
+							</div>
+							<div class="car-selection-select">
+								<p>₱10000.00</p>
+								<button class="carToRent">Select</button>
+							</div>
 						</div>
-						<div class="car-selection-card van">
+						<div class="car-selection-card suv">
 						</div>
 						<div class="car-selection-card sedan">
 						</div>
-						<div class="car-selection-card suv">
+						<div class="car-selection-card sedan">
 						</div>
 						<div class="car-selection-card van">
 						</div>

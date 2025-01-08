@@ -86,7 +86,7 @@ $(document).ready(function () {
     }
   });
 
-  $("#carToRent").on("click", function () {
+  $(".carToRent").on("click", function () {
     $("#carSelectionTab").removeClass("active");
     $("#carSelection").css("display", "none");
     $("#carInfoTab").addClass("active");
@@ -314,6 +314,27 @@ const validateLoginForm = async () => {
     });
 };
 
+function filterCars(carType) {
+  const buttons = document.querySelectorAll('.car-selection-filter-btn');
+  const cards = document.querySelectorAll('.car-selection-card');
+  
+  // Remove active class from all filter buttons
+  buttons.forEach(button => button.classList.remove('active'));
+  
+  // Add active class to the clicked button
+  event.target.classList.add('active');
+  
+  // Show or hide the kar cards based on the selected filter
+  cards.forEach(card => {
+      if (carType === 'all') {
+          card.style.display = 'block'; // Show all kars
+      } else if (card.classList.contains(carType)) {
+          card.style.display = 'block'; // Show the matching kar type
+      } else {
+          card.style.display = 'none'; // Hide non-matching kar types
+      }
+  });
+}
 /**
  *
  * wag na gumawa bagong $(document).ready(function () {} kasi may isa na sa taas.
