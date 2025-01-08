@@ -85,7 +85,41 @@ $(document).ready(function () {
     }
   });
 
-	
+  $("#carToRent").on("click", function () {
+    $("#carSelectionTab").removeClass("active");
+    $("#carSelection").css("display", "none");
+    $("#carInfoTab").addClass("active");
+    $("#carInfo").css("display", "block");
+  });
+
+	$("#submitCarInfo").on("click", function () {
+    $("#carInfoTab").removeClass("active");
+    $("#carInfo").css("display", "none");
+    $("#carCheckoutTab").addClass("active");
+    $("#carCheckout").css("display", "block");
+  });
+
+  $("#returnCarSelection").on("click", function () {
+    $("#carInfoTab").removeClass("active");
+    $("#carInfo").css("display", "none");
+    $("#carSelectionTab").addClass("active");
+    $("#carSelection").css("display", "flex");
+  });
+
+  $("#confirmCheckout").on("click", function () {
+    $("#carCheckoutTab").removeClass("active");
+    $("#carCheckout").css("display", "none");
+    $("#carApprovalTab").addClass("active");
+    $("#carApproval").css("display", "flex");
+  });
+
+  $("#returnCarInfo").on("click", function () {
+    $("#carCheckoutTab").removeClass("active");
+    $("#carCheckout").css("display", "none");
+    $("#carInfoTab").addClass("active");
+    $("#carInfo").css("display", "block");
+  });
+
 });
 
 const validateRegisterForm = async () => {

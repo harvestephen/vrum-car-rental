@@ -639,7 +639,7 @@
 							</div>
 							<div class="car-selection-select">
 								<p>₱10000.00</p>
-								<button>Select</button>
+								<button id="carToRent">Select</button>
 							</div>
 						</div>
 
@@ -675,8 +675,8 @@
 						</div>
 					</div>
 					<div class="car-rental-footer">
-						<button>Back</button>
-						<button>Next</button>
+						<button id="returnCarSelection">Back</button>
+						<button id="submitCarInfo">Next</button>
 					</div>
 				</div>
 			</div>
@@ -695,8 +695,8 @@
 						<input class="formInput" type="text" placeholder="Billing Address" noautocomplete>
 					</div>
 					<div class="car-rental-footer">
-						<button>Back</button>
-						<button>Next</button>
+						<button id="returnCarInfo">Back</button>
+						<button id="confirmCheckout">Next</button>
 					</div>
 				</div>
 			</div>
@@ -706,7 +706,7 @@
 				<img src="./assets/icons/okay.png" alt="Done">
 				<h3>Your request has been processed.</h3>
 				<h3>Wait within 24 hours for your request to be approved. Thank you!</h3>
-				<a>Home</a>
+				<a href="<?php echo $rootDirectory?>">Home</a>
 			</div>
 
 		</div>
