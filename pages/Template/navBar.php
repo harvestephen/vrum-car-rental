@@ -38,9 +38,11 @@
             <form class="modalForm" onsubmit="validateRegisterForm()" method="post" id="registerForm">    
                 <div>
                     <input class="formInput" type="text" placeholder="Username" noautocomplete required name="username">
+                    <p class="errormessage" id="usernameRegister">Username already exist</p>
                 </div>
                 <div>
                     <input class="formInput" type="email" placeholder="Email" noautocomplete required name="email">
+                    <p class="errormessage" id="emailRegister">Email already xist</p>
                 </div>
                 <div>
                     <input class="formInput" type="number" placeholder="Phone Number" noautocomplete required name="phone">
@@ -50,6 +52,7 @@
                 </div>
                 <div>
                     <input class="formInput" type="password" placeholder="Confirm Password" noautocomplete required name="confirm-password">
+                    <p class="errormessage" id="confirmPass">ulol di parehas password mo</p>
                 </div>
                 <div class="formSubmit">
                     <div style="display: flex; justify-content: center;">

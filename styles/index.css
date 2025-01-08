@@ -1355,7 +1355,6 @@ tabIndicator.active {
   max-width: 85vw;
   margin: 50px 0px;
   height: 75vh;
-  display: none;
   flex-direction: column;
   background: linear-gradient(
     rgba(115, 115, 115, 0.7),
@@ -1530,7 +1529,7 @@ tabIndicator.active {
   max-width: 85vw;
   margin: 50px 0px;
   height: 75vh;
-  display: flex;
+  display: none;
   flex-direction: column;
   background: linear-gradient(
     rgba(115, 115, 115, 0.7),
@@ -1909,4 +1908,17 @@ tabIndicator.active {
 .confirmBtn:hover {
   background-color: #cfb284;
   color: white;
+}
+.errormessage{
+  color: rgb(230, 53, 53);
+  text-align: center;
+}
+#confirmPass {
+  display: none;
+}
+#usernameRegister{
+  display: none;
+}
+#emailRegister{
+  display: none;
 }

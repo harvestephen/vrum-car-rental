@@ -84,53 +84,124 @@ $(document).ready(function () {
       $("#termsModal").fadeOut(100);
     }
   });
-
-	
 });
 
 const validateRegisterForm = async () => {
-	event.preventDefault();
-	//get form data
-	const formData = $("#registerForm").serializeArray();
-	const username = formData[0].value;
-	const email = formData[1].value;
-	const phoneNumber = formData[2].value;
-	const password = formData[3].value;
-	const confirmPassword = formData[4].value;
+  event.preventDefault();
+  //get form data
+  const formData = $("#registerForm").serializeArray();
+  const username = formData[0].value;
+  const email = formData[1].value;
+  const phoneNumber = formData[2].value;
+  const password = formData[3].value;
+  const confirmPassword = formData[4].value;
+  let hasName;
+  let hasEmail;
 
-	//validate password and confirm password
-	if (password !== confirmPassword) {
+  const changeHasName = (bool) => {
+    hasName = bool;
+  };
+  const changeHasEmail = (bool) => {
+    hasEmail = bool;
+  };
+  const sendData = async () => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json; charset=UTF-8");
 
-	}
+    const request = new Request("./backend/database/queries/accounts/register.php", {
+      "headers": myHeaders,
+      "method": "POST",
+      "body": JSON.stringify({
+        'username': username,
+        'email': email,
+        'phone': phoneNumber,
+        'password': password,
+      }),
+    });
 
-	//Get all username from database
+    fetch(request).then((res)=>{
+      return res.text(); //buy time
+    }).then((data)=>{
+      console.log(data);
+      window.location.href = "./index.php";
+    });
+  };
+
+  //validate password and confirm password
+  if (password !== confirmPassword) {
+    console.log();
+    $("#confirmPass").css("display", "block");
+  }
+
+  //Get all username from database
   const fetchData = async () => {
-    const data = await fetch('./backend/database/queries/database/getUserInfo.php');
+    const data = await fetch(
+      "./backend/database/queries/database/getUserInfo.php"
+    );
     return data;
   };
-  
-	fetchData()
-	.then((result) => {
-    if (result.status == 200) {
-      result.text().then((text) => {
-        console.log(text);  // Logs the raw JSON string
-      });
-    } else {
-      console.log('Error fetching data');
-    }
-  })
 
-	//check if username have a match
+  fetchData()
+    .then((result) => {
+      if (result.status == 200) {
+        return result.text(); // Return the text response for further processing
+      } else {
+        console.log("Error fetching data");
+        return Promise.reject("Error fetching data");
+      }
+    })
+    .then((userArray) => {
+      // Parse the JSON string and return the resulting object/array
+      return JSON.parse(userArray);
+    })
+    .then((data) => {
+      const usernames = [];
+      const emails = [];
+      for (let user of data) {
+        usernames.push(user.username);
+        emails.push(user.email);
+      }
+      const hasName = usernames.some(
+        (databaseUsername) => databaseUsername === username
+      );
+      const hasEmail = emails.some((databaseEmail) => databaseEmail === email);
+      changeHasName(hasName);
+      changeHasEmail(hasEmail);
 
-	//check if email have a match
+      if (password !== confirmPassword) {
+        $("#confirmPass").css("display", "block");
+      } else {
+        $("#confirmPass").css("display", "none");
+      }
+      if (hasName) {
+        $("#usernameRegister").css("display", "block");
+      } else {
+        $("#usernameRegister").css("display", "none");
+      }
+      if (hasEmail) {
+        $("#emailRegister").css("display", "block");
+      } else {
+        $("#emailRegister").css("display", "none");
+      }
+      if (password === confirmPassword && !hasName && !hasEmail) {
+        sendData();
+       
+      }
+    })
+    .catch((error) => {
+      console.error(error); // Handles any errors during the fetch or processing
+    });
 
-	//if no match, send data to php controller.
+  //check if username have a match
+  //get username in database
 
+  //check if email have a match
+
+  //if no match, send data to php controller.
 };
 
-
 /**
- * 
+ *
  * wag na gumawa bagong $(document).ready(function () {} kasi may isa na sa taas.
- * 
+ *
  */
