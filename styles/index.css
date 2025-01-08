@@ -1840,6 +1840,119 @@ tabIndicator.active {
   margin: 10px 0; /* Spacing above and below the line */
 }
 
+/* ADD CAR MODAL */
+/* Modal content box */
+.addCarModalBox {
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Car Name */
+.carName {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #7f7f7f;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 15px; /* Add spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Select Car Transmission */
+select#carTransmission {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #7f7f7f;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 30px;
+  margin-bottom: 15px; /* Add spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+select#carTransmission:focus {
+  border-color: #aaa; /* Darker border on focus */
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+select#carTransmission option {
+  color: #333;
+}
+
+/* Select Car Type */
+select#carType {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #7f7f7f;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 30px;
+  margin-bottom: 15px; /* Add spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+select#carType:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+select#carType option {
+  color: #333;
+}
+
+/* Add button */
+.addBtn {
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.addBtn:hover {
+  background-color: #cfb284;
+  color: white;
+}
+
 /* CONFIRM MODAL */
 /* Confirm Modal Box */
 .confirmModalBox {
