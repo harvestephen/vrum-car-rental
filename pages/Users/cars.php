@@ -1,5 +1,6 @@
 <div class="wrapper">
-	<!-- <div class="filter-buttons">
+	<!-- 
+<div class="filter-buttons">
 		<a href="#all.html" class="active">All</a>
 		<a href="#sedan.html">Sedans</a>
 		<a href="#van.html">Van</a>
@@ -707,7 +708,6 @@
 				<h3>Wait within 24 hours for your request to be approved. Thank you!</h3>
 				<a>Home</a>
 			</div>
-
 
 		</div>
 	</div>
