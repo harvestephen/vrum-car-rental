@@ -1297,7 +1297,8 @@ li.adminNavOption {
   display: grid;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 90px;
+  height: fit-content;
 }
 .car-rental-tabContainer {
   display: flex;
@@ -1361,7 +1362,7 @@ tabIndicator.active {
 .car-rental-selection-container{
   width: 100%;    
   max-width: 85vw;
-  margin: 50px 0px;
+  margin: 40px 0px;
   height: 75vh;
   display: flex;
   flex-direction: column;
@@ -1486,6 +1487,9 @@ tabIndicator.active {
   font-weight: 100;
   color: #fff;
 }
+.car-rental-info-form{
+  margin-bottom: 10px;
+}
 .car-rental-checkout-container{
   display: none;
   justify-items: center;
@@ -1497,7 +1501,7 @@ tabIndicator.active {
   justify-content: center;
 }
 .car-rental-header h1{
-  margin: 0px 0px 15px 0px;
+  margin: 15px 0px 15px 0px;
   font-family: Inter_18pt-Regular;
   font-size: 32px;
   font-weight: 100;
@@ -1522,7 +1526,7 @@ tabIndicator.active {
 
 .car-rental-card{ 
   width: 100%;
-  max-width: 20vw;
+  max-width: 25vw;
   background: linear-gradient(
     rgba(115, 115, 115, 0.7),
     rgba(115, 115, 115, 0.7)
@@ -1536,7 +1540,7 @@ tabIndicator.active {
 .car-rental-approval-container {
   width: 100%;
   max-width: 85vw;
-  margin: 50px 0px;
+  margin: 40px 0px;
   height: 75vh;
   display: none;
   flex-direction: column;
