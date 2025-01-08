@@ -63,7 +63,7 @@
                 <div>
                     <input class="formInput" type="password" placeholder="Confirm Password" noautocomplete required
                         name="confirm-password">
-                    <p class="errormessage" id="confirmPass">ulol di parehas password mo</p>
+                    <p class="errormessage" id="confirmPass">Incorrect Password!</p>
                 </div>
                 <div class="formSubmit">
                     <div style="display: flex; justify-content: center;">

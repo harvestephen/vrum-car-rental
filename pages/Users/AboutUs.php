@@ -1,4 +1,5 @@
 <?php $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory ?>
+<div class="wrapper">
 <div class="about-page">
     <header>
         <h1>About Vrum</h1>
@@ -51,4 +52,5 @@
 
         </div>
     </div>
+</div>
 </div>

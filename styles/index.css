@@ -1356,6 +1356,7 @@ tabIndicator.active {
   height: 100vh;
   display: flex;
   z-index: 10; /* Keeps content on top */
+  justify-content: center;
 }
 .car-rental-selection-container{
   width: 100%;    
