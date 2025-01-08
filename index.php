@@ -1,6 +1,20 @@
 <?php
+if (!empty($_POST)) {
+  session_start();
+  echo "A session starts.";
+  $_SESSION['username'] = $_POST['username'];
+} else {
+  session_start();
+  
+  if (session_id() && !empty($_SESSION['username'])) {
+    //echo "session exist";
+  } else {
+    session_destroy(); 
+  }
+}
 include "./backend/database/init.php";
-
+$currentURL = parse_url($_SERVER['REQUEST_URI'])['path']; // Get current URL
+$rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory (RELATIVE)
 /**
  * Main entry point :)
  * 
@@ -14,8 +28,6 @@ include "./backend/database/init.php";
 <body>
   <?php
   include './pages/Template/navBar.php';
-  $currentURL = parse_url($_SERVER['REQUEST_URI'])['path']; // Get current URL
-  $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory (RELATIVE)
   
   //Website Router
   switch ($currentURL) {

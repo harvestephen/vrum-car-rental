@@ -93,7 +93,7 @@ $(document).ready(function () {
     $("#carInfo").css("display", "block");
   });
 
-	$("#submitCarInfo").on("click", function () {
+  $("#submitCarInfo").on("click", function () {
     $("#carInfoTab").removeClass("active");
     $("#carInfo").css("display", "none");
     $("#carCheckoutTab").addClass("active");
@@ -120,7 +120,6 @@ $(document).ready(function () {
     $("#carInfoTab").addClass("active");
     $("#carInfo").css("display", "block");
   });
-
 });
 
 /**
@@ -272,15 +271,25 @@ const validateLoginForm = async () => {
         $("#loginusername").css("display", "none");
         for (user of array) {
           if (user.username === username && user.password === password) {
-            window.location.href = "./?username=" + username;
-            /**
-             * 
-             
-            fetch("./index.php", {
+            //window.location.href = "./?username=" + username;
+            var form = $("<form></form>");
+            form.attr("method", "POST");
+            form.attr("action", "./index.php");
+            $("<input>")
+              .attr({
+                type: "hidden",
+                name: "username",
+                value: username,
+              })
+              .appendTo(form);
+            $("body").append(form);
+            form.submit();
+            /** 
+            fetch("./backend/database/queries/database/user.php", {
               headers: {
                 "Content-Type": "application/json; charset=UTF-8",
               },
-              method: "GET",
+              method: "POST",
               body: JSON.stringify({
                 'username': username,
               }),
@@ -290,7 +299,7 @@ const validateLoginForm = async () => {
               })
               .then((data) => {
                 console.log(data);
-                window.location.href = "./index.php";
+                window.location.href = "./";
               });
               */
             $("#loginpassword").css("display", "none");

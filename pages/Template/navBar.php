@@ -1,6 +1,3 @@
-<?php
-$rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory 
-?>
 <div class="navBar navContent">
     <div class="pageTitle">
         <a class="pageTitle" href="<?php echo $rootDirectory ?>">Vrum</a>
@@ -18,20 +15,20 @@ $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root direc
         </div>
         <div class="accountSection navContent">
             <ul class="navOption">
-            <?php if(isset($_GET['username'])) {
-                echo '<li class="navOption">';
-                echo '<button class="navSelection" id="registerModalBtn">' . $_GET['username'] . '</button>';
-                echo '</li>';
-            } else {
-                echo '<li class="navOption">';
-                echo '<button class="navSelection" id="registerModalBtn">Register</button>';
-                echo '</li>';
-                echo '<li class="navOption">';
-                echo '<button class="navSelection" id="loginModalBtn">Login</button>';
-                echo '</li>';
-            } ?>
-            </ul>
-        </div>
+                <?php 
+                if (session_id() && !empty($_SESSION['username'])) {
+                    echo '<li class="navOption">';
+                    echo '<button class="navSelection"">'. $_SESSION['username'] .'</button>';
+                    echo '</li>';
+                } else {
+                    echo '<li class="navOption">';
+                    echo '<button class="navSelection" id="registerModalBtn">Register</button>';
+                    echo '</li>';
+                    echo '<li class="navOption">';
+                    echo '<button class="navSelection" id="loginModalBtn">Login</button>';
+                    echo '</li>';
+                }
+                ?>
                 
             </ul>
         </div>
