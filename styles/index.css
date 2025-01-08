@@ -1317,6 +1317,8 @@ tabIndicator.active{
 .carpagebg{
   position: relative; /* Ensures the pseudo-element is positioned relative to this container */
   background-image: url("../assets/images/bg.jpg");
+  background-color: rgba(0, 0, 0, 0.5); 
+  background-blend-mode: darken;
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
