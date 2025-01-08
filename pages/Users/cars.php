@@ -111,7 +111,7 @@
 				<div class="car-rental-card">
 					<div class="car-rental-info-content">
 						<h2>Rent Period</h2>
-						<div>
+						<div class="car-rental-info-form">
 							<input class="formInput" type="text" placeholder="From: mm/dd/yyyy" noautocomplete>
 							<input class="formInput" type="text" placeholder="To: mm/dd/yyyy" noautocomplete>
 						</div>
