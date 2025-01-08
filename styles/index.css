@@ -5,7 +5,7 @@
   .offer h3 {
     font-size: 1.5rem !important;
   }
-  
+
   .offer p {
     margin-top: 40px !important;
     font-size: 1rem !important;
@@ -36,6 +36,12 @@
   font-style: normal;
   font-weight: normal;
 }
+@font-face {
+  font-family: Fustat-Light;
+  src: url("../assets/fonts/Fustat/Fustat-Light.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
 
 * {
   margin: 0;
@@ -45,6 +51,18 @@
 body {
   background-color: #f4f4f4;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield !important;
+}
+
 .navBar {
   position: absolute;
   top: 0;
@@ -67,7 +85,7 @@ p.pageTitle {
   font-family: Kalam-Regular;
   color: #cfb284;
 }
-a.pageTitle{
+a.pageTitle {
   text-decoration: none;
   padding-top: 5px;
   font-size: 48px;
@@ -142,6 +160,8 @@ button.scrolled:hover {
   width: 100%;
   height: 100%;
   overflow: auto;
+  justify-content: center;
+  display: flex;
 }
 .modalContent {
   position: relative;
@@ -181,14 +201,14 @@ button.scrolled:hover {
   border: 1px solid #022b3a;
   border-radius: 15px;
 }
-#sign-up-alt{
+#sign-up-alt {
   text-decoration: underline;
   color: blue;
   cursor: pointer;
 }
-.formInput:focus{
-  outline: 2px solid #3399FF;
-  border-color: #3399FF;
+.formInput:focus {
+  outline: 2px solid #3399ff;
+  border-color: #3399ff;
   border-style: solid;
 }
 div.formSubmit {
@@ -346,7 +366,10 @@ footer {
 }
 .car-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Responsive columns */
   gap: 20px;
   width: 90%; /* Responsive width based on viewport */
   max-width: 70vw; /* Max width for large screens */
@@ -354,7 +377,6 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 20px;
-
 }
 
 .car-card {
@@ -460,7 +482,7 @@ footer {
   text-align: left;
 }
 .homepage {
-  position: relative; /* Ensures the pseudo-element is positioned relative to this container */
+  position: relative;
   background-image: url("../assets/images/bg.png");
   background-repeat: no-repeat;
   background-position: bottom center;
@@ -469,19 +491,19 @@ footer {
   color: #000;
   display: flex;
   align-items: center;
-  z-index: 10; /* Keeps content on top */
+  z-index: 10;
   justify-content: center;
 }
 
 .homepage::before {
-  content: ""; /* Empty content for the pseudo-element */
-  position: absolute; /* Covers the entire parent container */
+  content: "";
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-  z-index: -1; /* Places the overlay behind the content */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
 .new-header {
@@ -489,8 +511,12 @@ footer {
   bottom: 0;
   height: 100px;
   width: 100%;
-  color: #fff; 
-  background-image: linear-gradient(transparent, rgba(244, 244, 244, 0.7), #f4f4f4);
+  color: #fff;
+  background-image: linear-gradient(
+    transparent,
+    rgba(244, 244, 244, 0.7),
+    #f4f4f4
+  );
 }
 .homepageTitle h1 {
   font-family: Inter_28pt-Bold;
@@ -526,11 +552,9 @@ footer {
 }
 
 .MainContent {
-  flex: 1; /* Pushes the footer to the bottom when content is less */
+  flex: 1;
   text-align: center;
 }
-
-
 
 .what-we-offer h2 {
   display: block;
@@ -546,7 +570,7 @@ footer {
   width: 100%;
 }
 
-.offer-wrap{
+.offer-wrap {
   display: flex;
   position: relative;
   flex-direction: row;
@@ -574,7 +598,6 @@ footer {
   width: 100px;
   height: 100px;
   margin-bottom: 10px;
-
 }
 
 .offer h3 {
@@ -596,7 +619,7 @@ footer {
   background-color: white;
   margin-top: 10px;
   padding: 20px;
-  width: 70vw;; /* Center the FAQ container and set a max width */ 
+  width: 70vw; /* Center the FAQ container and set a max width */
   border-radius: 10px; /* Rounded corners for a polished look */
   margin-top: 50px; /* Add space at the top */
 }
@@ -640,7 +663,7 @@ footer {
   color: #c49a56;
 }
 .faq-container .accordion::after {
-  content: '\25BA'; /* Unicode for right arrow */
+  content: "\25BA"; /* Unicode for right arrow */
   font-size: 14px;
   color: #c49a56;
   position: absolute;
@@ -655,7 +678,6 @@ footer {
   font-weight: bold;
   background-color: #f0f0f0;
 }
-
 
 /* FAQ Panels */
 .faq-container .panel {
@@ -748,7 +770,6 @@ footer {
   padding: 0;
   line-height: 1.6;
   color: #333;
-
 }
 
 .about-page header {
@@ -756,11 +777,12 @@ footer {
   text-align: center;
   color: #fff;
   padding: 100px 20px;
-  background: url('../assets/images/AboutUs/AboutCar.jpg') no-repeat center center/cover;
+  background: url("../assets/images/AboutUs/AboutCar.jpg") no-repeat center
+    center/cover;
 }
 
 .about-page header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -770,13 +792,14 @@ footer {
   z-index: 1;
 }
 
-.about-page header h1, .about-page header p {
+.about-page header h1,
+.about-page header p {
   position: relative;
   z-index: 2; /* Ensures text stays above the overlay */
 }
 
 .about-page header h1 {
-padding-top:40px;
+  padding-top: 40px;
   margin: 0;
   font-size: 3em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -799,7 +822,7 @@ padding-top:40px;
   text-align: center;
   width: 70vw;
   padding-top: 40px;
-  padding-bottom: 40px
+  padding-bottom: 40px;
 }
 
 .about-page .intro p {
@@ -872,11 +895,12 @@ padding-top:40px;
   text-align: center;
   color: #fff;
   padding: 100px 20px;
-  background: url('../assets/images/TermsCondition/Terms.jfif') no-repeat center center/cover;
+  background: url("../assets/images/TermsCondition/Terms.jfif") no-repeat center
+    center/cover;
 }
 
 .terms-page header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -887,7 +911,7 @@ padding-top:40px;
 }
 
 .terms-page header h1 {
-padding-top:40px;
+  padding-top: 40px;
   position: relative;
   z-index: 2;
   margin: 0;
@@ -898,7 +922,7 @@ padding-top:40px;
 .terms-page header p {
   position: relative;
   z-index: 2;
-              margin-top: 1px;
+  margin-top: 1px;
   font-size: 1.2em;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
@@ -911,7 +935,7 @@ padding-top:40px;
 }
 
 .terms-page .intro {
-text-align:center;
+  text-align: center;
   padding: 20px;
 
   margin-bottom: 30px;
@@ -955,11 +979,12 @@ text-align:center;
   text-align: center;
   color: #fff;
   padding: 100px 20px;
-  background: url('../assets/images/PrivacyPolicy/Privacy.avif') no-repeat center center/cover;
+  background: url("../assets/images/PrivacyPolicy/Privacy.avif") no-repeat
+    center center/cover;
 }
 
 .privacy-policy-page header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -970,7 +995,7 @@ text-align:center;
 }
 
 .privacy-policy-page header h1 {
-padding-top:40px;
+  padding-top: 40px;
   position: relative;
   z-index: 2;
   margin: 0;
@@ -1000,7 +1025,7 @@ padding-top:40px;
   padding-bottom: 10px;
 }
 
-.privacy-policy-page .content p, 
+.privacy-policy-page .content p,
 .privacy-policy-page .content li {
   margin-bottom: 15px;
 }
@@ -1016,7 +1041,7 @@ padding-top:40px;
 }
 
 .privacy-policy-page .intro {
-text-align:center;
+  text-align: center;
   padding: 20px;
 
   margin-bottom: 30px;
@@ -1030,52 +1055,52 @@ text-align:center;
 body.contact-page {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-
 }
 
 /* Contact Header */
-    .contact-page header {
-        position: relative;
-        text-align: center;
-        color: #fff;
-        padding: 100px 20px;
-        background: url('../assets/images/Contacts/Contact.jpg') no-repeat center center/cover;
-    }
+.contact-page header {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;
+  background: url("../assets/images/Contacts/Contact.jpg") no-repeat center
+    center/cover;
+}
 
-    .contact-page header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
-        z-index: 1;
-    }
+.contact-page header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+  z-index: 1;
+}
 
-    .contact-page header h1 {
-    padding-top:40px;
-        position: relative;
-        z-index: 2;
-        margin: 0;
-        font-size: 3em;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
+.contact-page header h1 {
+  padding-top: 40px;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
 
-    .contact-page header p {
-        position: relative;
-        z-index: 2;
-        margin-top: 1px;
-  margin-bottom:18px;
-        font-size: 1.2em;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    }
+.contact-page header p {
+  position: relative;
+  z-index: 2;
+  margin-top: 1px;
+  margin-bottom: 18px;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
 
-    .contact-page .intro {
-  text-align:center;
-        padding-top: 70px;
-        margin-bottom: 30px;
-    }
+.contact-page .intro {
+  text-align: center;
+  padding-top: 70px;
+  margin-bottom: 30px;
+}
 /* Line Separator */
 .separator-unique {
   width: 90%;
@@ -1092,7 +1117,8 @@ body.contact-page {
   padding: 2rem;
 }
 
-.contact-info-unique, .map-unique {
+.contact-info-unique,
+.map-unique {
   flex: 1;
   max-width: 400px;
   margin: 1rem;
@@ -1112,7 +1138,7 @@ body.contact-page {
 }
 
 .contact-info-unique a {
-  color: #007BFF;
+  color: #007bff;
   text-decoration: none;
 }
 
@@ -1140,7 +1166,7 @@ iframe {
   height: 400px;
   border-radius: 4px;
   min-width: 0;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8); 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
 }
 .img-card {
   position: relative;
@@ -1157,7 +1183,7 @@ iframe {
   gap: 50px;
   padding: 10px;
 }
-.car-slider-wrapper{
+.car-slider-wrapper {
   position: relative;
   max-width: 70vw;
 }
@@ -1195,7 +1221,8 @@ iframe {
   background-color: #c49a56;
   color: white;
 }
-button.slider-rightBtn, button.slider-leftBtn{
+button.slider-rightBtn,
+button.slider-leftBtn {
   border-style: none;
   cursor: pointer;
 }
@@ -1220,7 +1247,12 @@ button.slider-rightBtn, button.slider-leftBtn{
   height: 10%;
   top: 0;
   left: 0;
-  background-image: linear-gradient(to top,transparent, rgba(244, 244, 244, 0.7), #f4f4f4);
+  background-image: linear-gradient(
+    to top,
+    transparent,
+    rgba(244, 244, 244, 0.7),
+    #f4f4f4
+  );
   z-index: 1;
 }
 .what-we-offer {
@@ -1238,7 +1270,7 @@ button.slider-rightBtn, button.slider-leftBtn{
   position: relative;
   z-index: 10;
 }
-.admin-sidebar-card-container{
+.admin-sidebar-card-container {
   width: 300px;
   height: 90vh;
   background: #1f7a8c;
@@ -1248,7 +1280,7 @@ button.slider-rightBtn, button.slider-leftBtn{
   margin-top: 80px;
   margin-left: 20px;
   margin-bottom: 20px;
-  padding:20px;
+  padding: 20px;
 }
 ul.adminNavOption {
   list-style-type: none;
@@ -1261,42 +1293,63 @@ li.adminNavOption {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-.car-rental-page{
+.car-rental-page {
   display: grid;
   align-items: center;
   justify-content: center;
   margin-top: 100px;
 }
-.car-rental-tabContainer{
+.car-rental-tabContainer {
   display: flex;
   overflow: hidden;
-  width: 70vw;
+  width: 85vw;
 }
-.car-rental-tabs{
+.car-rental-tabs {
   flex: 1;
-  color: #fff;
-  font-size: 1em;
   margin: 0 10px;
 }
-tabIndicator{
+.car-rental-tabs div{
+  display: inline-flex;
+  align-items: center;
+}
+.car-rental-tabs h6{
+  width: 25px;
+  height: 25px;
+  background-color: #cfb284;
+  border-radius: 20px;
+  color: #fff;
+  font-family: Inter_18pt-Regular;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+}
+.car-rental-tabs p{
+  color: #fff;
+  font-family: Fustat-Light;
+  font-weight: 50;
+  font-size: 20px;
+}
+tabIndicator {
   border: none;
-  border-radius: 3px;
   border-top: 5px solid #fff;
-  width: 100%; 
-  margin-top: 8px; 
+  width: 100%;
+  margin-top: 8px;
   display: block;
 }
-tabIndicator.active{
+tabIndicator.active {
   border: none;
-  border-radius: 3px;
   border-top: 5px solid #cfb284;
-  width: 100%;  
-  margin-top: 8px;   
+  width: 100%;
+  margin-top: 8px;
   display: block;
 }
-.carpagebg{
+.carpagebg {
   position: relative; /* Ensures the pseudo-element is positioned relative to this container */
-  background-image: url("../assets/images/bg.png");
+  background-image: url("../assets/images/bg.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
@@ -1305,16 +1358,19 @@ tabIndicator.active{
   z-index: 10; /* Keeps content on top */
 }
 .car-rental-selection-container{
-  width: 100%;
-  max-width: 70vw; /* Container width is 70% of viewport */
+  width: 100%;    
+  max-width: 85vw;
   margin: 50px 0px;
-  height: 65vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35));
+  background: linear-gradient(
+    rgba(115, 115, 115, 0.7),
+    rgba(115, 115, 115, 0.7)
+  );
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  overflow: auto;
 }
 .car-selection-filter-container {
   padding: 1rem;
@@ -1331,12 +1387,13 @@ tabIndicator.active{
 }
 
 .car-selection-filter-btn {
-  padding: 0.5rem 1rem;
+  padding: 4px 8px;
   background-color: #d3d3d3;
-  border: 2px solid #cfb284 ;
+  border: 2px solid #cfb284;
   border-radius: 8px;
   color: #000000;
-  font-weight: bold;
+  font-family: Inter_18pt-Regular;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -1345,27 +1402,652 @@ tabIndicator.active{
 .car-selection-filter-btn:hover {
   background-color: #cfb284;
 }
-.car-rental-selection{
+.car-rental-selection {
   flex: 1;
-  padding: 1rem;
+  margin: 25px;
   overflow-y: auto;
 }
-.car-selection-grid{
+.car-selection-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
-.car-selection-card{
+.car-selection-card {
   width: 100%;
-  height: 150px;
-  background-color: #e0e0e0;
-  border-radius: 8px;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  position: relative;
+  position: relative; 
+  display: block;
+  padding: 15px;
 }
-.car-selection-card img{
+.car-selection-carName h2{
+  font-family: Inter_28pt-Bold;
+  font-size: 24px;
+  color: #000;
+}
+.car-selection-carName h3{
+  font-family: Inter_18pt-Regular;
+  font-size: 18px;
+  font-weight: 100;
+  color: #000;
+}
+.car-selection-icons{
+  margin: 5px 0px;
+  display: inline-flex;
+  align-items: center;
+}
+.car-selection-icons img{
+  width: 16px;
+  height: 16px;
+}
+.car-selection-icons p{
+  margin: 0px 10px;
+  font-family: Inter_18pt-Regular;
+  font-size: 16px;
+  font-weight: 100;
+  color: #000;
+}
+.car-selection-img{
+  display: flex;
+  justify-content: center;
+  height: 150px;
+}
+.car-selection-img img{
+  object-fit: cover;
+}   
+.car-selection-select{
+  margin: 0px 5px;
+  font-size: 20px;
+  color: #000;   
+}
+.car-selection-select button{ 
+  width: 100%;
+  margin: 5px 0px 0px 0px;
+  padding: 8px 0px;
+  background-color: #cfb284;
+  border: none;
+  font-family: Inter_18pt-Regular;
+  font-size: 16px;
+  color: #fff;
+}
+
+.car-rental-info-container{
+  display: none;
+  justify-items: center;
+  height: 75vh;
+  padding-top: 80px;
+}
+.car-rental-info-container h2{
+  margin: 0px 0px 10px 0px;
+  font-family: Inter_18pt-Regular;
+  font-size: 22px;
+  font-weight: 100;
+  color: #fff;
+}
+.car-rental-checkout-container{
+  display: none;
+  justify-items: center;
+  height: 75vh;
+  padding-top: 80px;
+}
+.car-rental-header{ 
+  display: flex;
+  justify-content: center;
+}
+.car-rental-header h1{
+  margin: 0px 0px 15px 0px;
+  font-family: Inter_18pt-Regular;
+  font-size: 32px;
+  font-weight: 100;
+  color: #fff;
+}
+.car-rental-footer{
+  display: flex;  
+  justify-content: center;
+  margin: 10px 0px 0px 0px;
+}
+.car-rental-footer button{
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0px 8px;
+}
+
+.car-rental-card{ 
+  width: 100%;
+  max-width: 20vw;
+  background: linear-gradient(
+    rgba(115, 115, 115, 0.7),
+    rgba(115, 115, 115, 0.7)
+  );
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px 25px 20px 25px;
+  display: block;
+}
+
+.car-rental-approval-container {
+  width: 100%;
+  max-width: 85vw;
+  margin: 50px 0px;
+  height: 75vh;
+  display: none;
+  flex-direction: column;
+  background: linear-gradient(
+    rgba(115, 115, 115, 0.7),
+    rgba(115, 115, 115, 0.7)
+  );
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+}
+.car-rental-approval-container img {
+  width: 150px;
+  height: 150px;
+  margin: 15px;
+}
+.car-rental-approval-container h3{
+  margin: 10px;
+  color: #fff;
+  font-family: Inter_18pt-Regular;
+  font-weight: 100;
+  font-size: 20px;
+}
+.car-rental-approval-container a {
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 18px;
+  color:#000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* TERMS MODAL */
+#termsModal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 9999; /* Ensure it's on top of other elements */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  display: flex; /* Flexbox for centering */
+}
+
+/* Modal Box */
+.termsModalBox {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px; /* Adjust the width as needed */
+  width: 90%; /* Responsive width */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for a nice effect */
+  text-align: left; /* Align text to the left */
+}
+
+.termsModalHeader {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: Inter_28pt-Bold;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #022b3a;
+}
+
+/* Modal Body */
+.modalBody {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1a3636;
+  margin-bottom: 20px;
+}
+
+/* Ordered List Style */
+.modalBody ol {
+  padding-left: 20px;
+}
+
+.modalBody li {
+  margin-bottom: 15px;
+}
+
+/* Modal Footer */
+.modalFooter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.agreeBtn {
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Agree Button Style */
+.agreeBtn {
+  color: #333333;
+}
+
+.agreeBtn:hover {
+  background-color: #cfb284;
+  color: white;
+}
+
+.line {
+  border-bottom: 2px solid #1a3636; /* Line color */
+  margin: 10px 0; /* Spacing above and below the line */
+}
+
+/* CONFIRM MODAL */
+/* Confirm Modal Box */
+.confirmModalBox {
+  background-color: #d3d3d3;
+  width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+/* Modal Body */
+.confirmModalBox .modalBody {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.confirmHeader {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: Inter_28pt-Bold;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: #022b3a;
+}
+
+/* Modal Footer */
+.confirmModalBox .modalFooter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.confirmBtn {
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cancelBtn {
+  color: #ffffff;
+  background-color: #ff5e57;
+  border: 2px solid #ff5e57;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Confirm Button Style */
+.confirmBtn {
+  color: #333333;
+}
+
+.confirmBtn:hover {
+  background-color: #cfb284;
+  color: white;
+}
+
+/* TERMS MODAL */
+#termsModal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 9999; /* Ensure it's on top of other elements */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  display: flex; /* Flexbox for centering */
+}
+
+/* Modal Box */
+.termsModalBox {
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px; /* Adjust the width as needed */
+  width: 90%; /* Responsive width */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for a nice effect */
+  text-align: left; /* Align text to the left */
+}
+
+.termsModalHeader {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: Inter_28pt-Bold;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #022b3a;
+}
+
+/* Modal Body */
+.modalBody {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1a3636;
+  margin-bottom: 20px;
+}
+
+/* Ordered List Style */
+.modalBody ol {
+  padding-left: 20px;
+}
+
+.modalBody li {
+  margin-bottom: 15px;
+}
+
+/* Modal Footer */
+.modalFooter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.agreeBtn {
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Agree Button Style */
+.agreeBtn {
+  color: #333333;
+}
+
+.agreeBtn:hover {
+  background-color: #cfb284;
+  color: white;
+}
+
+.line {
+  border-bottom: 2px solid #1a3636; /* Line color */
+  margin: 10px 0; /* Spacing above and below the line */
+}
+
+/* ADD CAR MODAL */
+/* Modal content box */
+.addCarModalBox {
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Car Name */
+.carName {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #7f7f7f;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 15px; /* Add spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Select Car Transmission */
+select#carTransmission {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #7f7f7f;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 30px;
+  margin-bottom: 15px; /* Add spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+select#carTransmission:focus {
+  border-color: #aaa; /* Darker border on focus */
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+select#carTransmission option {
+  color: #333;
+}
+
+/* Select Car Type */
+select#carType {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #7f7f7f;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  outline: none;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 30px;
+  margin-bottom: 15px; /* Add spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+select#carType:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+select#carType option {
+  color: #333;
+}
+
+/* Add button */
+.addBtn {
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.addBtn:hover {
+  background-color: #cfb284;
+  color: white;
+}
+
+/* CONFIRM MODAL */
+/* Confirm Modal Box */
+.confirmModalBox {
+  background-color: #d3d3d3;
+  width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+/* Modal Body */
+.confirmModalBox .modalBody {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.confirmHeader {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: Inter_28pt-Bold;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: #022b3a;
+}
+
+/* Modal Footer */
+.confirmModalBox .modalFooter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+.confirmBtn {
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cancelBtn {
+  color: #ffffff;
+  background-color: #ff5e57;
+  border: 2px solid #ff5e57;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Confirm Button Style */
+.confirmBtn {
+  color: #333333;
+}
+
+.confirmBtn:hover {
+  background-color: #cfb284;
+  color: white;
+}
+.errormessage{
+  color: rgb(230, 53, 53);
+  text-align: center;
+}
+#confirmPass {
+  display: none;
+}
+#usernameRegister{
+  display: none;
+}
+#emailRegister{
+  display: none;
+}
+#loginusername {
+  display: none;
+}
+#loginpassword{
+  display: none;
 }

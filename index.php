@@ -1,31 +1,46 @@
-<?php 
+<?php
+if (!empty($_POST)) {
+  session_start();
+  echo "A session starts.";
+  $_SESSION['username'] = $_POST['username'];
+} else {
+  session_start();
+  
+  if (session_id() && !empty($_SESSION['username'])) {
+    //echo "session exist";
+  } else {
+    session_destroy(); 
+  }
+}
+include "./backend/database/init.php";
+$currentURL = parse_url($_SERVER['REQUEST_URI'])['path']; // Get current URL
+$rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory (RELATIVE)
 /**
-   * Main entry point :)
-   * 
-   * Location: /E:/Workspace/XAMPP/Vrum/index.php
-   */
+ * Main entry point :)
+ * 
+ * Location: /E:/Workspace/XAMPP/Vrum/index.php
+ */
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php require './pages/Template/header.php'; ?>
+
 <body>
   <?php
   include './pages/Template/navBar.php';
-  $currentURL = $_SERVER['REQUEST_URI']; // Get current URL
-  $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory (RELATIVE)
-
+  
   //Website Router
   switch ($currentURL) {
-
     //Home Page Links
     case "{$rootDirectory}/":
     case "{$rootDirectory}/index.php":
+      case "{$rootDirectory}/index.php":
       include './pages/HomeDefault/userHome.php';
       break;
     case "{$rootDirectory}/adminHome":
-      case "{$rootDirectory}/adminHome/":
-        include './pages/HomeDefault/adminHome.php';
-        break;
+    case "{$rootDirectory}/adminHome/":
+      include './pages/HomeDefault/adminHome.php';
+      break;
 
     //Footer Links
     case "{$rootDirectory}/cars":
@@ -52,10 +67,26 @@
     case "{$rootDirectory}/index.php/":
       include './pages/HomeDefault/userHome.php';
       break;
+
+    //Modal Links
+    case "{$rootDirectory}/termsModal":
+    case "{$rootDirectory}/termsModal/":
+      include './pages/Modals/terms_modal.php';
+      break;
+
+    case "{$rootDirectory}/confirmModal":
+    case "{$rootDirectory}/confirmModal/":
+      include './pages/Modals/confirm_modal.php';
+      break;
+    case "{$rootDirectory}/submitRegister":
+      include './backend/database/queries/accounts/register.php';
+      break;
+    default:
+      echo "error 404";
   }
   include './pages/Template/footer.php';
   ?>
-  <script src="<?php echo $rootDirectory . "/main.js"?>"></script>
+  <script src="<?php echo $rootDirectory . "/main.js" ?>"></script>
 </body>
 
 </html>
