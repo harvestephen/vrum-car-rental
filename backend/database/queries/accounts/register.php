@@ -10,7 +10,7 @@ if(isset($_POST)){
   $password = $data["password"];
   $email = $data["email"];
   $phone = $data["phone"];
-  $role = "role";
+  $role = "user";
   
   $query = "INSERT INTO users (username, role, password, email, phone) VALUES (?, ?, ?, ?, ?)";
   $stmt = $conn -> prepare($query);
