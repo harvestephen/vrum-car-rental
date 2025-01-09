@@ -2055,3 +2055,225 @@ select#carType option {
 #loginpassword{
   display: none;
 }
+
+.BookedCarspage {
+  position: relative; /* Ensures the pseudo-element is positioned relative to this container */
+  background-image: url("../assets/images/bg.jpg");
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  z-index: 10; /* Keeps content on top */
+  justify-content: center;
+}
+
+/* Updated CSS for Booking Page */
+.booking-car-selection-container {
+  width: 100%; /* Ensures it adapts to the parent container */
+  max-width: 70vw; /* Limits the container width to 70% of the viewport */
+  height: calc(75vh - 60px); /* Keeps the height flexible */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    rgba(115, 115, 115, 0.7),
+    rgba(115, 115, 115, 0.7)
+  );
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  box-sizing: border-box; /* Includes padding and border in width/height */
+}
+.booking-car-filter-container {
+  padding: 1rem;
+
+}
+
+.booking-car-filter-buttons {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 20px;
+  justify-content: start;
+  gap: 10px;
+}
+
+.booking-car-filter-btn {
+  padding: 4px 8px;
+  background-color: #d3d3d3;
+  border: 2px solid #cfb284;
+  border-radius: 8px;
+  color: #000000;
+  font-family: Inter_18pt-Regular;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.booking-car-filter-btn.active,
+.booking-car-filter-btn:hover {
+  background-color: #cfb284;
+}
+.filter-header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #fff;
+}
+.booking-car-rental-selection {
+  flex: 1;
+  margin: 25px;
+  overflow-x: hidden;
+}
+
+.booking-car-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 15px;
+}
+
+.booking-car-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  overflow: hidden;
+}
+.booking-car-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+.booking-car-row:last-child {
+  border-bottom: none;
+}
+.booking-car-column {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+}
+.booking-car-column button {
+  padding: 8px 16px;
+  background-color: #cfb284;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.booking-car-column button:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+.booking-car-name h2 {
+  font-family: Inter_18pt-Regular;
+  font-size: 24px;
+  color: #000;
+}
+
+.booking-car-name h3 {
+  font-family: Fustat-Light;
+  font-size: 18px;
+  font-weight: 100;
+  color: #000;
+}
+
+.booking-car-icons {
+  margin: 5px 0px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.booking-car-icons img {
+  width: 16px;
+  height: 16px;
+}
+
+.booking-car-icons p {
+  margin: 0px 10px;
+  font-family: Fustat-Light;
+  font-size: 16px;
+  color: #000;
+}
+
+.booking-car-img {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+}
+
+.booking-car-img img {
+  object-fit: cover;
+}
+.booking-car-image img {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+  border-radius: 8px; /* Optional for rounded corners */
+  object-fit: cover; /* Ensure the image scales properly */
+}
+
+
+.booking-car-select {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #000;
+}
+
+.booking-car-select button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px 0px;
+  background-color: #cfb284;
+  border: none;
+  font-family: Inter_18pt-Regular;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+}
+.Booking-header {
+  width: 100%;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  display: flex; /* Center align the header */
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+.Booking-header h1 {
+  font-family: Inter_18pt-Regular;
+  color:#fff;
+  font-size: 32px;
+  font-weight: 100;
+}
+.bookingheader h2{
+  font-family: Inter_18pt-Regular;
+  color:#fff;
+  font-size: 32px;
+  font-weight: 100;
+
+}
+.BookingPage{
+  margin-top: 90px;
+
+
+
+}
+.bookingheader{
+  display: flex;
+  overflow: hidden;
+  width: 85vw;
+}

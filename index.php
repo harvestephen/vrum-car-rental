@@ -54,6 +54,10 @@ $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root direc
     case "{$rootDirectory}/cars/":
       include './pages/Users/cars.php';
       break;
+    case "{$rootDirectory}/book":
+    case "{$rootDirectory}/book/":
+      include './pages/Users/BookedCars.php';
+      break;
     case "{$rootDirectory}/about":
     case "{$rootDirectory}/about/":
       include './pages/Users/AboutUs.php';

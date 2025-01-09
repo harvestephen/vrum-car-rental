@@ -431,6 +431,39 @@ toDate.addEventListener("input", validateDates);
 submitButton.addEventListener("click", function () {
   alert(`Rental period: From ${fromDate.value} to ${toDate.value}`);
 });
+
+function filterBookingCars(status) {
+  const buttons = document.querySelectorAll('.booking-car-filter-btn');
+  const cards = document.querySelectorAll('.booking-car-card');
+  const filterHeader = document.getElementById('filterHeader');
+
+  buttons.forEach(button => button.classList.remove('active'));
+  const clickedButton = event.currentTarget;
+  clickedButton.classList.add('active');
+
+  // Update the filter header text
+  switch (status) {
+    case 'all':
+      filterHeader.textContent = 'All Cars';
+      break;
+    case 'pending':
+      filterHeader.textContent = 'Pending Cars';
+      break;
+    case 'approved':
+      filterHeader.textContent = 'Approved Cars';
+      break;
+    case 'review':
+      filterHeader.textContent = 'Review Cars';
+      break;
+    default:
+      filterHeader.textContent = 'Cars';
+  }
+
+  cards.forEach(card => {
+    card.style.display = status === 'all' || card.classList.contains(status) ? 'block' : 'none';
+  });
+}
+
 /**
  *
  * wag na gumawa bagong $(document).ready(function () {} kasi may isa na sa taas.
