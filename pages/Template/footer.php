@@ -7,7 +7,6 @@
 		<a href="<?php echo $rootDirectory . "/terms"?>">Terms and Condition</a> |
 		<a href="<?php echo $rootDirectory . "/privacy"?>">Privacy Policy</a> |
 		<a href="<?php echo $rootDirectory . "/contacts"?>">Contacts</a>
-		<a href="<?php echo $rootDirectory . "/book"?>">Booked Cars</a>
 	</div>
 
 	<div class="footer-bottom">
