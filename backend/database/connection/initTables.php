@@ -83,12 +83,11 @@ function checkTablesExist() {
 // if missing tables array is not empty, loop in the array and create a table for each element in the $missingTables array.
 $missingTables = checkTablesExist();
 if (count($missingTables) > 0 ) {
-  echo "<br/>...";
   foreach ($missingTables as $missingTable) {
     if ($missingTable === "users") {
       createTables($missingTable, "(user_id INT PRIMARY KEY auto_increment, username VARCHAR(50) NOT NULL, role VARCHAR(10) NOT NULL, password VARCHAR(100) NOT NULL, email VARCHAR(45) NOT NULL, phone VARCHAR(15) NOT NULL);");
     } else if ($missingTable === "appointments") {
-      createTables($missingTable, "(appointment_id INT PRIMARY KEY auto_increment, appointment_title VARCHAR(50) NOT NULL, appointment_date DATE NOT NULL, appointor_id INT NOT NULL, car_rented_id INT NOT NULL, payment_info VARCHAR(200) NOT NULL, gov_id MEDIUMBLOB NOT NULL)");
+      createTables($missingTable, "(appointment_id INT PRIMARY KEY auto_increment, appointment_title VARCHAR(50) NOT NULL, appointment_toDate DATE NOT NULL, appointment_fromDate DATE NOT NULL, appointor_id INT NOT NULL, car_rented_id INT NOT NULL, payment_info VARCHAR(200) NOT NULL, gov_id MEDIUMBLOB NOT NULL)");
     } else if ($missingTable === "cars") {
       createTables($missingTable, "(car_id INT PRIMARY KEY auto_increment, car_name varchar(50) NOT NULL, renter_id INT, type VARCHAR(50) NOT NULL, transmission VARCHAR(50) NOT NULL, capacity VARCHAR(50) NOT NULL, review VARCHAR(50) NOT NULL, car_image VARCHAR(50) NOT NULL);");
     } else if ($missingTable === "reviews") {
