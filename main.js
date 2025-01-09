@@ -50,6 +50,19 @@ $(document).ready(function () {
     }
   });
 
+  // Show the User Menu Modal when "username" is clicked
+  $('#usernameTrigger').on('click', function (e) {
+    e.preventDefault(); // Prevent any default behavior
+    $('#userMenuModal').toggle(); // Toggle the modal visibility
+  });
+
+  // Optional: Close modal if clicked outside
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('#userMenuModal, #usernameTrigger').length) {
+      $('#userMenuModal').hide(); // Hide modal if clicked outside
+    }
+  });
+
   $(".slider-rightBtn").on("click", function () {
     const cardWidth = $(".card").css("width");
     const element = $(".slider").get(0);
@@ -102,6 +115,14 @@ $(document).ready(function () {
       $("#termsModal").fadeOut(100);
     }
   });
+
+$(window).on("scroll", function () {
+  // Close the modals on scroll
+  $("#registerModal").fadeOut(100);
+  $("#loginModal").fadeOut(100);
+  $("#termsModal").fadeOut(100);
+  $("#userMenuModal").fadeOut(100);
+});
 
   $(".carToRent").on("click", function () {
     $("#carSelectionTab").removeClass("active");

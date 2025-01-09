@@ -1957,6 +1957,65 @@ select#carType option {
   color: white;
 }
 
+/* USER MENU MODAL*/
+/* General modal styles */
+.userModal {
+  display: none;
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.userModalBox {
+  width: 150px;
+  text-align: left;
+}
+
+/* List styles */
+.userMenuList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.userMenuList li {
+  font-family: Inter_28pt-Bold;
+  margin: 10px 0;
+}
+
+.userMenuList li a {
+  text-decoration: none;
+  color: #022B3A;
+  font-size: 14px;
+  display: block;
+}
+
+.userMenuList a:hover {
+  color: #cfb284;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 1px solid #022B3A;
+  margin: 10px 0;
+}
+
+/* Sign Out button styles */
+.userMenuList li a.sign-out {
+  color: #FF5E57 !important; /* Ensure the correct color */
+  font-weight: bold;
+}
+
+.userMenuList li a.sign-out:hover {
+  color: red !important; /* Ensure the hover color */
+}
+
 /* CONFIRM MODAL */
 /* Confirm Modal Box */
 .confirmModalBox {

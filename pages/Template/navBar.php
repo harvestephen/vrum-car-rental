@@ -18,7 +18,7 @@
                 <?php 
                 if (session_id() && !empty($_SESSION['username'])) {
                     echo '<li class="navOption">';
-                    echo '<button class="navSelection"">'. $_SESSION['username'] .'</button>';
+                    echo '<button class="navSelection" id="usernameTrigger">'. htmlspecialchars($_SESSION['username']) .'</button>';
                     echo '</li>';
                 } else {
                     echo '<li class="navOption">';
@@ -34,6 +34,8 @@
         </div>
     </div>
 </div>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/vrum-car-rental/pages/Modal/usermenu_modal.php'; ?>
 
 <!-- Register Modal -->
 
