@@ -132,10 +132,23 @@ $(window).on("scroll", function () {
   });
 
   $("#submitCarInfo").on("click", function () {
-    $("#carInfoTab").removeClass("active");
-    $("#carInfo").css("display", "none");
-    $("#carCheckoutTab").addClass("active");
-    $("#carCheckout").css("display", "block");
+    const fromDateValue = document.getElementById("fromDate").value.trim();
+    const toDateValue = document.getElementById("toDate").value.trim();
+    const gov_IDValue = document.getElementById("gov_ID").value.trim();
+
+    if (fromDateValue !== "" && toDateValue !== "" && gov_IDValue !== "") {
+      $("#carInfoTab").removeClass("active"); 
+      $("#carInfo").css("display", "none");
+      $("#carCheckoutTab").addClass("active");
+      $("#carCheckout").css("display", "block");
+      $("#car-rental-info-fillOut").css("display", "none");
+      $("#car-rental-info-fillOutSpacer").css("display", "block");
+      $("#error-message").css("display", "none"); 
+    } else {
+      $("#car-rental-info-fillOut").css("display", "block");
+      $("#car-rental-info-fillOutSpacer").css("display", "none");
+      $("#error-message").css("display", "none"); 
+    }
   });
 
   $("#returnCarSelection").on("click", function () {
@@ -146,10 +159,24 @@ $(window).on("scroll", function () {
   });
 
   $("#confirmCheckout").on("click", function () {
-    $("#carCheckoutTab").removeClass("active");
-    $("#carCheckout").css("display", "none");
-    $("#carApprovalTab").addClass("active");
-    $("#carApproval").css("display", "flex");
+    const CHNameValue = document.getElementById("cardHolderName").value.trim();
+    const cardNumberValue = document.getElementById("cardNumber").value.trim();
+    const expiryDateValue = document.getElementById("expiryDate").value.trim();
+    const codeValue = document.getElementById("cvv_cvc").value.trim();
+    const billAddressValue = document.getElementById("billAddress").value.trim();
+
+    if (CHNameValue !== "" && cardNumberValue !== "" && expiryDateValue !== "" && codeValue !== "" && billAddressValue !== "") {
+
+      $("#carCheckoutTab").removeClass("active");
+      $("#carCheckout").css("display", "none");
+      $("#carApprovalTab").addClass("active");
+      $("#carApproval").css("display", "flex");
+    } else {
+      $("#car-rental-info-fillOut").css("display", "block");
+      $("#car-rental-info-fillOutSpacer").css("display", "none");
+    }
+
+    
   });
 
   $("#returnCarInfo").on("click", function () {
@@ -442,19 +469,24 @@ toDate.setAttribute("min", todayString);
 function validateDates() {
   const from = new Date(fromDate.value);
   const to = new Date(toDate.value);
+  const toChangeSpacer = document.getElementById("car-rental-info-fillOutSpacer");
+  const toChangeError = document.getElementById("car-rental-info-fillOut");
 
   if (fromDate.value && toDate.value) {
     if (to >= from) {
       errorMessage.style.display = "none";
-      submitButton.disabled = false;
+      toChangeSpacer.style.display = "block";
+      submitButton.disabled = false;  
     } else {
       errorMessage.style.display = "block";
+      toChangeSpacer.style.display = "none";
+      toChangeError.style.display = "none";
       submitButton.disabled = true;
     }
   } else {
     submitButton.disabled = true;
-  }
-}
+  };
+};
 
 fromDate.addEventListener("input", validateDates);
 toDate.addEventListener("input", validateDates);

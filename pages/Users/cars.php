@@ -188,7 +188,7 @@
 			<div class="car-rental-info-container" id="carInfo">
 				<div class="car-rental-header">
 					<h1>Please fill the following</h1>
-				</div>	
+				</div>			
 				<div class="car-rental-card">
 					<div class="car-rental-info-content">
 						<h2>Rent Period</h2>
@@ -196,13 +196,14 @@
 							<input name="fromDate" class="formInput" id="fromDate" type="date" placeholder="From: mm/dd/yyyy" noautocomplete>
 							<input name="toDate" class="formInput" id="toDate" type="date" placeholder="To: mm/dd/yyyy" noautocomplete>
 						</div>
-						<p class="error" id="error-message" style="display: none;">The "To" date must be later than or equal to the "From" date.</p>
-
 						<h2>Government Issued ID</h2>
 						<div>
 							<input name="gov_ID" type="file" id="gov_ID" placeholder="Choose a File">
 						</div>
-					</div>
+						<p id="car-rental-info-fillOutSpacer" style="opacity: 0;">SPACE</p>
+						<p class="error" id="error-message" style="display: none;">The "To" date must be later than or equal to the "From" date.</p>
+						<p id="car-rental-info-fillOut" style="display: none;">Please fill out the form!</p>
+					</div>	
 					<div class="car-rental-footer">
 						<a id="returnCarSelection">Return</a>
 						<a id="submitCarInfo">Proceed</a>
@@ -222,6 +223,7 @@
 						<input name="expiryDate" id="expiryDate" class="formInput" type="text" placeholder="Expiration Date" noautocomplete>
 						<input name="cvv_cvc" id="cvv_cvc" class="formInput" type="text" placeholder="CVV/CVC Code" noautocomplete>
 						<input name="billAddress" id="billAddress" class="formInput" type="text" placeholder="Billing Address" noautocomplete>
+						<p>Please fill out the form!</p>
 					</div>
 					<div class="car-rental-footer">
 						<a id="returnCarInfo">Return</a>

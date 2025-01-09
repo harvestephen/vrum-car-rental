@@ -1479,19 +1479,27 @@ tabIndicator.active {
   padding-top: 80px;
 }
 .car-rental-info-container h2{
-  margin: 0px 0px 10px 0px;
+  margin: 10px 0px;
   font-family: Inter_18pt-Regular;
   font-size: 22px;
   font-weight: 100;
   color: #fff;
 }
-.car-rental-info-form{
-  margin-bottom: 10px;
+.car-rental-card p{
+  margin: 15px 0px; 
+  font-family: Fustat-Light;
+  font-size: 14px;
+  font-weight: 100;
+  color: #000;
+  text-align: center;
 }
 .car-rental-checkout-container{
   display: none;
   justify-items: center;
   padding-top: 80px;
+}
+.car-rental-checkout-content{
+  margin: 10px 0px 0px 0px;
 }
 .car-rental-header{ 
   display: flex;
