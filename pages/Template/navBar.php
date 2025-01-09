@@ -35,8 +35,6 @@
     </div>
 </div>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/vrum-car-rental/pages/Modal/usermenu_modal.php'; ?>
-
 <!-- Register Modal -->
 
 <div id="registerModal" class="modal">
