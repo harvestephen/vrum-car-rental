@@ -290,10 +290,16 @@ const validateLoginForm = async () => {
         $("#loginusername").css("display", "none");
         for (user of array) {
           if (user.username === username && user.password === password) {
-            //window.location.href = "./?username=" + username;
             var form = $("<form></form>");
             form.attr("method", "POST");
             form.attr("action", "./index.php");
+            $("<input>")
+              .attr({
+                type: "hidden",
+                name: "role",
+                value: user.role,
+              })
+              .appendTo(form);
             $("<input>")
               .attr({
                 type: "hidden",
@@ -301,6 +307,7 @@ const validateLoginForm = async () => {
                 value: username,
               })
               .appendTo(form);
+              
             $("body").append(form);
             form.submit();
             /** 

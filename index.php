@@ -3,9 +3,11 @@
 //session_destroy();
 if (!empty($_POST)) {
   session_start();
+  $_SESSION['role'] = $_POST['role'];
   $_SESSION['username'] = $_POST['username'];
 } else {
   session_start();
+
 
   if (session_id() && !empty($_SESSION['username'])) {
     //echo "session exist";
@@ -36,7 +38,11 @@ $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root direc
     case "{$rootDirectory}/":
     case "{$rootDirectory}/index.php":
     case "{$rootDirectory}/index.php":
-      include './pages/HomeDefault/userHome.php';
+      if ( isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+        include './pages/HomeDefault/adminHome.php';
+      } else {
+        include './pages/HomeDefault/userHome.php';
+      }
       break;
     case "{$rootDirectory}/adminHome":
     case "{$rootDirectory}/adminHome/":
