@@ -339,6 +339,41 @@ const validateLoginForm = async () => {
       }
     });
 };
+const reqAppointmentForm = async () => {
+  event.preventDefault();
+  const formData = $("#reqAppointmentForm").serializeArray();
+  const fromDate = formData[0].value;
+  const toDate = formData[1].value;
+  const gov_ID = formData[2].value;
+  const cardHolderName = formData[3].value;
+  const cardNumber = formData[4].value;
+  const expiryDate = formData[5].value;
+  const cvv_cvc = formData[6].value;
+  const billAddress = formData[7].value;
+
+  const sendData = async () => {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json; charset=UTF-8");
+
+    const request = new Request(
+      "./backend/database/queries/transactions/appointments/requestAppointment.php",
+      {
+        headers: myHeaders,
+        method: "POST",
+        body: JSON.stringify({
+          fromDate: fromDate,
+          toDate: toDate,
+          gov_ID: gov_ID,
+          cardHolderName: cardHolderName,
+          cardNumber: cardNumber,
+          expiryDate: expiryDate,
+          cvv_cvc: cvv_cvc,
+          billAddress: billAddress,
+        }),
+      }
+    )
+  };
+};
 
 function filterCars(carType) {
   const buttons = document.querySelectorAll(".car-selection-filter-btn");

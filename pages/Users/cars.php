@@ -36,6 +36,7 @@
 			</div>
 
 			<!-- Car Selection Tab -->
+			<form onsubmit="reqAppointmentForm()" method="post" id="reqAppointmentForm">
 			<div class="car-rental-selection-container" id="carSelection">
 				<div class="car-selection-filter-Container">
 					<div class="car-selection-filter-buttons">
@@ -56,7 +57,7 @@
 							<div class="car-selection-icons">
 								<img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
 								<p>4</p>
-								<img src="./assets/icons/CarCards/luggage.png" alt="Luggage">
+								<img src="./assets/icons/CarCards/luggage.png" alt="Capacity">
 								<p>1</p>
 								<img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
 								<p>Manual</p>
@@ -66,12 +67,12 @@
 							</div>
 							<div class="car-selection-select">
 								<p>₱10000.00</p>
-								<button class="carToRent">Select</button>
+								<a name="carToRent" class="carToRent">Select</a>
 							</div>
 						</div>
 
 						<div class="car-selection-card suv">
-						<div class="car-selection-carName">
+							<div class="car-selection-carName">
 								<h2>Car Name</h2>
 								<h3>Description</h3>
 							</div>
@@ -176,7 +177,7 @@
 							</div>
 							<div class="car-selection-select">
 								<p>₱10000.00</p>
-								<button class="carToRent">Select</button>
+								<button name="carToRent" class="carToRent">Select</button>
 							</div>
 						</div>
 					</div>
@@ -192,21 +193,19 @@
 					<div class="car-rental-info-content">
 						<h2>Rent Period</h2>
 						<div>
-							<input class="formInput" id="fromDate" type="date" placeholder="From: mm/dd/yyyy" noautocomplete>
-							<input class="formInput" id="toDate" type="date" placeholder="To: mm/dd/yyyy" noautocomplete>
+							<input name="fromDate" class="formInput" id="fromDate" type="date" placeholder="From: mm/dd/yyyy" noautocomplete>
+							<input name="toDate" class="formInput" id="toDate" type="date" placeholder="To: mm/dd/yyyy" noautocomplete>
 						</div>
 						<p class="error" id="error-message" style="display: none;">The "To" date must be later than or equal to the "From" date.</p>
 
 						<h2>Government Issued ID</h2>
 						<div>
-							<input type="file" id="idFile" placeholder="Choose a File">
+							<input name="gov_ID" type="file" id="idFile" placeholder="Choose a File">
 						</div>
-
-
 					</div>
 					<div class="car-rental-footer">
-						<button id="returnCarSelection">Back</button>
-						<button id="submitCarInfo">Next</button>
+						<a id="returnCarSelection">Return</a>
+						<a id="submitCarInfo">Proceed</a>
 					</div>
 				</div>
 			</div>
@@ -218,18 +217,19 @@
 				</div>	
 				<div class="car-rental-card">
 					<div class="car-rental-checkout-content">
-						<input class="formInput" type="text" placeholder="Cardholder Name" noautocomplete>
-						<input class="formInput" type="text" placeholder="Card Number" noautocomplete>
-						<input class="formInput" type="text" placeholder="Expiration Date" noautocomplete>
-						<input class="formInput" type="text" placeholder="CVV/CVC Code" noautocomplete>
-						<input class="formInput" type="text" placeholder="Billing Address" noautocomplete>
+						<input name="cardHoldername" class="formInput" type="text" placeholder="Cardholder Name" noautocomplete>
+						<input name="cardNumber" class="formInput" type="text" placeholder="Card Number" noautocomplete>
+						<input name="expiryDate" class="formInput" type="text" placeholder="Expiration Date" noautocomplete>
+						<input name="cvv_cvc" class="formInput" type="text" placeholder="CVV/CVC Code" noautocomplete>
+						<input name="billAddress" class="formInput" type="text" placeholder="Billing Address" noautocomplete>
 					</div>
 					<div class="car-rental-footer">
-						<button id="returnCarInfo">Back</button>
-						<button id="confirmCheckout">Next</button>
+						<a id="returnCarInfo">Return</a>
+						<button id="confirmCheckout">Confirm</button>
 					</div>
 				</div>
 			</div>
+			</form>
 
 			<!-- Approval Tab -->
 			<div class="car-rental-approval-container" id="carApproval">
