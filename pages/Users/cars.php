@@ -200,7 +200,7 @@
 
 						<h2>Government Issued ID</h2>
 						<div>
-							<input name="gov_ID" type="file" id="idFile" placeholder="Choose a File">
+							<input name="gov_ID" type="file" id="gov_ID" placeholder="Choose a File">
 						</div>
 					</div>
 					<div class="car-rental-footer">
@@ -217,11 +217,11 @@
 				</div>	
 				<div class="car-rental-card">
 					<div class="car-rental-checkout-content">
-						<input name="cardHoldername" class="formInput" type="text" placeholder="Cardholder Name" noautocomplete>
-						<input name="cardNumber" class="formInput" type="text" placeholder="Card Number" noautocomplete>
-						<input name="expiryDate" class="formInput" type="text" placeholder="Expiration Date" noautocomplete>
-						<input name="cvv_cvc" class="formInput" type="text" placeholder="CVV/CVC Code" noautocomplete>
-						<input name="billAddress" class="formInput" type="text" placeholder="Billing Address" noautocomplete>
+						<input name="cardHolderName" id="cardHolderName" class="formInput" type="text" placeholder="Cardholder Name" noautocomplete>
+						<input name="cardNumber" id="cardNumber" class="formInput" type="text" placeholder="Card Number" noautocomplete>
+						<input name="expiryDate" id="expiryDate" class="formInput" type="text" placeholder="Expiration Date" noautocomplete>
+						<input name="cvv_cvc" id="cvv_cvc" class="formInput" type="text" placeholder="CVV/CVC Code" noautocomplete>
+						<input name="billAddress" id="billAddress" class="formInput" type="text" placeholder="Billing Address" noautocomplete>
 					</div>
 					<div class="car-rental-footer">
 						<a id="returnCarInfo">Return</a>

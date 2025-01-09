@@ -344,12 +344,12 @@ const reqAppointmentForm = async () => {
   const formData = $("#reqAppointmentForm").serializeArray();
   const fromDate = formData[0].value;
   const toDate = formData[1].value;
-  const gov_ID = formData[2].value;
-  const cardHolderName = formData[3].value;
-  const cardNumber = formData[4].value;
-  const expiryDate = formData[5].value;
-  const cvv_cvc = formData[6].value;
-  const billAddress = formData[7].value;
+  const cardHolderName = formData[2].value;
+  const cardNumber = formData[3].value;
+  const expiryDate = formData[4].value;
+  const cvv_cvc = formData[5].value;
+  const billAddress = formData[6].value;
+  const gov_ID = document.getElementById("gov_ID").files[0];
 
   const sendData = async () => {
     const myHeaders = new Headers();
@@ -372,7 +372,17 @@ const reqAppointmentForm = async () => {
         }),
       }
     )
+    fetch(request)
+      .then((res) => {
+        return res.text(); //buy time
+      })
+      .then((data) => {
+        console.log(data);
+      }).catch((error) => {
+        console.error('Error:', error);
+      });
   };
+  sendData();
 };
 
 function filterCars(carType) {

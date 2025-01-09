@@ -1,9 +1,9 @@
 <?php
 
 //access all variables and functions in connection.php as if the connection.php is written here
-include "connection.php";
+include "../../../connection/connection.php";
 
-if(isset($_POST["addAppointment"])){
+if(isset($_POST)){
   // create variables from $_POST['name attribute']
 
   if(isset($_POST)){
@@ -21,15 +21,15 @@ if(isset($_POST["addAppointment"])){
     $appointment_title = "test";
     $appointment_fromDate = $data["fromDate"];
     $appointment_toDate = $data["toDate"];
-    $appointor_id = $data["test"];
-    $car_rented_id = $data["test"];
+    $appointor_id = 1;
+    $car_rented_id = 1;
     $payment_info = json_encode($payment_info_array);
     $gov_id = ["gov_ID"];
 
     
-    $query = "INSERT INTO ? (appointment_title, appointment_fromDate, appointment_toDate, appointor_id, car_rented_id, payment_info, gov_id) VALUES (?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO appointments (appointment_title, appointment_fromDate, appointment_toDate, appointor_id, car_rented_id, payment_info, gov_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn -> prepare($query);
-    $stmt -> bind_param("sssss", $appointment_title, $appointment_date, $appointor_id, $car_rented_id, $payment_info, $gov_id);
+    $stmt -> bind_param("sssiisb", $appointment_title, $appointment_fromDate, $appointment_toDate, $appointor_id, $car_rented_id, $payment_info, $gov_id);
     
     if($stmt -> execute()){
       echo "Data inserted successfully";
