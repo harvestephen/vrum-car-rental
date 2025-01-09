@@ -71,7 +71,7 @@
                     </div>
                     <div style="display: flex; justify-content: center; align-items: center; margin-top: 10px;">
                         <p class="formSubmit" style="margin-right: 5px;">Already Have an Account?</p>
-                        <a class="formSubmit" id="sign-up-alt">Sign up</a>
+                        <a class="formSubmit sign-up-alt" id="sign-up-alt">Sign up</a>
                     </div>
                 </div>
             </form>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="formSubmit" id="login-bottom">
                     <button class="formSubmit" style="flex-shrink: 0">Log in</button>
-                    <a class="formSubmit" id="sign-up-alt" style="flex-shrink: 0">Register</a>
+                    <a class="formSubmit register-up-alt" id="sign-up-alt" style="flex-shrink: 0">Register</a>
                 </div>
             </form>
         </div>

@@ -6,6 +6,23 @@ $(document).ready(function () {
     panel.slideToggle(100);
   });
 
+  $(".sign-up-alt").on("click", function() {
+    if ($("#loginModal").css("display") == "none") {
+      $("#loginModal").fadeIn(100);
+      $("#registerModal").fadeOut(100);
+    } else {
+      $("#loginModal").fadeOut(100);
+    }
+  });
+  $(".register-up-alt").on("click", function() {
+    if ($("#registerModal").css("display") == "none") {
+      $("#registerModal").fadeIn(100);
+      $("#loginModal").fadeOut(100);
+    } else {
+      $("#registerModal").fadeOut(100);
+    }
+  });
+
   $("#registerModalBtn").on("click", function () {
     if ($("#registerModal").css("display") == "none") {
       $("#registerModal").fadeIn(100);
@@ -169,6 +186,8 @@ const validateRegisterForm = async () => {
       .then((data) => {
         console.log(data);
         window.location.href = "./index.php";
+      }).catch((error) => {
+        console.error('Error:', error);
       });
   };
 
@@ -350,61 +369,61 @@ const reqAppointmentForm = async () => {
 };
 
 function filterCars(carType) {
-  const buttons = document.querySelectorAll('.car-selection-filter-btn');
-  const cards = document.querySelectorAll('.car-selection-card');
-  
+  const buttons = document.querySelectorAll(".car-selection-filter-btn");
+  const cards = document.querySelectorAll(".car-selection-card");
+
   // Remove active class from all filter buttons
-  buttons.forEach(button => button.classList.remove('active'));
-  
+  buttons.forEach((button) => button.classList.remove("active"));
+
   // Add active class to the clicked button
-  event.target.classList.add('active');
-  
+  event.target.classList.add("active");
+
   // Show or hide the kar cards based on the selected filter
-  cards.forEach(card => {
-      if (carType === 'all') {
-          card.style.display = 'block'; // Show all kars
-      } else if (card.classList.contains(carType)) {
-          card.style.display = 'block'; // Show the matching kar type
-      } else {
-          card.style.display = 'none'; // Hide non-matching kar types
-      }
+  cards.forEach((card) => {
+    if (carType === "all") {
+      card.style.display = "block"; // Show all kars
+    } else if (card.classList.contains(carType)) {
+      card.style.display = "block"; // Show the matching kar type
+    } else {
+      card.style.display = "none"; // Hide non-matching kar types
+    }
   });
 }
 
-const fromDate = document.getElementById('fromDate');
-    const toDate = document.getElementById('toDate');
-    const submitButton = document.getElementById('submit-button');
-    const errorMessage = document.getElementById('error-message');
+const fromDate = document.getElementById("fromDate");
+const toDate = document.getElementById("toDate");
+const submitButton = document.getElementById("submit-button");
+const errorMessage = document.getElementById("error-message");
 
-    // Set today's date as the minimum date
-    const today = new Date();
-    const todayString = today.toISOString().split('T')[0];
-    fromDate.setAttribute('min', todayString);
-    toDate.setAttribute('min', todayString);
+// Set today's date as the minimum date
+const today = new Date();
+const todayString = today.toISOString().split("T")[0];
+fromDate.setAttribute("min", todayString);
+toDate.setAttribute("min", todayString);
 
-    function validateDates() {
-        const from = new Date(fromDate.value);
-        const to = new Date(toDate.value);
+function validateDates() {
+  const from = new Date(fromDate.value);
+  const to = new Date(toDate.value);
 
-        if (fromDate.value && toDate.value) {
-            if (to >= from) {
-                errorMessage.style.display = 'none';
-                submitButton.disabled = false;
-            } else {
-                errorMessage.style.display = 'block';
-                submitButton.disabled = true;
-            }
-        } else {
-            submitButton.disabled = true;
-        }
+  if (fromDate.value && toDate.value) {
+    if (to >= from) {
+      errorMessage.style.display = "none";
+      submitButton.disabled = false;
+    } else {
+      errorMessage.style.display = "block";
+      submitButton.disabled = true;
     }
+  } else {
+    submitButton.disabled = true;
+  }
+}
 
-    fromDate.addEventListener('input', validateDates);
-    toDate.addEventListener('input', validateDates);
+fromDate.addEventListener("input", validateDates);
+toDate.addEventListener("input", validateDates);
 
-    submitButton.addEventListener('click', function () {
-        alert(`Rental period: From ${fromDate.value} to ${toDate.value}`);
-    });
+submitButton.addEventListener("click", function () {
+  alert(`Rental period: From ${fromDate.value} to ${toDate.value}`);
+});
 /**
  *
  * wag na gumawa bagong $(document).ready(function () {} kasi may isa na sa taas.
