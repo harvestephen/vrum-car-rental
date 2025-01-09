@@ -5,11 +5,11 @@ if (!empty($_POST)) {
   $_SESSION['username'] = $_POST['username'];
 } else {
   session_start();
-  
+
   if (session_id() && !empty($_SESSION['username'])) {
     //echo "session exist";
   } else {
-    session_destroy(); 
+    session_destroy();
   }
 }
 include "./backend/database/init.php";
@@ -28,13 +28,13 @@ $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root direc
 <body>
   <?php
   include './pages/Template/navBar.php';
-  
+
   //Website Router
   switch ($currentURL) {
     //Home Page Links
     case "{$rootDirectory}/":
     case "{$rootDirectory}/index.php":
-      case "{$rootDirectory}/index.php":
+    case "{$rootDirectory}/index.php":
       include './pages/HomeDefault/userHome.php';
       break;
     case "{$rootDirectory}/adminHome":
