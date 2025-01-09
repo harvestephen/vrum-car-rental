@@ -2196,10 +2196,7 @@ hr {
 }
 .filter-header {
   text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 10px 0;
-  color: #fff;
+
 }
 .booking-car-rental-selection {
   flex: 1;
@@ -2235,8 +2232,9 @@ hr {
 }
 .booking-car-column {
   flex: 1;
+  font-family: 'Inter_18pt-Regular';
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
 }
 .booking-car-column button {
   padding: 8px 16px;
