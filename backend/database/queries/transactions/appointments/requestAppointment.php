@@ -9,20 +9,27 @@ if(isset($_POST["addAppointment"])){
   if(isset($_POST)){
     $rawData = file_get_contents("php://input");
     $data = json_decode($rawData, true);
+
+    $payment_info_array = array(
+      "cardHolderName" => $data["cardHolderName"],
+      "cardNumber" => $data["cardNumber"],
+      "expiryDate" => $data["expiryDate"],
+      "cvv_cvc" => $data["cvv_cvc"],
+      "billAddress" => $data["billAddress"],
+    );
   
-    $carID = "test";
-    $fromDate = $data["fromDate"];
-    $toDate = $data["toDate"];
-    $gov_ID = $data["gov_ID"];
-    $cardHolderName = $data["cardHoldername"];
-    $cardNumber = "cardNumber";
-    $expiryDate = $data["expiryDate"];
-    $cvv_cvc = $data["cvv_cvc"];
-    $billAddress = $data["billAddress"];
+    $appointment_title = "test";
+    $appointment_fromDate = $data["fromDate"];
+    $appointment_toDate = $data["toDate"];
+    $appointor_id = $data["test"];
+    $car_rented_id = $data["test"];
+    $payment_info = json_encode($payment_info_array);
+    $gov_id = ["gov_ID"];
+
     
-    $query = "INSERT INTO ? (carID, fromDate, toDate, gov_ID, cardHolderName, cardNumber, expiryDate, cvv_cvc, billAddress) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO ? (appointment_title, appointment_fromDate, appointment_toDate, appointor_id, car_rented_id, payment_info, gov_id) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn -> prepare($query);
-    $stmt -> bind_param("sssss", $carID, $fromDate, $toDate, $gov_ID, $cardHolderName, $cardNumber, $expiryDate, $cvv_cvc, $billAddress);
+    $stmt -> bind_param("sssss", $appointment_title, $appointment_date, $appointor_id, $car_rented_id, $payment_info, $gov_id);
     
     if($stmt -> execute()){
       echo "Data inserted successfully";
