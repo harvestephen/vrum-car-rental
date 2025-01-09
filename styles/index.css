@@ -1520,6 +1520,17 @@ tabIndicator.active {
   transition: background-color 0.3s, color 0.3s;
   margin: 0px 8px;
 }
+.car-rental-footer button{
+  background-color: #ffffff;
+  border: 2px solid #cfb284;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-family: Inter_28pt-Bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0px 8px;
+}
 
 .car-rental-card{ 
   width: 100%;
