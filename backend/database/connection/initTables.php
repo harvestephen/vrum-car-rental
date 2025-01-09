@@ -74,9 +74,6 @@ function checkTablesExist() {
   } 
   if ($result -> num_rows === 0) {
     insertAdminUser();
-    echo "admin account created";
-  } else {
-    echo "there is already an account";
   }
  }
  /**
