@@ -3,7 +3,6 @@
 //session_destroy();
 if (!empty($_POST)) {
   session_start();
-  echo "A session starts.";
   $_SESSION['username'] = $_POST['username'];
 } else {
   session_start();
