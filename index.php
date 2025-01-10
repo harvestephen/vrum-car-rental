@@ -7,8 +7,6 @@ if (!empty($_POST)) {
   $_SESSION['username'] = $_POST['username'];
 } else {
   session_start();
-
-
   if (session_id() && !empty($_SESSION['username'])) {
     //echo "session exist";
   } else {

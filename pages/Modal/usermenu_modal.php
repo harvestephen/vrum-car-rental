@@ -4,7 +4,7 @@
 if (isset($_GET['logout']) && $_GET['logout'] === 'true') {
     session_unset();
     session_destroy();
-    header("Location: /vrum-car-rental");
+    header("Location: ./index.php");
     exit();
 }
 ?>
