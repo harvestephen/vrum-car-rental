@@ -9,11 +9,11 @@
             <!-- Admin Menu List -->
             <div>
                 <ul>
-                    <li class="navSelectionadmin"><a href="<?php echo $rootDirectory . '/cars'; ?>">Dashboard</a></li>
+                    <li class="navSelectionadmin"><a href="<?php echo $rootDirectory . '/adminHome'; ?>">Dashboard</a></li>
                     <hr id="admin-divider" />
                     <li class="navSelectionadmin"><a href="<?php echo $rootDirectory . '/adminUsers'; ?>">User Accounts</a>
                     </li>
-                    <li class="navSelectionadmin"><a href="<?php echo $rootDirectory . '/adminCars'; ?>">Cars</a></li>
+                    <li class="navSelectionadmincurrent"><a href="<?php echo $rootDirectory . '/adminCars'; ?>">Cars</a></li>
                     <li class="navSelectionadmin"><a href="<?php echo $rootDirectory . '/adminAppointments'; ?>">Appointments</a></li>
                     </li>
                 </ul>
