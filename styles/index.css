@@ -2221,6 +2221,9 @@ hr {
   display: flex;
   justify-content: center;
   background-image: url("../assets/images/bg.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: darken;
   height: 100vh; /* Ensures it covers the full height of the viewport */
@@ -2288,25 +2291,75 @@ hr {
 #admin-divider {
   width: 100%;
   height: 1px;
-  background-color: #000;
+  border-color: #bbbbbb;
 }
 .admin-finance-dashboard-wrapper {
   width: 60%;
+  height: 90%;
+  margin-top: 80px;
 }
 .admin-finance-dashboard {
   display: flex;
-  flex-direction: row;
+  height: 60%;
+  flex-direction: column;
   background: #d4d4d4;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 80px;
   margin-left: 20px;
   margin-bottom: 20px;
   padding: 20px;
 }
-.finance1 {
 
+/** DASHBOARD CONTENTS ADMIN CSS*/
+.admin-cars-dashboard p{
+  line-height: 30px;
+}
+.admin-cars-dashboard h1{
+  margin-bottom: 12px;
+  text-align: center;
+}
+.admin-cars-dashboard h1, .admin-cars-dashboard p, .admin-cars-dashboard h3{
+  color: #313131;
+}
+.admin-user-dashboard p{
+  line-height: 30px;
+}
+.admin-user-dashboard h1{
+  margin-bottom: 12px;
+  text-align: center;
+}
+.admin-user-dashboard{
+  margin-top: 10px;
+}
+.admin-user-dashboard h1, .admin-user-dashboard p, .admin-user-dashboard h3{
+  color: #313131;
+}
+.badstat {
+  color: #FF5E57 !important;
+}
+.finance1 p{
+  line-height: 30px;
+  color: #4B7E2C !important;
+  font-weight: bold;
+}
+.finance1 h2, .finance1 p{
+  color: #313131;
+}
+.topfinance h1  {
+  color: #313131;
+  text-align: center;
+  margin-bottom: 12px;
 }
 .finance2 {
-
+  width: 70%;
+  height: 100%;
+}
+.finance-contents {
+  display: flex;
+  flex-direction: row;
+}
+#myChart {
+  width: 100%;
+  height: 100%;
+  margin-left: 20px;
 }
