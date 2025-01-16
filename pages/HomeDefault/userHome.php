@@ -1,7 +1,3 @@
-<?php 
-$rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory 
-
-?>
 <div class="wrapper">
 	<div class="MainContent">
 		<div class="homepage">
