@@ -2255,17 +2255,6 @@ hr {
 }
 .admin-cars-user {
 }
-.admin-finance-dashbaord {
-  width: 40%;
-  height: 100px;
-  background: #d4d4d4;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 80px;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
-}
 .navSelectionadmin {
   color :#000;
   text-decoration: none;
@@ -2275,12 +2264,28 @@ hr {
   color :#000;
   text-decoration: none;
 }
-.navSelectionadmin:first-child a{
-  color :#bb7b7b;
-  text-decoration: none;
-}
 #admin-divider {
   width: 100%;
   height: 1px;
   background-color: #000;
+}
+.admin-finance-dashboard-wrapper {
+  width: 60%;
+}
+.admin-finance-dashboard {
+  display: flex;
+  flex-direction: row;
+  background: #d4d4d4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 80px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+.finance1 {
+
+}
+.finance2 {
+
 }

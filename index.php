@@ -16,6 +16,7 @@ if (!empty($_POST)) {
 include "./backend/database/init.php";
 $currentURL = parse_url($_SERVER['REQUEST_URI'])['path']; // Get current URL
 $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory (RELATIVE)
+$rootURL = dirname('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']);
 /**
  * Main entry point :)
  * 
@@ -89,6 +90,15 @@ $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root direc
       break;
     case "{$rootDirectory}/submitRegister":
       include './backend/database/queries/accounts/register.php';
+      break;
+    case "{$rootDirectory}/adminCars":
+      include './pages/Admin/AdminCars.php';
+      break;
+    case "{$rootDirectory}/adminUsers":
+      include './pages/Admin/AdminUsers.php';
+      break;
+    case "{$rootDirectory}/adminAppointments":
+      include './pages/Admin/Appointments.php';
       break;
     default:
       echo "error 404";
