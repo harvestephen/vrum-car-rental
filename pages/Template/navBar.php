@@ -4,14 +4,19 @@
     </div>
     <div class="pageNav navContent">
         <div class="navOption navContent">
-            <ul class="navOption">
-                <li class="navOption">
-                    <a class="navSelection" href=<?php echo $rootDirectory . "/cars" ?>>Car</a>
-                </li>
-                <li class="navOption">
-                    <a class="navSelection" href="<?php echo $rootDirectory . "/about" ?>">About</a>
-                </li>
-            </ul>
+            <?php 
+            if (isset($_SESSION['role']) && $_SESSION['role'] !== 'admin'){
+               echo '<ul class="navOption">';
+               echo '<li class="navOption">'; 
+               echo '<a class="navSelection" href=<?php echo $rootDirectory . "/cars" ?>Car</a>';    
+               echo '</li>'; 
+               echo '<li class="navOption">'; 
+               echo '<a class="navSelection" href="<?php echo $rootDirectory . "/about" ?>About</a>';     
+               echo '</li>'; 
+               echo '</ul>'; 
+            }
+            ?>
+            
         </div>
         <div class="accountSection navContent">
             <ul class="navOption">
