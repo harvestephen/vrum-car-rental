@@ -361,7 +361,7 @@ const validateLoginForm = async () => {
           if (user.username === username && user.password === password) {
             var form = $("<form></form>");
             form.attr("method", "POST");
-            form.attr("action", "./index.php");
+            form.attr("action", "./backend/database/queries/accounts/signup.php");
             $("<input>")
               .attr({
                 type: "hidden",

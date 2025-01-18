@@ -19,6 +19,15 @@
                 echo '<a class="navSelection" href=' . $rootDirectory . '/about>About</a>';
                 echo '</li>';
                 echo '</ul>';
+            } else if (!isset($_SESSION['role'])) {
+                echo '<ul class="navOption">';
+                echo '<li class="navOption">';
+                echo '<a class="navSelection" href=' . $rootDirectory . '/cars >Car</a>';
+                echo '</li>';
+                echo '<li class="navOption">';
+                echo '<a class="navSelection" href=' . $rootDirectory . '/about>About</a>';
+                echo '</li>';
+                echo '</ul>';
             }
             ?>
 
