@@ -1,19 +1,5 @@
 <?php
-//session_start();
-//session_destroy();
-if (!empty($_POST)) {
-  session_start();
-  $_SESSION['role'] = $_POST['role'];
-  $_SESSION['username'] = $_POST['username'];
-} else {
-  session_start();
-  if (session_id() && !empty($_SESSION['username'])) {
-    //echo "session exist";
-  } else {
-    session_destroy();
-    $_SESSION['role'] = null;
-  }
-}
+session_start();
 include "./backend/database/init.php";
 $currentURL = parse_url($_SERVER['REQUEST_URI'])['path']; // Get current URL
 $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory (RELATIVE)
