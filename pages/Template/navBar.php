@@ -1,29 +1,34 @@
-<div class="navBar navContent">
+<div class="<?php if (isset($_SESSION['role']) && $_SESSION['role'] === "admin") {
+    echo "AdminnavBar navContent";
+} else {
+    echo "navBar navContent";
+}
+?>">
     <div class="pageTitle">
         <a class="pageTitle" href="<?php echo $rootDirectory ?>">Vrum</a>
     </div>
     <div class="pageNav navContent">
         <div class="navOption navContent">
-            <?php 
-            if (isset($_SESSION['role']) && $_SESSION['role'] !== 'admin'){
-               echo '<ul class="navOption">';
-               echo '<li class="navOption">'; 
-               echo '<a class="navSelection" href=' . $rootDirectory . '/cars >Car</a>';    
-               echo '</li>'; 
-               echo '<li class="navOption">'; 
-               echo '<a class="navSelection" href=' . $rootDirectory . '/about>About</a>';     
-               echo '</li>'; 
-               echo '</ul>'; 
+            <?php
+            if (isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
+                echo '<ul class="navOption">';
+                echo '<li class="navOption">';
+                echo '<a class="navSelection" href=' . $rootDirectory . '/cars >Car</a>';
+                echo '</li>';
+                echo '<li class="navOption">';
+                echo '<a class="navSelection" href=' . $rootDirectory . '/about>About</a>';
+                echo '</li>';
+                echo '</ul>';
             }
             ?>
-            
+
         </div>
         <div class="accountSection navContent">
             <ul class="navOption">
-                <?php 
+                <?php
                 if (session_id() && !empty($_SESSION['username'])) {
                     echo '<li class="navOption">';
-                    echo '<button class="navSelection" id="usernameTrigger">'. htmlspecialchars($_SESSION['username']) .'</button>';
+                    echo '<button class="navSelection" id="usernameTrigger">' . htmlspecialchars($_SESSION['username']) . '</button>';
                     echo '</li>';
                 } else {
                     echo '<li class="navOption">';
@@ -34,7 +39,7 @@
                     echo '</li>';
                 }
                 ?>
-                
+
             </ul>
         </div>
     </div>

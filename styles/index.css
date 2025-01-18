@@ -71,6 +71,17 @@ input[type="number"] {
   z-index: 20;
   background-color: transparent;
 }
+.AdminnavBar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 76px;
+  z-index: 20;
+  background-color: rgb(54, 54, 54);
+}
+.AdminnavBar .navSelection {
+  color: rgb(182, 182, 182);
+}
 .navContent {
   display: flex;
 }
@@ -2217,39 +2228,40 @@ hr {
   overflow: hidden;
   width: 85vw;
 }
+
+/** ADMIN PAGE CSSs*/
 .AdminPage {
   display: flex;
   justify-content: center;
-  background-image: url("../assets/images/bg.png");
+  background-color: #f1f1f1;
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  background-color: rgba(0, 0, 0, 0.5);
-  background-blend-mode: darken;
+  width: 100vw;
   height: 100vh; /* Ensures it covers the full height of the viewport */
 }
 .admin-sidebar-card-container {
+  position: relative;
+  left: 0;
   width: 300px;
-  height: 80%;
-  background: #d4d4d4;
-  border-radius: 10px;
+  height: 100vh;
+  background: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 80px;
-  margin-left: 20px;
+  margin-top: 75px;
   margin-bottom: 20px;
   padding: 20px;
 }
 .AdminWrapper {
   display: flex;
   flex-direction: row;
-  width: 95vw;
+  width: 100vw;
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
 }
 .admin-cars-dashboard,
 .admin-user-dashboard {
   width: 300px;
-  background: #d4d4d4;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 80px;
@@ -2258,6 +2270,7 @@ hr {
   padding: 20px;
 }
 .admin-cars-user {
+  margin-top: 20px;
 }
 .navSelectionadmin {
   color :#000;
@@ -2296,13 +2309,14 @@ hr {
 .admin-finance-dashboard-wrapper {
   width: 60%;
   height: 90%;
-  margin-top: 80px;
+  margin-top: 100px;
+  margin-right: 20px;
 }
 .admin-finance-dashboard {
   display: flex;
   min-height: 60%;
   flex-direction: column;
-  background: #d4d4d4;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-left: 20px;
@@ -2366,13 +2380,14 @@ hr {
 
 /** ADMIN CARS CSS*/
 .admincarswrapper {
-  background-color: rgb(243, 243, 243);
-  margin-top: 80px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 100px;
   max-height: 80%;
   border-radius: 5px;
   margin-left: 20px;
-  width: 90%;
-  border: 1px solid rgb(121, 121, 121);
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-right: 10px;
 }
 .admincarstopvar {
   display: flex;
@@ -2399,10 +2414,10 @@ hr {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border: 1px solid rgb(121, 121, 121);
   border-radius: 2px;
-  margin-top: 5px;
-  background-color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  background-color: rgb(241, 241, 241);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .admincarscard p{
   color: #474747;
@@ -2418,18 +2433,20 @@ hr {
   padding: 4px 6px;
   border-radius: 2px;
   border: 1px solid rgb(121, 121, 121);
+  cursor: pointer;
 }
 .admincarsoptions p {
   color: #00c853;
 }
 .appointmentlistwrapper {
-  background-color: rgb(243, 243, 243);
-  margin-top: 80px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 100px;
   max-height: 80%;
+  margin-right: 10px;
   border-radius: 5px;
   margin-left: 20px;
-  width: 90%;
-  border: 1px solid rgb(121, 121, 121);
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .adminappointmenttitlebar {
   border-bottom: 1px solid rgb(121, 121, 121);
@@ -2443,10 +2460,10 @@ hr {
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
-  border: 1px solid rgb(121, 121, 121);
   border-radius: 2px;
-  margin-top: 5px;
-  background-color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  background-color: rgb(241, 241, 241);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .appointmentinfo p{
   color: #474747;
@@ -2458,6 +2475,7 @@ hr {
   border-color: transparent;
   border-radius: 2px;
   border-style: solid;
+  cursor: pointer;
 }
 .appointmentoptionsapprove {
 background-color: #28782D;
@@ -2466,13 +2484,14 @@ background-color: #28782D;
 background-color: #FF5E57;
 }
 .adminUsersWrapper {
-  background-color: rgb(243, 243, 243);
-  margin-top: 80px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 94px;
   max-height: 80%;
   border-radius: 5px;
   margin-left: 20px;
-  width: 90%;
-  border: 1px solid rgb(121, 121, 121);
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-right: 10px;
 }
 .adminUsersWrapper h1{
   border-bottom: 1px solid rgb(121, 121, 121);
@@ -2498,18 +2517,20 @@ background-color: #FF5E57;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border: 1px solid rgb(121, 121, 121);
   border-radius: 2px;
-  margin-top: 5px;
-  background-color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  background-color: rgb(241, 241, 241);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .useradminlist-options button {
   padding: 4px 6px;
   border-radius: 2px;
   border: 1px solid rgb(121, 121, 121);
+  cursor: pointer;
 }
 .useradminlist-optionsedit {
   background-color: #28782D;
   color: white;
   border: 1px solid rgb(121, 121, 121);
+  cursor: pointer;
 }
