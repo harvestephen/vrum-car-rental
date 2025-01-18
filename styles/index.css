@@ -2300,7 +2300,7 @@ hr {
 }
 .admin-finance-dashboard {
   display: flex;
-  height: 60%;
+  min-height: 60%;
   flex-direction: column;
   background: #d4d4d4;
   border-radius: 10px;
@@ -2362,4 +2362,154 @@ hr {
   width: 100%;
   height: 100%;
   margin-left: 20px;
+}
+
+/** ADMIN CARS CSS*/
+.admincarswrapper {
+  background-color: rgb(243, 243, 243);
+  margin-top: 80px;
+  max-height: 80%;
+  border-radius: 5px;
+  margin-left: 20px;
+  width: 90%;
+  border: 1px solid rgb(121, 121, 121);
+}
+.admincarstopvar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgb(121, 121, 121);
+}
+.admincarstopvar button {
+  padding: 4px 6px;
+  border-radius: 2px;
+  border: 1px solid #c49a56;
+}
+.admincarstopvar button:hover {
+  background-color: #c9b591;
+  cursor: pointer;
+}
+.admincarscardlist {
+  padding: 15px 20px;
+}
+.admincarscard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid rgb(121, 121, 121);
+  border-radius: 2px;
+  margin-top: 5px;
+  background-color: rgb(255, 255, 255);
+}
+.admincarscard p{
+  color: #474747;
+}
+.admincarsoptions {
+  display: flex;
+  flex-direction: row;
+  width: 120px;
+  justify-content: space-between;
+  align-items: center;
+}
+.admincarsoptions button {
+  padding: 4px 6px;
+  border-radius: 2px;
+  border: 1px solid rgb(121, 121, 121);
+}
+.admincarsoptions p {
+  color: #00c853;
+}
+.appointmentlistwrapper {
+  background-color: rgb(243, 243, 243);
+  margin-top: 80px;
+  max-height: 80%;
+  border-radius: 5px;
+  margin-left: 20px;
+  width: 90%;
+  border: 1px solid rgb(121, 121, 121);
+}
+.adminappointmenttitlebar {
+  border-bottom: 1px solid rgb(121, 121, 121);
+  padding: 15px 20px;
+}
+.appointmentcardlist {
+  padding: 15px 20px;
+}
+.appointmentcard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  border: 1px solid rgb(121, 121, 121);
+  border-radius: 2px;
+  margin-top: 5px;
+  background-color: rgb(255, 255, 255);
+}
+.appointmentinfo p{
+  color: #474747;
+  margin-bottom: 10px;
+}
+.appointmentoptions button {
+  padding: 4px 6px;
+  color: white;
+  border-color: transparent;
+  border-radius: 2px;
+  border-style: solid;
+}
+.appointmentoptionsapprove {
+background-color: #28782D;
+}
+.appointmentoptionsdeny{
+background-color: #FF5E57;
+}
+.adminUsersWrapper {
+  background-color: rgb(243, 243, 243);
+  margin-top: 80px;
+  max-height: 80%;
+  border-radius: 5px;
+  margin-left: 20px;
+  width: 90%;
+  border: 1px solid rgb(121, 121, 121);
+}
+.adminUsersWrapper h1{
+  border-bottom: 1px solid rgb(121, 121, 121);
+  padding: 15px 20px;
+}
+.adminusercontents {
+  padding: 15px 20px;
+}
+.usersearch {
+  background-color: rgb(197, 197, 197);
+  width: 100px;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 30px;
+  border-style: none;
+}
+.adminusercardlist {
+  padding: 15px 0 15px 0;
+}
+.userlistcard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid rgb(121, 121, 121);
+  border-radius: 2px;
+  margin-top: 5px;
+  background-color: rgb(255, 255, 255);
+}
+.useradminlist-options button {
+  padding: 4px 6px;
+  border-radius: 2px;
+  border: 1px solid rgb(121, 121, 121);
+}
+.useradminlist-optionsedit {
+  background-color: #28782D;
+  color: white;
+  border: 1px solid rgb(121, 121, 121);
 }

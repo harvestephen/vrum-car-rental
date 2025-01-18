@@ -8,10 +8,10 @@
             if (isset($_SESSION['role']) && $_SESSION['role'] !== 'admin'){
                echo '<ul class="navOption">';
                echo '<li class="navOption">'; 
-               echo '<a class="navSelection" href=<?php echo $rootDirectory . "/cars" ?>Car</a>';    
+               echo '<a class="navSelection" href=' . $rootDirectory . '/cars >Car</a>';    
                echo '</li>'; 
                echo '<li class="navOption">'; 
-               echo '<a class="navSelection" href="<?php echo $rootDirectory . "/about" ?>About</a>';     
+               echo '<a class="navSelection" href=' . $rootDirectory . '/about>About</a>';     
                echo '</li>'; 
                echo '</ul>'; 
             }

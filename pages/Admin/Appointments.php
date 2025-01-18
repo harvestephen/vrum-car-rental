@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="appointmentlistwrapper">
-            <div class="titlebar">
+            <div class="adminappointmenttitlebar">
                 <h1>Appointment List</h1>
             </div>
             <div class="appointmentcardlist">
@@ -31,8 +31,30 @@
                         <p>Date: from to to</p>
                     </div>
                     <div class="appointmentoptions">
-                        <button>Approve</button>
-                        <button>Deny</button>
+                        <button class="appointmentoptionsapprove">Approve</button>
+                        <button class="appointmentoptionsdeny">Deny</button>
+                    </div>
+                </div>
+                <div class="appointmentcard">
+                    <div class="appointmentinfo">
+                        <p>Car: Carname</p>
+                        <p>Renter: user</p>
+                        <p>Date: from to to</p>
+                    </div>
+                    <div class="appointmentoptions">
+                        <button class="appointmentoptionsapprove">Approve</button>
+                        <button class="appointmentoptionsdeny">Deny</button>
+                    </div>
+                </div>
+                <div class="appointmentcard">
+                    <div class="appointmentinfo">
+                        <p>Car: Carname</p>
+                        <p>Renter: user</p>
+                        <p>Date: from to to</p>
+                    </div>
+                    <div class="appointmentoptions">
+                        <button class="appointmentoptionsapprove">Approve</button>
+                        <button class="appointmentoptionsdeny">Deny</button>
                     </div>
                 </div>
             </div>

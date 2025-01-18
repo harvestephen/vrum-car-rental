@@ -21,7 +21,7 @@
         </div>
         <div class="admincarswrapper">
             <div class="admincarstopvar">
-                <button>Add New Car</button>
+                <button>New Car</button>
                 <div class="admincarsnavoptions">
                     <button>All</button>
                     <button>Sedan</button>
