@@ -11,6 +11,7 @@ if (!empty($_POST)) {
     //echo "session exist";
   } else {
     session_destroy();
+    $_SESSION['role'] = null;
   }
 }
 include "./backend/database/init.php";

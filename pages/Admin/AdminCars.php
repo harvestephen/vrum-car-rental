@@ -1,3 +1,10 @@
+<?php 
+$rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory
+if (!isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
+    echo '<script>window.location.href="' . $rootDirectory . '/";</script>';
+    exit();
+}
+?>
 <div class="AdminPage">
     <!-- Admin Sidebar Menu -->
     <div class="AdminWrapper">

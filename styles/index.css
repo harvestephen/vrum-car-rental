@@ -1831,14 +1831,14 @@ select#carType option {
 }
 
 .userMenuList li {
-  font-family: Inter_28pt-Bold;
+  font-family: Inter_28pt-Regular;
   margin: 10px 0;
 }
 
 .userMenuList li a {
   text-decoration: none;
   color: #022b3a;
-  font-size: 14px;
+  font-size: 16px;
   display: block;
 }
 
@@ -1857,6 +1857,8 @@ hr {
 .userMenuList li a.sign-out {
   color: #ff5e57 !important; /* Ensure the correct color */
   font-weight: bold;
+  background-color: transparent;
+  border: none;
 }
 
 .userMenuList li a.sign-out:hover {
