@@ -681,7 +681,7 @@ footer {
   font-size: 14px;
   color: #c49a56;
   position: absolute;
-  right: 20px;
+  right: 0;
   transition: transform 0.3s ease;
 }
 
@@ -2061,6 +2061,7 @@ hr {
   margin-left: 20px;
   justify-content: start;
   gap: 10px;
+  overflow: hidden;
 }
 
 .booking-car-filter-btn {
@@ -2114,7 +2115,7 @@ hr {
 .booking-car-row:last-child {
   border-bottom: none;
 }
-.booking-car-column {
+.booking-car-column, .booking-car-right {
   flex: 1;
   font-family: "Inter_18pt-Regular";
   text-align: center;
@@ -2606,13 +2607,8 @@ p {
 .car-rental-card {
   max-width: 70vw;
 }
-
-}
-
-
-@media (max-width: 768px) {
-  .car-rental-selection-container {
-  height: calc(80vh - 20px);
+.car-rental-selection-container {
+  height: calc(80vh - 0px);
   }
   .carpagebg {
     height: 120vh;
@@ -2620,4 +2616,47 @@ p {
   .car-rental-approval-container {
     height: calc(80vh - 20px);
   }
+  .BookedCarspage {
+    height: 120vh;
 }
+.booking-car-selection-container {
+  width: 100%;
+  max-width: 90vw;
+  height: calc(80vh - 20px);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(115, 115, 115, 0.7), rgba(115, 115, 115, 0.7));
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  box-sizing: border-box;
+}
+.booking-car-column {
+  font-size: 3vw;
+}
+.booking-car-row {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  justify-content: center;
+  grid-template-columns: auto 1fr;
+  column-gap: 15px;
+}
+.booking-car-image img {
+  width: 30vw;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.booking-car-right {
+  flex: 1;
+  font-family: "Inter_18pt-Regular";
+  text-align: center;
+  font-size: 6vw;
+}
+}
+
+
