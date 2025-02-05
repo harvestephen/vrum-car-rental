@@ -104,16 +104,12 @@ a.pageTitle {
   color: #cfb284;
   background-color: transparent;
 }
+
 div.pageNav {
   justify-content: space-between;
   width: 100%;
 }
 /* Responsive Styles */
-@media screen and (max-width: 768px) {
-  .nav-links {
-      display: none; /* Hide Desktop Menu */
-    }
-}
 div.navOption {
   align-items: center;
 }
@@ -556,7 +552,7 @@ footer {
   border: 2px solid #fff;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 30px;
   letter-spacing: 1px;
   margin-top: 20px;
   transition: all 0.3s ease;
@@ -607,7 +603,7 @@ footer {
   padding: 20px;
   width: 400px;
   margin-top: 50px;
-  max-height: 700px;
+  
   margin-bottom: 10px;
 }
 
@@ -673,7 +669,7 @@ footer {
 .featured-header {
   width: 70vw;
   max-width: 70vw;
-  text-align: left;
+  text-align: center;
   font-size: 40px;
   font-family: Kalam-Regular;
   color: #c49a56;
@@ -855,8 +851,10 @@ footer {
 
 .about-page .section {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 40px;
   width: 70vw;
+  justify-content: center;
 }
 
 .about-page .section img {
@@ -1168,14 +1166,6 @@ iframe {
   border-radius: 8px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-container-unique {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .card {
   background-color: #a5b4c2;
   height: 400px;
@@ -1198,6 +1188,7 @@ iframe {
   gap: 50px;
   padding: 10px;
 }
+
 .car-slider-wrapper {
   position: relative;
   max-width: 70vw;
@@ -2545,4 +2536,65 @@ background-color: #FF5E57;
   color: white;
   border: 1px solid rgb(121, 121, 121);
   cursor: pointer;
+}
+
+/*responsive to mobile*/
+@media screen and (max-width: 768px) {
+  .nav-links {
+      display: none; /* Hide Desktop Menu */
+    }
+
+	.contact-container-unique {
+		flex-direction: column;
+		align-items: center;
+	}
+    .slider {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 100%;
+		overflow: hidden;
+		flex-direction: row;
+		gap: 50px;
+		padding: 10px;
+	}
+  .homepage a {
+    display: inline-block;
+    color: #cfb284;
+    padding: 10px 30px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 3vw;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    font-family: Inter_18pt-Regular;
+}
+.featured-header {
+  width: 70vw;
+  max-width: 70vw;
+  text-align: center;
+  font-size: 8vw;
+  font-family: Kalam-Regular;
+  color: #c49a56;
+  padding-top: 40px;
+}
+
+.what-we-offer h2 {
+    display: block;
+    font-size: 8vw;
+    position: relative;
+    margin-bottom: 20px;
+}
+.about-page .section h2 {
+  margin-bottom: 10px;
+  color: #222;
+  font-size: 3rem;
+  text-align: center;
+}
+  .about-page .section p {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+}
 }
