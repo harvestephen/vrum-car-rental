@@ -98,7 +98,7 @@ p.pageTitle {
 }
 a.pageTitle {
   text-decoration: none;
-  padding-top: 5px;
+  padding-left: 20px;
   font-size: 48px;
   font-family: Kalam-Regular;
   color: #cfb284;
@@ -107,6 +107,12 @@ a.pageTitle {
 div.pageNav {
   justify-content: space-between;
   width: 100%;
+}
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .nav-links {
+      display: none; /* Hide Desktop Menu */
+    }
 }
 div.navOption {
   align-items: center;
@@ -531,7 +537,7 @@ footer {
 }
 .homepageTitle h1 {
   font-family: Inter_28pt-Bold;
-  font-size: 72px;
+  font-size: 7vw;
   text-shadow: 4px 4px 10px black;
   letter-spacing: 10px;
   color: white;
