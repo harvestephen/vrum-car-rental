@@ -1,33 +1,46 @@
 //JQUERY EVENT HANDLERS
 $(document).ready(function () {
-  const xValues = [50,60,70,80,90,100,110,120,130,140,150];
-  const yValues = [7,8,8,9,9,9,10,11,14,14,15];
-  new Chart($("#myChart"), {
-    type: "line",
-    data: {
-      labels: xValues,
-      datasets: [{
-        fill: false,
-        lineTension: 0,
-        backgroundColor: "rgba(0,0,255,1.0)",
-        borderColor: "rgba(0,0,255,0.1)",
-        data: yValues
-      }]
-    },
-    options: {
-      legend: {display: false},
-      scales: {
-        yAxes: [{ticks: {min: 6, max:16}}],
-      }
-    }
-  });
+  fetch("./backend/database/queries/getSales.php")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      createChart(data, 'line');
+    });
+
+  function createChart(chartdata, type) {
+    const xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    const yValues = [1200, 1500, 1400];
+    new Chart($("#myChart"), {
+      type: "line",
+      data: {
+        labels: xValues,
+        datasets: [
+          {
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "rgba(0,0,255,1.0)",
+            borderColor: "rgba(0,0,255,0.1)",
+            data: chartdata.map(row => row.total_sales),
+          },
+        ],
+      },
+      options: {
+        legend: { display: false },
+        scales: {
+          yAxes: [{ ticks: { min: 1000, max: 20000 } }],
+        },
+      },
+    });
+  }
+
   $(".accordion").click(function () {
     $(this).toggleClass("active");
     let panel = $(this).next(".panel");
     panel.slideToggle(100);
   });
 
-  $(".sign-up-alt").on("click", function() {
+  $(".sign-up-alt").on("click", function () {
     if ($("#loginModal").css("display") == "none") {
       $("#loginModal").fadeIn(100);
       $("#registerModal").fadeOut(100);
@@ -35,7 +48,7 @@ $(document).ready(function () {
       $("#loginModal").fadeOut(100);
     }
   });
-  $(".register-up-alt").on("click", function() {
+  $(".register-up-alt").on("click", function () {
     if ($("#registerModal").css("display") == "none") {
       $("#registerModal").fadeIn(100);
       $("#loginModal").fadeOut(100);
@@ -72,15 +85,15 @@ $(document).ready(function () {
   });
 
   // Show the User Menu Modal when "username" is clicked
-  $('#usernameTrigger').on('click', function (e) {
+  $("#usernameTrigger").on("click", function (e) {
     e.preventDefault(); // Prevent any default behavior
-    $('#userMenuModal').toggle(); // Toggle the modal visibility
+    $("#userMenuModal").toggle(); // Toggle the modal visibility
   });
 
   // Optional: Close modal if clicked outside
-  $(document).on('click', function (e) {
-    if (!$(e.target).closest('#userMenuModal, #usernameTrigger').length) {
-      $('#userMenuModal').hide(); // Hide modal if clicked outside
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest("#userMenuModal, #usernameTrigger").length) {
+      $("#userMenuModal").hide(); // Hide modal if clicked outside
     }
   });
 
@@ -137,13 +150,13 @@ $(document).ready(function () {
     }
   });
 
-$(window).on("scroll", function () {
-  // Close the modals on scroll
-  $("#registerModal").fadeOut(100);
-  $("#loginModal").fadeOut(100);
-  $("#termsModal").fadeOut(100);
-  $("#userMenuModal").fadeOut(100);
-});
+  $(window).on("scroll", function () {
+    // Close the modals on scroll
+    $("#registerModal").fadeOut(100);
+    $("#loginModal").fadeOut(100);
+    $("#termsModal").fadeOut(100);
+    $("#userMenuModal").fadeOut(100);
+  });
 
   $(".carToRent").on("click", function () {
     $("#carSelectionTab").removeClass("active");
@@ -158,17 +171,17 @@ $(window).on("scroll", function () {
     const gov_IDValue = document.getElementById("gov_ID").value.trim();
 
     if (fromDateValue !== "" && toDateValue !== "" && gov_IDValue !== "") {
-      $("#carInfoTab").removeClass("active"); 
+      $("#carInfoTab").removeClass("active");
       $("#carInfo").css("display", "none");
       $("#carCheckoutTab").addClass("active");
       $("#carCheckout").css("display", "block");
       $("#car-rental-info-fillOut").css("display", "none");
       $("#car-rental-info-fillOutSpacer").css("display", "block");
-      $("#error-message").css("display", "none"); 
+      $("#error-message").css("display", "none");
     } else {
       $("#car-rental-info-fillOut").css("display", "block");
       $("#car-rental-info-fillOutSpacer").css("display", "none");
-      $("#error-message").css("display", "none"); 
+      $("#error-message").css("display", "none");
     }
   });
 
@@ -184,10 +197,17 @@ $(window).on("scroll", function () {
     const cardNumberValue = document.getElementById("cardNumber").value.trim();
     const expiryDateValue = document.getElementById("expiryDate").value.trim();
     const codeValue = document.getElementById("cvv_cvc").value.trim();
-    const billAddressValue = document.getElementById("billAddress").value.trim();
+    const billAddressValue = document
+      .getElementById("billAddress")
+      .value.trim();
 
-    if (CHNameValue !== "" && cardNumberValue !== "" && expiryDateValue !== "" && codeValue !== "" && billAddressValue !== "") {
-
+    if (
+      CHNameValue !== "" &&
+      cardNumberValue !== "" &&
+      expiryDateValue !== "" &&
+      codeValue !== "" &&
+      billAddressValue !== ""
+    ) {
       $("#carCheckoutTab").removeClass("active");
       $("#carCheckout").css("display", "none");
       $("#carApprovalTab").addClass("active");
@@ -196,8 +216,6 @@ $(window).on("scroll", function () {
       $("#car-rental-info-fillOut").css("display", "block");
       $("#car-rental-info-fillOutSpacer").css("display", "none");
     }
-
-    
   });
 
   $("#returnCarInfo").on("click", function () {
@@ -255,8 +273,9 @@ const validateRegisterForm = async () => {
       .then((data) => {
         console.log(data);
         window.location.href = "./index.php";
-      }).catch((error) => {
-        console.error('Error:', error);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
       });
   };
 
@@ -361,7 +380,10 @@ const validateLoginForm = async () => {
           if (user.username === username && user.password === password) {
             var form = $("<form></form>");
             form.attr("method", "POST");
-            form.attr("action", "./backend/database/queries/accounts/signup.php");
+            form.attr(
+              "action",
+              "./backend/database/queries/accounts/signup.php"
+            );
             $("<input>")
               .attr({
                 type: "hidden",
@@ -376,7 +398,7 @@ const validateLoginForm = async () => {
                 value: username,
               })
               .appendTo(form);
-              
+
             $("body").append(form);
             form.submit();
             /** 
@@ -440,15 +462,16 @@ const reqAppointmentForm = async () => {
           billAddress: billAddress,
         }),
       }
-    )
+    );
     fetch(request)
       .then((res) => {
         return res.text(); //buy time
       })
       .then((data) => {
         console.log(data);
-      }).catch((error) => {
-        console.error('Error:', error);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
       });
   };
   sendData();
@@ -490,14 +513,16 @@ toDate.setAttribute("min", todayString);
 function validateDates() {
   const from = new Date(fromDate.value);
   const to = new Date(toDate.value);
-  const toChangeSpacer = document.getElementById("car-rental-info-fillOutSpacer");
+  const toChangeSpacer = document.getElementById(
+    "car-rental-info-fillOutSpacer"
+  );
   const toChangeError = document.getElementById("car-rental-info-fillOut");
 
   if (fromDate.value && toDate.value) {
     if (to >= from) {
       errorMessage.style.display = "none";
       toChangeSpacer.style.display = "block";
-      submitButton.disabled = false;  
+      submitButton.disabled = false;
     } else {
       errorMessage.style.display = "block";
       toChangeSpacer.style.display = "none";
@@ -506,8 +531,8 @@ function validateDates() {
     }
   } else {
     submitButton.disabled = true;
-  };
-};
+  }
+}
 
 fromDate.addEventListener("input", validateDates);
 toDate.addEventListener("input", validateDates);
@@ -517,34 +542,35 @@ submitButton.addEventListener("click", function () {
 });
 
 function filterBookingCars(status) {
-  const buttons = document.querySelectorAll('.booking-car-filter-btn');
-  const cards = document.querySelectorAll('.booking-car-card');
-  const filterHeader = document.getElementById('filterHeader');
+  const buttons = document.querySelectorAll(".booking-car-filter-btn");
+  const cards = document.querySelectorAll(".booking-car-card");
+  const filterHeader = document.getElementById("filterHeader");
 
-  buttons.forEach(button => button.classList.remove('active'));
+  buttons.forEach((button) => button.classList.remove("active"));
   const clickedButton = event.currentTarget;
-  clickedButton.classList.add('active');
+  clickedButton.classList.add("active");
 
   // Update the filter header text
   switch (status) {
-    case 'all':
-      filterHeader.textContent = 'All Cars';
+    case "all":
+      filterHeader.textContent = "All Cars";
       break;
-    case 'pending':
-      filterHeader.textContent = 'Pending Cars';
+    case "pending":
+      filterHeader.textContent = "Pending Cars";
       break;
-    case 'approved':
-      filterHeader.textContent = 'Approved Cars';
+    case "approved":
+      filterHeader.textContent = "Approved Cars";
       break;
-    case 'review':
-      filterHeader.textContent = 'Review Cars';
+    case "review":
+      filterHeader.textContent = "Review Cars";
       break;
     default:
-      filterHeader.textContent = 'Cars';
+      filterHeader.textContent = "Cars";
   }
 
-  cards.forEach(card => {
-    card.style.display = status === 'all' || card.classList.contains(status) ? 'block' : 'none';
+  cards.forEach((card) => {
+    card.style.display =
+      status === "all" || card.classList.contains(status) ? "block" : "none";
   });
 }
 
@@ -553,6 +579,3 @@ function filterBookingCars(status) {
  * wag na gumawa bagong $(document).ready(function () {} kasi may isa na sa taas.
  *
  */
-
-
-
