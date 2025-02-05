@@ -44,15 +44,28 @@ $result = $conn -> query($sql);
                 <?php 
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo <<<HTML
+                            if ($row['available'] != 0) {
+                                echo <<<HTML
                                 <div class="admincarscard">
                                     <p>{$row['car_name']}</p>
                                     <div class="admincarsoptions">
-                                        <p>{$row['availability']}</p>
+                                        <p>Available</p>
                                         <button>Edit</button>
                                     </div>
                                 </div>
                                 HTML;
+                            } else {
+                                echo <<<HTML
+                                <div class="admincarscard">
+                                    <p>{$row['car_name']}</p>
+                                    <div class="admincarsoptions">
+                                        <p class="badstat">Not Available</p>
+                                        <button>Edit</button>
+                                    </div>
+                                </div>
+                                HTML;
+                            }
+                            
                         }
                     } else {
                         echo "No records found";
