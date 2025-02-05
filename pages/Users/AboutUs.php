@@ -1,4 +1,4 @@
-<?php $rootDirectory = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'); // Get root directory ?>
+
 <div class="wrapper">
 <div class="about-page">
     <header>
@@ -32,11 +32,10 @@
                 <div>
                     <h2>Why Choose Us</h2>
                     <ul>
-                        <li><strong>Reliable Fleet:</strong> Regularly maintained vehicles for a smooth experience.</li>
-                        <li><strong>Affordable Rates:</strong> Transparent pricing without hidden charges.</li>
-                        <li><strong>24/7 Support:</strong> Assistance available whenever you need it.</li>
-                        <li><strong>Sustainability:</strong> Eco-friendly options with hybrid and fuel-efficient vehicles.
-                        </li>
+                        <p><strong>Reliable Fleet:</strong> Regularly maintained vehicles for a smooth experience.</p>
+                        <p><strong>Affordable Rates:</strong> Transparent pricing without hidden charges.</p>
+                        <p><strong>24/7 Support:</strong> Assistance available whenever you need it.</p>
+                        <p><strong>Sustainability:</strong> Eco-friendly options with hybrid and fuel-efficient vehicles.</p>
                     </ul>
                 </div>
             </div>

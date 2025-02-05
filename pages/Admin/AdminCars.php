@@ -4,6 +4,10 @@ if (!isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
     echo '<script>window.location.href="' . $rootDirectory . '/";</script>';
     exit();
 }
+
+$sql = "SELECT * from cars";
+$result = $conn -> query($sql);
+
 ?>
 <div class="AdminPage">
     <!-- Admin Sidebar Menu -->
@@ -37,27 +41,23 @@ if (!isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
                 </div>
             </div>
             <div class="admincarscardlist">
-                <div class="admincarscard">
-                    <p>Carname</p>
-                    <div class="admincarsoptions">
-                        <p>Available</p>
-                        <button>Edit</button>
-                    </div>
-                </div>
-                <div class="admincarscard">
-                    <p>Carname</p>
-                    <div class="admincarsoptions">
-                        <p>Available</p>
-                        <button>Edit</button>
-                    </div>
-                </div>
-                <div class="admincarscard">
-                    <p>Carname</p>
-                    <div class="admincarsoptions">
-                        <p>Available</p>
-                        <button>Edit</button>
-                    </div>
-                </div>
+                <?php 
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo <<<HTML
+                                <div class="admincarscard">
+                                    <p>{$row['car_name']}</p>
+                                    <div class="admincarsoptions">
+                                        <p>{$row['availability']}</p>
+                                        <button>Edit</button>
+                                    </div>
+                                </div>
+                                HTML;
+                        }
+                    } else {
+                        echo "No records found";
+                    }
+                ?>
             </div>
         </div>
     </div>

@@ -4,6 +4,12 @@ if (!isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
     echo '<script>window.location.href="' . $rootDirectory . '/";</script>';
     exit();
 }
+
+
+$sql = "SELECT * FROM users WHERE role = 'user'";
+$result = $conn -> query($sql);
+
+
 ?>
 <div class="AdminPage">
     <!-- Admin Sidebar Menu -->
@@ -36,27 +42,24 @@ if (!isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
                     <input class="usersearch" type="text" placeholder="Search">
                 </form>
                 <div class="adminusercardlist">
-                    <div class="userlistcard">
-                        <p>Username</p>
-                        <div class="useradminlist-options">
-                            <button class="useradminlist-optionsdetails">Details</button>
-                            <button class="useradminlist-optionsedit">Edit</button>
-                        </div>
-                    </div>
-                    <div class="userlistcard">
-                        <p>Username</p>
-                        <div class="useradminlist-options">
-                            <button class="useradminlist-optionsdetails">Details</button>
-                            <button class="useradminlist-optionsedit">Edit</button>
-                        </div>
-                    </div>
-                    <div class="userlistcard">
-                        <p>Username</p>
-                        <div class="useradminlist-options">
-                            <button class="useradminlist-optionsdetails">Details</button>
-                            <button class="useradminlist-optionsedit">Edit</button>
-                        </div>
-                    </div>
+                    <?php 
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo <<<HTML
+                                <div class="userlistcard">
+                                    <p>{$row['username']}</p>
+                                    <div class="useradminlist-options">
+                                        <button class="useradminlist-optionsdetails">Details</button>
+                                        <button class="useradminlist-optionsedit">Edit</button>
+                                    </div>
+                                </div>
+                                HTML;
+                        }
+                    } else {
+                        echo "No records found";
+                    }
+                    ?>
+                    
                 </div>
             </div>
         </div>

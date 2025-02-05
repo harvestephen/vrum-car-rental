@@ -4,11 +4,11 @@
     echo "navBar navContent";
 }
 ?>">
-    <div class="pageTitle">
-        <a class="pageTitle" href="<?php echo $rootDirectory ?>">Vrum</a>
-    </div>
+
     <div class="pageNav navContent">
         <div class="navOption navContent">
+        <a class="pageTitle" href="<?php echo $rootDirectory ?>">Vrum</a>
+        <div class="nav-links">
             <?php
             if (isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
                 echo '<ul class="navOption">';
@@ -30,7 +30,7 @@
                 echo '</ul>';
             }
             ?>
-
+        </div>
         </div>
         <div class="accountSection navContent">
             <ul class="navOption">

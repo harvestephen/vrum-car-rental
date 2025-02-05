@@ -98,16 +98,18 @@ p.pageTitle {
 }
 a.pageTitle {
   text-decoration: none;
-  padding-top: 5px;
+  padding-left: 20px;
   font-size: 48px;
   font-family: Kalam-Regular;
   color: #cfb284;
   background-color: transparent;
 }
+
 div.pageNav {
   justify-content: space-between;
   width: 100%;
 }
+/* Responsive Styles */
 div.navOption {
   align-items: center;
 }
@@ -531,7 +533,7 @@ footer {
 }
 .homepageTitle h1 {
   font-family: Inter_28pt-Bold;
-  font-size: 72px;
+  font-size: 5vw;
   text-shadow: 4px 4px 10px black;
   letter-spacing: 10px;
   color: white;
@@ -550,7 +552,7 @@ footer {
   border: 2px solid #fff;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 30px;
   letter-spacing: 1px;
   margin-top: 20px;
   transition: all 0.3s ease;
@@ -601,8 +603,9 @@ footer {
   padding: 20px;
   width: 400px;
   margin-top: 50px;
-  max-height: 700px;
   margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .offer img {
@@ -667,7 +670,7 @@ footer {
 .featured-header {
   width: 70vw;
   max-width: 70vw;
-  text-align: left;
+  text-align: center;
   font-size: 40px;
   font-family: Kalam-Regular;
   color: #c49a56;
@@ -678,7 +681,7 @@ footer {
   font-size: 14px;
   color: #c49a56;
   position: absolute;
-  right: 20px;
+  right: 0;
   transition: transform 0.3s ease;
 }
 
@@ -849,8 +852,10 @@ footer {
 
 .about-page .section {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 40px;
   width: 70vw;
+  justify-content: center;
 }
 
 .about-page .section img {
@@ -1162,14 +1167,6 @@ iframe {
   border-radius: 8px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-container-unique {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .card {
   background-color: #a5b4c2;
   height: 400px;
@@ -1192,6 +1189,7 @@ iframe {
   gap: 50px;
   padding: 10px;
 }
+
 .car-slider-wrapper {
   position: relative;
   max-width: 70vw;
@@ -1296,6 +1294,7 @@ li.adminNavOption {
 .car-rental-page {
   display: block;
   margin-top: 90px;
+  align-items: center;
 }
 .car-rental-tabContainer {
   display: flex;
@@ -1327,7 +1326,7 @@ li.adminNavOption {
   color: #fff;
   font-family: Fustat-Light;
   font-weight: 50;
-  font-size: 20px;
+  font-size: 16px;
 }
 tabIndicator {
   border: none;
@@ -1351,7 +1350,7 @@ tabIndicator.active {
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
-  height: 100vh;
+  height: 110vh;
   display: flex;
   z-index: 10; /* Keeps content on top */
   justify-content: center;
@@ -1359,7 +1358,7 @@ tabIndicator.active {
 .car-rental-selection-container {
   width: 100%;
   max-width: 85vw;
-  height: calc(75vh - 60px);
+  height: calc(75vh - 45px);
   margin: 50px auto;
   display: flex;
   flex-direction: column;
@@ -1477,7 +1476,8 @@ tabIndicator.active {
   display: none;
   justify-items: center;
   height: 75vh;
-  padding-top: 80px;
+  margin-top: 50px;
+ 
 }
 .car-rental-info-container h2 {
   margin: 10px 0px;
@@ -1497,7 +1497,7 @@ tabIndicator.active {
 .car-rental-checkout-container {
   display: none;
   justify-items: center;
-  padding-top: 80px;
+  margin-top: 50px;
 }
 .car-rental-checkout-content {
   margin: 10px 0px 0px 0px;
@@ -1512,6 +1512,7 @@ tabIndicator.active {
   font-size: 32px;
   font-weight: 100;
   color: #fff;
+  text-align: center;
 }
 .car-rental-footer {
   display: flex;
@@ -1544,11 +1545,11 @@ tabIndicator.active {
 .car-rental-card {
   width: 100%;
   margin: 0px auto;
-  max-width: 25vw;
+  max-width: 35vw;
   background: linear-gradient(
     rgba(115, 115, 115, 0.7),
     rgba(115, 115, 115, 0.7)
-  );
+    );
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 30px 25px 20px 25px;
@@ -1584,6 +1585,7 @@ tabIndicator.active {
   font-family: Fustat-Light;
   font-weight: 100;
   font-size: 20px;
+  text-align: center;
 }
 .car-rental-approval-container a {
   background-color: #ffffff;
@@ -2059,6 +2061,7 @@ hr {
   margin-left: 20px;
   justify-content: start;
   gap: 10px;
+  overflow: hidden;
 }
 
 .booking-car-filter-btn {
@@ -2112,7 +2115,7 @@ hr {
 .booking-car-row:last-child {
   border-bottom: none;
 }
-.booking-car-column {
+.booking-car-column, .booking-car-right {
   flex: 1;
   font-family: "Inter_18pt-Regular";
   text-align: center;
@@ -2239,7 +2242,7 @@ hr {
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  width: 100vw;
+  width: 100%;
   height: 100vh; /* Ensures it covers the full height of the viewport */
 }
 .admin-sidebar-card-container {
@@ -2383,13 +2386,14 @@ hr {
 /** ADMIN CARS CSS*/
 .admincarswrapper {
   background-color: rgb(255, 255, 255);
-  margin-top: 100px;
+  margin-top: 120px;
   max-height: 80%;
   border-radius: 5px;
   margin-left: 20px;
   width: 80%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-right: 10px;
+  height: 80vh;
 }
 .admincarstopvar {
   display: flex;
@@ -2409,9 +2413,12 @@ hr {
 }
 .admincarscardlist {
   padding: 15px 20px;
+  overflow-y: auto;
+  height: 70vh;
 }
 .admincarscard {
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -2536,3 +2543,120 @@ background-color: #FF5E57;
   border: 1px solid rgb(121, 121, 121);
   cursor: pointer;
 }
+
+/*responsive to mobile*/
+@media screen and (max-width: 768px) {
+  .nav-links {
+      display: none;
+    }
+    .homepageTitle h1 {
+      font-size: 6vw;
+  }
+.footer-bottom {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.footer-socials {
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+p {
+    display: block;
+    text-align: center;
+    unicode-bidi: isolate;
+}
+.contact-container-unique {
+		flex-direction: column;
+		align-items: center;
+	}
+.slider {
+		grid-auto-columns: 100%;
+	}
+.homepage a {
+    font-size: 3vw;
+}
+.featured-header {
+  font-size: 6vw;
+}
+
+.what-we-offer h2 {
+
+    font-size: 8vw;
+}
+.about-page .section h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+  .about-page .section p {
+  text-align: center;
+}
+.car-selection-grid {
+  grid-template-columns: repeat(1, 1fr);
+}
+.car-selection-filter-btn {
+  font-size: 2vw;
+}
+.car-rental-tabs p {
+  font-size: 2vw;
+}
+.car-rental-header h1 {
+  font-size: 6vw;
+}
+.car-rental-card {
+  max-width: 70vw;
+}
+.car-rental-selection-container {
+  height: calc(80vh - 0px);
+  }
+  .carpagebg {
+    height: 120vh;
+  }
+  .car-rental-approval-container {
+    height: calc(80vh - 20px);
+  }
+  .BookedCarspage {
+    height: 120vh;
+}
+.booking-car-selection-container {
+  width: 100%;
+  max-width: 90vw;
+  height: calc(80vh - 20px);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(115, 115, 115, 0.7), rgba(115, 115, 115, 0.7));
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  box-sizing: border-box;
+}
+.booking-car-column {
+  font-size: 3vw;
+}
+.booking-car-row {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  justify-content: center;
+  grid-template-columns: auto 1fr;
+  column-gap: 15px;
+}
+.booking-car-image img {
+  width: 30vw;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.booking-car-right {
+  flex: 1;
+  font-family: "Inter_18pt-Regular";
+  text-align: center;
+  font-size: 6vw;
+}
+}
+
+
