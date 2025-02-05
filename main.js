@@ -376,6 +376,13 @@ const validateLoginForm = async () => {
                 value: username,
               })
               .appendTo(form);
+            $("<input>")
+              .attr({
+                type: "hidden",
+                name: "user_id",
+                value: user.id,
+              })
+              .appendTo(form);
               
             $("body").append(form);
             form.submit();
@@ -410,6 +417,7 @@ const validateLoginForm = async () => {
 };
 const reqAppointmentForm = async () => {
   event.preventDefault();
+  const appointorId = document.getElementById("appointorId").value;
   const formData = $("#reqAppointmentForm").serializeArray();
   const fromDate = formData[0].value;
   const toDate = formData[1].value;
@@ -419,6 +427,8 @@ const reqAppointmentForm = async () => {
   const cvv_cvc = formData[5].value;
   const billAddress = formData[6].value;
   const gov_ID = document.getElementById("gov_ID").files[0];
+
+  // console.log(formData);
 
   const sendData = async () => {
     const myHeaders = new Headers();
@@ -430,6 +440,7 @@ const reqAppointmentForm = async () => {
         headers: myHeaders,
         method: "POST",
         body: JSON.stringify({
+          appointorId : appointorId,
           fromDate: fromDate,
           toDate: toDate,
           gov_ID: gov_ID,
@@ -497,22 +508,22 @@ function validateDates() {
     if (to >= from) {
       errorMessage.style.display = "none";
       toChangeSpacer.style.display = "block";
-      submitButton.disabled = false;  
+      document.getElementById("submitCarInfo").disabled = false;  
     } else {
       errorMessage.style.display = "block";
       toChangeSpacer.style.display = "none";
       toChangeError.style.display = "none";
-      submitButton.disabled = true;
+      document.getElementById("submitCarInfo").disabled = true;
     }
   } else {
-    submitButton.disabled = true;
+    document.getElementById("submitCarInfo").disabled = true;
   };
 };
 
 fromDate.addEventListener("input", validateDates);
 toDate.addEventListener("input", validateDates);
 
-submitButton.addEventListener("click", function () {
+document.getElementById("submitCarInfo").addEventListener("click", function () {
   alert(`Rental period: From ${fromDate.value} to ${toDate.value}`);
 });
 
