@@ -211,8 +211,9 @@ button.scrolled:hover {
   color: black;
   padding: 8px 15px;
   margin: 5px 0;
-  border: 1px solid #022b3a;
+  border: 1px solid black;
   border-radius: 15px;
+  font-family: 'Fustat-Light';
 }
 #sign-up-alt {
   text-decoration: underline;
@@ -1486,6 +1487,42 @@ tabIndicator.active {
   font-weight: 100;
   color: #fff;
 }
+.file-upload {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 8px 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.file-upload span {
+  font-size: 16px;
+  color: black;
+  font-family: 'Fustat-Light';
+}
+.file-upload input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+.file-upload:hover {
+  background-color: #e0e0e0;
+}
+.file-upload.has-file {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+.file-upload.has-file span {
+  color: #155724;
+}
 .car-rental-card p {
   margin: 15px 0px;
   font-family: Fustat-Light;
@@ -1501,6 +1538,14 @@ tabIndicator.active {
 }
 .car-rental-checkout-content {
   margin: 10px 0px 0px 0px;
+}
+.car-rental-checkout-content label {
+  display: block;
+  margin: 5px 0px;
+  font-size: 20px;
+  color: white;
+  font-weight: 100;
+  font-family: Inter_18pt-Regular;
 }
 .car-rental-header {
   display: flex;
