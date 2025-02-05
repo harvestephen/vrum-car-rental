@@ -11,8 +11,7 @@
 
 	<div class="footer-bottom">
 		<div class="footer-text">
-			<p>©2024 Vrum | All rights reserve</p>
-			<p>Car Rental Website By Group 6</p>
+			<p>©2024 Vrum | All rights reserve<br>Car Rental Website By Group 4</p>
 		</div>
 		<div class="footer-socials">
 			<a href="https://www.facebook.com/hanzzcedric" class="hover-svg">
