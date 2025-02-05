@@ -38,6 +38,15 @@
 			<!-- Car Selection Tab -->
 			<form onsubmit="reqAppointmentForm()" method="post" id="reqAppointmentForm">
 			<div class="car-rental-selection-container" id="carSelection">
+			<?php
+			if (isset($_SESSION["user_id"])) {
+				echo "<input type='hidden' id='appointorId' value='" . htmlspecialchars($_SESSION["user_id"], ENT_QUOTES, 'UTF-8') . "'>";
+				// echo "<script>console.log('User ID: " . $_SESSION["user_id"] . "');</script>";
+			} else {
+				echo "<input type='hidden' id='appointorId' value=''>";
+				// echo "<script>console.log('User ID not set');</script>";
+			}
+			?>
 				<div class="car-selection-filter-Container">
 					<div class="car-selection-filter-buttons">
 						<button class="car-selection-filter-btn active" onclick="filterCars('all')">All</button>
@@ -223,7 +232,8 @@
 						<input name="expiryDate" id="expiryDate" class="formInput" type="text" placeholder="Expiration Date" noautocomplete>
 						<input name="cvv_cvc" id="cvv_cvc" class="formInput" type="text" placeholder="CVV/CVC Code" noautocomplete>
 						<input name="billAddress" id="billAddress" class="formInput" type="text" placeholder="Billing Address" noautocomplete>
-						<p>Please fill out the form!</p>
+						<p id="car-rental-info-fillOutSpacer" style="opacity: 0;">SPACE</p>
+						<p id="car-rental-info-fillOut" style="display: none;">Please fill out the form!</p>
 					</div>
 					<div class="car-rental-footer">
 						<a id="returnCarInfo">Return</a>

@@ -21,7 +21,7 @@ if(isset($_POST)){
     $appointment_title = "test";
     $appointment_fromDate = $data["fromDate"];
     $appointment_toDate = $data["toDate"];
-    $appointor_id = 1;
+    $appointor_id = $data["appointorId"];
     $car_rented_id = 1;
     $payment_info = json_encode($payment_info_array);
     $gov_id = ["gov_ID"];
