@@ -4,6 +4,34 @@ if (!isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
     echo '<script>window.location.href="' . $rootDirectory . '/";</script>';
     exit();
 }
+
+$currentWeek = (int) date("W") - 1;
+$currentMonth = date("m");
+
+$sqlAnnual = "SELECT YEAR(sales_date_made) AS year, SUM(sales) AS total_sales FROM sales GROUP BY year;";
+$sqlMonthly = "SELECT YEAR(sales_date_made) AS year, MONTH(sales_date_made) AS month, SUM(sales) AS total_sales FROM sales WHERE MONTH(sales_date_made) = " . $currentMonth . " GROUP BY year, month;";
+$sqlWeekly = "SELECT YEAR(sales_date_made) AS year, WEEK(sales_date_made) AS week, SUM(sales) AS total_sales FROM sales WHERE WEEK(sales_date_made) = " . 05 . " GROUP BY year, week;";
+$sqlTotal = "SELECT SUM(sales) AS total_sales FROM sales;";
+
+$resultAnnual = $conn -> query($sqlAnnual);
+$resultMonthly = $conn -> query($sqlMonthly);
+$resultWeekly = $conn -> query($sqlWeekly);
+$resultTotal = $conn -> query($sqlTotal);
+
+$sqlTotalCars = "SELECT Qnty FROM cars;";
+$sqlAvailableCars = "SELECT available FROM cars;";
+$sqlUnavailableCars = "SELECT Qnty, available FROM cars;";
+
+$resultTotalCars = $conn -> query($sqlTotalCars);
+$resultAvailableCars = $conn -> query($sqlAvailableCars);
+$resultUnavailableCars = $conn -> query($sqlUnavailableCars);
+
+$sqlTotalUsers = "SELECT * FROM users WHERE role = 'user';";
+$sqlSuspendedUsers = "SELECT * FROM users WHERE status = 'bad'";
+
+$resultTotalUsers= $conn -> query($sqlTotalUsers);
+$resultSuspendedUsers= $conn -> query($sqlSuspendedUsers);
+
 ?>
 <div class="AdminPage">
     <!-- Admin Sidebar Menu -->
@@ -28,20 +56,61 @@ if (!isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
             <div class="admin-cars-dashboard">
                 <h1>Cars Count</h1>
                 <h3>Total Cars:</h3>
-                <p>100</p>
+                <p>
+                    <?php
+                        $totalCars = 0;
+                        while ($row = $resultTotalCars -> fetch_assoc()) {
+                            $currentQnty =  (int) $row["Qnty"];
+                            $totalCars += $currentQnty;
+                        }
+                        echo $totalCars;
+                    ?>
+                </p>
                 <h3>Cars Available:</h3>
-                <p>75</p>
-                <h3>Cars Deployed:</h3>
-                <p>25</p>
-                <h3>Under Maintenance:</h3>
-                <p class="badstat">2</p>
+                <p>
+                    <?php
+                        $totalAvailableCars = 0;
+                        while ($row = $resultAvailableCars -> fetch_assoc()) {
+                            $currentQnty =  (int) $row["available"];
+                            $totalAvailableCars += $currentQnty;
+                        }
+                        echo $totalAvailableCars;
+                    ?>
+                </p>
+                <h3>Cars Unavailable:</h3>
+                <p class="badstat">
+                    <?php
+                        $totalUnavailableCars = 0;
+                        while ($row = $resultUnavailableCars -> fetch_assoc()) {
+                            $unavailableRow = (int) $row['Qnty'] - (int) $row['available'];
+                            $totalUnavailableCars += $unavailableRow;
+                        }
+                        echo $totalUnavailableCars;
+                    ?>
+                </p>
             </div>
             <div class="admin-user-dashboard">
                 <h1>User Count</h1>
                 <h3>Registered User:</h3>
-                <p>1023</p>
+                <p>
+                    <?php
+                        $totalUsers = 0;
+                        while ($row = $resultTotalUsers -> fetch_assoc()) {
+                            $totalUsers += 1;
+                        }
+                        echo $totalUsers;
+                    ?>
+                </p>
                 <h3>Suspended:</h3>
-                <p class="badstat">0</p>
+                <p class="badstat">
+                <?php
+                        $totalSuspendedUsers = 0;
+                        while ($row = $resultSuspendedUsers -> fetch_assoc()) {
+                            $totalSuspendedUsers += 1;
+                        }
+                        echo $totalSuspendedUsers;
+                    ?>
+                </p>
             </div>
         </div>
         <div class="admin-finance-dashboard-wrapper">
@@ -51,17 +120,41 @@ if (!isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
                 </div>
                 <div class="finance-contents">
                     <div class="finance1">
-                        <h2>Total Sales Revenue (₱):</h2>
-                        <p>P164,254.23</p>
+                        <h2>Total Sales (₱):</h2>
+                        <p>₱
+                        <?php
+                            while ($row = $resultTotal->fetch_assoc()) {
+                                echo number_format($row["total_sales"], 2);
+                            }
+                        ?>
+                        </p>
                         <br>
-                        <h2>Daily Sales (₱):</h2>
-                        <p>P164,254.23</p>
+                        <h2>Weekly Sales (₱):</h2>
+                        <p>₱
+                        <?php
+                            while ($row = $resultWeekly->fetch_assoc()) {
+                                echo number_format($row["total_sales"], 2);
+                            }
+                        ?>
+                        </p>
                         <br>
                         <h2>Monthly Sales (₱):</h2>
-                        <p>P164,254.23</p>
+                        <p>₱
+                        <?php
+                            while ($row = $resultMonthly->fetch_assoc()) {
+                                echo number_format($row["total_sales"], 2);
+                            }
+                        ?>
+                        </p>
                         <br>
-                        <h2>Annual Sales (₱):</h2>
-                        <p>P164,254.23</p>
+                        <h2>Annual Sales (₱):</h2> 
+                        <p>₱
+                        <?php
+                            while ($row = $resultAnnual->fetch_assoc()) {
+                                echo number_format($row["total_sales"], 2);
+                            }
+                        ?>
+                        </p>
                     </div>
                     <div class="finance2">
                         <div>        
