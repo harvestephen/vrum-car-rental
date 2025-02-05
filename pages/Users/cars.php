@@ -206,8 +206,9 @@
 							<input name="toDate" class="formInput" id="toDate" type="date" placeholder="To: mm/dd/yyyy" noautocomplete>
 						</div>
 						<h2>Government Issued ID</h2>
-						<div>
-							<input name="gov_ID" type="file" id="gov_ID" placeholder="Choose a File">
+						<div class="file-upload">
+    						<span>Choose a File</span>
+							<input name="gov_ID" type="file" id="gov_ID">
 						</div>
 						<p id="car-rental-info-fillOutSpacer" style="opacity: 0;">SPACE</p>
 						<p class="error" id="error-message" style="display: none;">The "To" date must be later than or equal to the "From" date.</p>
@@ -227,10 +228,15 @@
 				</div>	
 				<div class="car-rental-card">
 					<div class="car-rental-checkout-content">
+						<label for="cardHolderName">Cardholder Name</label>
 						<input name="cardHolderName" id="cardHolderName" class="formInput" type="text" placeholder="Cardholder Name" noautocomplete>
+						<label for="cardNumber">Card Number</label>
 						<input name="cardNumber" id="cardNumber" class="formInput" type="text" placeholder="Card Number" noautocomplete>
-						<input name="expiryDate" id="expiryDate" class="formInput" type="text" placeholder="Expiration Date" noautocomplete>
+						<label for="expiryDate">Expiration Date</label>
+						<input name="expiryDate" id="expiryDate" class="formInput" type="date" placeholder="Expiration Date" noautocomplete>
+						<label for="cvv_cvc">CVV/CVC Code</label>
 						<input name="cvv_cvc" id="cvv_cvc" class="formInput" type="text" placeholder="CVV/CVC Code" noautocomplete>
+						<label for="billAddress">Billing Address</label>
 						<input name="billAddress" id="billAddress" class="formInput" type="text" placeholder="Billing Address" noautocomplete>
 						<p id="car-rental-info-fillOutSpacer" style="opacity: 0;">SPACE</p>
 						<p id="car-rental-info-fillOut" style="display: none;">Please fill out the form!</p>
