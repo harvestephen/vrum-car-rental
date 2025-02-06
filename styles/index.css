@@ -1767,7 +1767,6 @@ tabIndicator.active {
   font-family: Arial, sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 /* Car Name */
 .carName {
   appearance: none;
@@ -2473,6 +2472,25 @@ hr {
   background-color: #c9b591;
   cursor: pointer;
 }
+.adminuserstopvar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.admincarsnavoptions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.adminuserstopvar button {
+  padding: 4px 6px;
+  border-radius: 2px;
+  border: 1px solid #c49a56;
+}
+.adminuserstopvar button:hover {
+  background-color: #c9b591;
+  cursor: pointer;
+}
 .admincarscardlist {
   padding: 15px 20px;
   overflow-y: auto;
@@ -2496,7 +2514,7 @@ hr {
 .admincarsoptions {
   display: flex;
   flex-direction: row;
-  width: 150px;
+  width: 250px;
   justify-content: space-between;
   align-items: center;
 }
