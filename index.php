@@ -87,6 +87,9 @@ $rootURL = dirname('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']);
     case "{$rootDirectory}/adminAppointments":
       include './pages/Admin/Appointments.php';
       break;
+    case "{$rootDirectory}/addcar":
+      include './backend/database/queries/carCatalog/addCar.php';
+      break;
     default:
       echo "error 404";
   }

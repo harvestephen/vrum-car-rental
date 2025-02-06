@@ -4,14 +4,8 @@ if (!isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
     echo '<script>window.location.href="' . $rootDirectory . '/";</script>';
     exit();
 }
-
-
 $sql = "SELECT * FROM users WHERE role = 'user'";
 $result = $conn -> query($sql);
-
-
-
-
 ?>
 <div class="AdminPage">
     <!-- Admin Sidebar Menu -->

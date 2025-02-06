@@ -7,7 +7,7 @@ if (!isset($_SESSION['role']) && $_SESSION['role'] !== 'admin') {
 
 $sql = "SELECT * from cars";
 $result = $conn -> query($sql);
-
+include "./pages/Modal/addcar_modal.php";
 ?>
 <div class="AdminPage">
     <!-- Admin Sidebar Menu -->
@@ -32,7 +32,7 @@ $result = $conn -> query($sql);
         </div>
         <div class="admincarswrapper">
             <div class="admincarstopvar">
-                <button>New Car</button>
+                <button id="newcarbtn">New Car</button>
                 <div class="admincarsnavoptions">
                     <form method="post">
                         <button type="submit" name="submitAllCars">All</button>

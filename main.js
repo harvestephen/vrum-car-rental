@@ -40,6 +40,14 @@ $(document).ready(function () {
     panel.slideToggle(100);
   });
 
+  $('#addcarcancel').click((event) => {
+    event.preventDefault();
+    $('#addCarModal').fadeOut(100);
+  });
+  $("#newcarbtn").click(() => {
+    $('#addCarModal').fadeIn(100);
+  });
+
   $(".sign-up-alt").on("click", function () {
     if ($("#loginModal").css("display") == "none") {
       $("#loginModal").fadeIn(100);
