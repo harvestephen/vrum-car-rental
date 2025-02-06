@@ -208,12 +208,13 @@ button.scrolled:hover {
 .formInput {
   width: 100%;
   display: inline-block;
+  background-color: white;
   color: black;
   padding: 8px 15px;
   margin: 5px 0;
   border: 1px solid black;
   border-radius: 15px;
-  font-family: 'Fustat-Light';
+  font-family: Fustat-Light;
 }
 #sign-up-alt {
   text-decoration: underline;
@@ -221,8 +222,9 @@ button.scrolled:hover {
   cursor: pointer;
 }
 .formInput:focus {
-  outline: 2px solid #3399ff;
-  border-color: #3399ff;
+  background-color: #fafafa;
+  outline: 2px solid #cfb284;
+  border-color: #cfb284;
   border-style: solid;
 }
 div.formSubmit {
@@ -1502,7 +1504,7 @@ tabIndicator.active {
 .file-upload span {
   font-size: 16px;
   color: black;
-  font-family: 'Fustat-Light';
+  font-family: Fustat-Light;
 }
 .file-upload input[type="file"] {
   position: absolute;
@@ -1514,14 +1516,23 @@ tabIndicator.active {
   width: 100%;
 }
 .file-upload:hover {
-  background-color: #e0e0e0;
+  background-color: #fafafa;
+  outline: 2px solid #cfb284;
+  border-color: #cfb284;
+  border-style: solid;
 }
 .file-upload.has-file {
-  background-color: #d4edda;
-  border-color: #c3e6cb;
+  background-color: #e0e0e0;
+  border-color: #cfb284;
 }
 .file-upload.has-file span {
-  color: #155724;
+  color: black;
+}
+#govID-file-name {
+  margin-left: 10px;
+  font-size: 14px;
+  font-family: 'Fustat-Light';
+  color: black;
 }
 .car-rental-card p {
   margin: 15px 0px;
@@ -1575,6 +1586,9 @@ tabIndicator.active {
   transition: background-color 0.3s, color 0.3s;
   margin: 0px 8px;
 }
+.car-rental-footer a:hover {
+  background-color: #cfb284;
+}
 .car-rental-footer button {
   background-color: #ffffff;
   border: 2px solid #cfb284;
@@ -1585,6 +1599,9 @@ tabIndicator.active {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   margin: 0px 8px;
+}
+.car-rental-footer button:hover {
+  background-color: #cfb284;
 }
 
 .car-rental-card {

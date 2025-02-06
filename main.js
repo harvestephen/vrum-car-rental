@@ -185,6 +185,11 @@ $(document).ready(function () {
     }
   });
 
+  document.getElementById("gov_ID").addEventListener("change", function() {
+    var fileName = document.getElementById("gov_ID").files[0].name;
+    document.getElementById("govID-file-name").textContent = fileName;
+  });
+
   $("#returnCarSelection").on("click", function () {
     $("#carInfoTab").removeClass("active");
     $("#carInfo").css("display", "none");
@@ -487,6 +492,7 @@ const reqAppointmentForm = async () => {
   };
   sendData();
 };
+
 
 function filterCars(carType) {
   const buttons = document.querySelectorAll(".car-selection-filter-btn");
