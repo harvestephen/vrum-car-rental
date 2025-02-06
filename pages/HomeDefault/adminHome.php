@@ -37,7 +37,7 @@ $resultSuspendedUsers= $conn -> query($sqlSuspendedUsers);
     <!-- Admin Sidebar Menu -->
     <div class="AdminWrapper">
         <div class="admin-sidebar-card-container">
-            <div>
+            <div class="admin-sidebar-card-container-2">
                 <ul>
                     <li class="navSelectionadmincurrent"><a
                             href="<?php echo $rootDirectory . '/adminHome'; ?>">Dashboard</a></li>

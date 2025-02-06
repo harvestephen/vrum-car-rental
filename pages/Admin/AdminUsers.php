@@ -11,12 +11,8 @@ $result = $conn -> query($sql);
     <!-- Admin Sidebar Menu -->
     <div class="AdminWrapper">
         <div class="admin-sidebar-card-container">
-            <!-- Admin Menu Header -->
-            <div>
-
-            </div>
             <!-- Admin Menu List -->
-            <div>
+            <div class="admin-sidebar-card-container-2">
                 <ul>
                     <li class="navSelectionadmin"><a href="<?php echo $rootDirectory . '/adminHome'; ?>">Dashboard</a>
                     </li>
