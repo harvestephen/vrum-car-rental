@@ -132,8 +132,12 @@ $resultSuspendedUsers= $conn -> query($sqlSuspendedUsers);
                         <h2>Weekly Sales (₱):</h2>
                         <p>₱
                         <?php
-                            while ($row = $resultWeekly->fetch_assoc()) {
-                                echo number_format($row["total_sales"], 2);
+                            if ($resultWeekly -> num_rows !== 0) {
+                                while ($row = $resultWeekly->fetch_assoc()) {
+                                    echo number_format($row["total_sales"], 2);
+                                }
+                            } else {
+                                echo number_format(0, 2);
                             }
                         ?>
                         </p>
@@ -141,8 +145,12 @@ $resultSuspendedUsers= $conn -> query($sqlSuspendedUsers);
                         <h2>Monthly Sales (₱):</h2>
                         <p>₱
                         <?php
-                            while ($row = $resultMonthly->fetch_assoc()) {
-                                echo number_format($row["total_sales"], 2);
+                            if ($resultMonthly -> num_rows !== 0) {
+                                while ($row = $resultMonthly->fetch_assoc()) {
+                                    echo number_format($row["total_sales"], 2);
+                                }
+                            } else {
+                                echo number_format(0, 2);
                             }
                         ?>
                         </p>
@@ -150,8 +158,12 @@ $resultSuspendedUsers= $conn -> query($sqlSuspendedUsers);
                         <h2>Annual Sales (₱):</h2> 
                         <p>₱
                         <?php
-                            while ($row = $resultAnnual->fetch_assoc()) {
-                                echo number_format($row["total_sales"], 2);
+                            if ($resultAnnual -> num_rows !== 0) {
+                                while ($row = $resultAnnual->fetch_assoc()) {
+                                    echo number_format($row["total_sales"], 2);
+                                }
+                            } else {
+                                echo number_format(0, 2);
                             }
                         ?>
                         </p>

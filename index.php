@@ -90,7 +90,15 @@ $rootURL = dirname('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']);
     default:
       echo "error 404";
   }
-  include './pages/Template/footer.php';
+
+  if ( isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
+    include './pages/Template/footer.php';
+  } else if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+    //
+  } else {
+    include './pages/Template/footer.php';
+  }
+  
   ?>
   <script src="<?php echo $rootDirectory . "/main.js" ?>"></script>
 </body>

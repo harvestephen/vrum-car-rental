@@ -10,6 +10,8 @@ $sql = "SELECT * FROM users WHERE role = 'user'";
 $result = $conn -> query($sql);
 
 
+
+
 ?>
 <div class="AdminPage">
     <!-- Admin Sidebar Menu -->
@@ -38,26 +40,54 @@ $result = $conn -> query($sql);
         <div class="adminUsersWrapper">
             <h1>User List</h1>
             <div class="adminusercontents">
-                <form>
-                    <input class="usersearch" type="text" placeholder="Search">
+                <form class="usersearchform" method="post">
+                    <input class="usersearch" type="text" placeholder="Username" name="name">
+                    <input type="submit" name="submit" class="searchsubmit" value="Search">
                 </form>
                 <div class="adminusercardlist">
+                    
                     <?php 
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo <<<HTML
-                                <div class="userlistcard">
-                                    <p>{$row['username']}</p>
-                                    <div class="useradminlist-options">
-                                        <button class="useradminlist-optionsdetails">Details</button>
-                                        <button class="useradminlist-optionsedit">Edit</button>
+                    if (isset($_POST["submit"])) {
+                        $name = "%" . $_POST["name"] . "%";
+                        $stmt = $conn->prepare("SELECT * FROM users WHERE username LIKE ?;");
+                        $stmt->bind_param("s", $name);
+                        $stmt->execute();
+                        $resultGetName = $stmt -> get_result();
+                    
+                        if ($resultGetName -> num_rows !== 0) {
+                            while ($row = $resultGetName -> fetch_assoc()) {
+                                echo <<<HTML
+                                    <div class="userlistcard">
+                                        <p>{$row['username']}</p>
+                                        <div class="useradminlist-options">
+                                            <button class="useradminlist-optionsdetails">Details</button>
+                                            <button class="useradminlist-optionsedit">Edit</button>
+                                        </div>
                                     </div>
-                                </div>
-                                HTML;
+                                    HTML;
+                            }
+                        } else {
+                            echo "no record";
                         }
                     } else {
-                        echo "No records found";
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo <<<HTML
+                                    <div class="userlistcard">
+                                        <p>{$row['username']}</p>
+                                        <div class="useradminlist-options">
+                                            <button class="useradminlist-optionsdetails">Details</button>
+                                            <button class="useradminlist-optionsedit">Edit</button>
+                                        </div>
+                                    </div>
+                                    HTML;
+                            }
+                        } else {
+                            echo "No records found";
+                        }
                     }
+                    
+                   
                     ?>
                     
                 </div>
