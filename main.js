@@ -455,42 +455,32 @@ const reqAppointmentForm = async () => {
   const billAddress = formData[6].value;
   const gov_ID = document.getElementById("gov_ID").files[0];
 
-  // console.log(formData);
+  const formDataToSend = new FormData();
+  formDataToSend.append("appointorId", appointorId);
+  formDataToSend.append("fromDate", fromDate);
+  formDataToSend.append("toDate", toDate);
+  formDataToSend.append("cardHolderName", cardHolderName);
+  formDataToSend.append("cardNumber", cardNumber);
+  formDataToSend.append("expiryDate", expiryDate);
+  formDataToSend.append("cvv_cvc", cvv_cvc);
+  formDataToSend.append("billAddress", billAddress);
+  formDataToSend.append("gov_ID", gov_ID);
 
-  const sendData = async () => {
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json; charset=UTF-8");
+  // for (let pair of formDataToSend.entries()) {
+  //   console.log(pair[0] + ": " + pair[1]);
+  // }
 
-    const request = new Request(
-      "./backend/database/queries/transactions/appointments/requestAppointment.php",
-      {
-        headers: myHeaders,
-        method: "POST",
-        body: JSON.stringify({
-          appointorId : appointorId,
-          fromDate: fromDate,
-          toDate: toDate,
-          gov_ID: gov_ID,
-          cardHolderName: cardHolderName,
-          cardNumber: cardNumber,
-          expiryDate: expiryDate,
-          cvv_cvc: cvv_cvc,
-          billAddress: billAddress,
-        }),
-      }
-    );
-    fetch(request)
-      .then((res) => {
-        return res.text(); //buy time
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
-  sendData();
+  try {
+    const response = await fetch("./backend/database/queries/transactions/appointments/requestAppointment.php", {
+      method: "POST",
+      body: formDataToSend, // Use FormData instead of JSON
+    });
+
+    const data = await response.text();
+    console.log(data);
+  } catch (error) {
+    console.error("Error:", error);
+  }
 };
 
 

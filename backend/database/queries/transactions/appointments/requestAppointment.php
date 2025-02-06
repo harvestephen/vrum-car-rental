@@ -1,42 +1,43 @@
 <?php
-
-//access all variables and functions in connection.php as if the connection.php is written here
 include "../../../connection/connection.php";
 
-if(isset($_POST)){
-  // create variables from $_POST['name attribute']
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  // Read form data
+  $appointment_title = "test";
+  $appointment_fromDate = $_POST["fromDate"];
+  $appointment_toDate = $_POST["toDate"];
+  $appointor_id = $_POST["appointorId"];
+  $car_rented_id = 1;
 
-  if(isset($_POST)){
-    $rawData = file_get_contents("php://input");
-    $data = json_decode($rawData, true);
+  // Payment Info Array
+  $payment_info_array = array(
+      "cardHolderName" => $_POST["cardHolderName"],
+      "cardNumber" => $_POST["cardNumber"],
+      "expiryDate" => $_POST["expiryDate"],
+      "cvv_cvc" => $_POST["cvv_cvc"],
+      "billAddress" => $_POST["billAddress"]
+  );
 
-    $payment_info_array = array(
-      "cardHolderName" => $data["cardHolderName"],
-      "cardNumber" => $data["cardNumber"],
-      "expiryDate" => $data["expiryDate"],
-      "cvv_cvc" => $data["cvv_cvc"],
-      "billAddress" => $data["billAddress"],
-    );
-  
-    $appointment_title = "test";
-    $appointment_fromDate = $data["fromDate"];
-    $appointment_toDate = $data["toDate"];
-    $appointor_id = $data["appointorId"];
-    $car_rented_id = 1;
-    $payment_info = json_encode($payment_info_array);
-    $gov_id = ["gov_ID"];
+  $payment_info = json_encode($payment_info_array);
 
-    
-    $query = "INSERT INTO appointments (appointment_title, appointment_fromDate, appointment_toDate, appointor_id, car_rented_id, payment_info, gov_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    $stmt = $conn -> prepare($query);
-    $stmt -> bind_param("sssiisb", $appointment_title, $appointment_fromDate, $appointment_toDate, $appointor_id, $car_rented_id, $payment_info, $gov_id);
-    
-    if($stmt -> execute()){
-      echo "Data inserted successfully";
-    } else {
-      echo "Error: " . $stmt -> error;
-    }
+  // Handling file upload (BLOB storage)
+  if (isset($_FILES["gov_ID"]) && $_FILES["gov_ID"]["error"] === 0) {
+      $gov_ID = file_get_contents($_FILES["gov_ID"]["tmp_name"]); // Read file as binary
+  } else {
+      die("Error: gov_ID file is missing or invalid.");
   }
 
-  //database logic to add items
+  // Database connection (assuming $conn is already defined)
+  $query = "INSERT INTO appointments (appointment_title, appointment_fromDate, appointment_toDate, appointor_id, car_rented_id, payment_info, gov_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+  $stmt = $conn->prepare($query);
+  $stmt->bind_param("sssiiss", $appointment_title, $appointment_fromDate, $appointment_toDate, $appointor_id, $car_rented_id, $payment_info, $gov_ID);
+
+  if ($stmt->execute()) {
+      echo "Data inserted successfully";
+  } else {
+      echo "Error: " . $stmt->error;
+  }
+
+  $stmt->close();
+  $conn->close();
 }
