@@ -30,13 +30,13 @@
         <p>2.3. The deposit will be refunded within 7–14 business days after the vehicle is returned, subject to inspection and verification of compliance with these terms.</p>
 
         <h2>3. Vehicle Use</h2>
-        <ul>
-            <li>3.1. The rented vehicle is to be used strictly for personal, non-commercial purposes.</li>
-            <li>3.2. Renters must not use the vehicle for off-road driving, racing, towing, transporting hazardous materials, or any illegal activities.</li>
-            <li>3.3. The vehicle must not be driven by anyone under the influence of drugs or alcohol.</li>
-            <li>3.4. Renters are prohibited from sub-renting or leasing the vehicle to third parties.</li>
-            <li>3.5. Smoking is strictly prohibited in all rental vehicles. A cleaning fee will be charged if smoking occurs.</li>
-        </ul>
+        
+            <p>3.1. The rented vehicle is to be used strictly for personal, non-commercial purposes.</p>
+            <p>3.2. Renters must not use the vehicle for off-road driving, racing, towing, transporting hazardous materials, or any illegal activities.</p>
+            <p>3.3. The vehicle must not be driven by anyone under the influence of drugs or alcohol.</p>
+            <p>3.4. Renters are prohibited from sub-renting or leasing the vehicle to third parties.</p>
+            <p>3.5. Smoking is strictly prohibited in all rental vehicles. A cleaning fee will be charged if smoking occurs.</p>
+        
 
         <h2>4. Insurance Coverage</h2>
         <p>4.1. Basic insurance is included with all rentals and provides limited coverage for damages and liabilities.</p>

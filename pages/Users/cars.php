@@ -206,10 +206,14 @@
 							<input name="toDate" class="formInput" id="toDate" type="date" placeholder="To: mm/dd/yyyy" noautocomplete>
 						</div>
 						<h2>Government Issued ID</h2>
-						<div class="file-upload">
-    						<span>Choose a File</span>
-							<input name="gov_ID" type="file" id="gov_ID">
+						<div style="display: flex; align-items: center;">
+							<div class="file-upload">
+								<span>Choose a File</span>
+								<input name="gov_ID" type="file" id="gov_ID">
+							</div>
+							<span id="govID-file-name">File Name</span>
 						</div>
+						
 						<p id="car-rental-info-fillOutSpacer" style="opacity: 0;">SPACE</p>
 						<p class="error" id="error-message" style="display: none;">The "To" date must be later than or equal to the "From" date.</p>
 						<p id="car-rental-info-fillOut" style="display: none;">Please fill out the form!</p>
