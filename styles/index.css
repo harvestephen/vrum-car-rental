@@ -1351,7 +1351,7 @@ tabIndicator.active {
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: cover;
-  height: 110vh;
+  height: 130vh;
   display: flex;
   z-index: 10; /* Keeps content on top */
   justify-content: center;
@@ -1590,7 +1590,7 @@ tabIndicator.active {
 .car-rental-card {
   width: 100%;
   margin: 0px auto;
-  max-width: 35vw;
+  max-width: 40vw;
   background: linear-gradient(
     rgba(115, 115, 115, 0.7),
     rgba(115, 115, 115, 0.7)
@@ -1605,7 +1605,7 @@ tabIndicator.active {
   width: 100%;
   max-width: 85vw;
   margin: 50px auto;
-  height: calc(75vh - 60px);
+  height: calc(90vh - 20px);
   display: none;
   flex-direction: column;
   background: linear-gradient(
@@ -2656,10 +2656,10 @@ p {
   height: calc(80vh - 0px);
   }
   .carpagebg {
-    height: 120vh;
+    height: 170vh;
   }
   .car-rental-approval-container {
-    height: calc(80vh - 20px);
+    height: calc(80vh - 10px);
   }
   .BookedCarspage {
     height: 120vh;
