@@ -2943,6 +2943,7 @@ display: none;
 .dashwrapper{
   display: flex;
   flex-direction: column;
+
 }
 .admin-finance-dashboard-wrapper {
   display: flex;
@@ -2991,5 +2992,20 @@ display: none;
 .admincarscard p {
   text-align: start;
 }
+.admincarsoptions {
+    width: 150px;
+
+}
+.admincarstopvar {
+  overflow-x: hidden;
+  flex-wrap: wrap;
+}
+.adminuserstopvar {
+  flex-wrap: wrap;
+}
+.userlistcard {
+  flex-wrap: wrap;
+}
+
 
 }
