@@ -2643,7 +2643,6 @@ background-color: #FF5E57;
 }
 .overlay {
   height: 100%;
-  
   max-width: 100vw;
   position: absolute;
   z-index: 1;
@@ -2652,7 +2651,7 @@ background-color: #FF5E57;
   background-color: rgba(0,0,0, 0.9);
   overflow-x: hidden;
   transition: 0.5s;
-  margin-top: 76px;
+  position: fixed;
 }
 
 .overlay-content {
@@ -2679,7 +2678,7 @@ background-color: #FF5E57;
 
 .overlay .closebtn {
   position: absolute;
-  top: 20px;
+  top: 76px;
   right: 45px;
   font-size: 60px;
 }
