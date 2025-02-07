@@ -2721,6 +2721,7 @@ background-color: #FF5E57;
   overflow-x: hidden;
   transition: 0.5s;
   position: fixed;
+  opacity: 0;
 }
 
 .overlay-content {
@@ -2805,6 +2806,7 @@ background-color: #FF5E57;
     border-radius: 10px;
     
 }
+
   .openspan:hover{
     background: #918e89;
     transform: scale(1.1);
@@ -2812,6 +2814,11 @@ background-color: #FF5E57;
   }
   .openspan.hidden{
     visibility: hidden;
+  }
+  .overlay{
+    opacity: 1;
+    overflow: hidden;
+    width: 0%;
   }
 }
 /*responsive to mobile*/
