@@ -2501,7 +2501,7 @@ hr {
 #myChart {
   width: 100%;
   height: 100%;
-  margin-left: 20px;
+
 }
 
 /** ADMIN CARS CSS*/
@@ -2753,8 +2753,8 @@ background-color: #FF5E57;
     border-radius: 5px;
     margin-left: 20px;
     width: 80%;
-
-    margin-right: 10px; 
+    margin-right: 10px;
+    
 }
 @media screen and (max-height: 450px) {
   .overlay a {font-size: 20px}
@@ -2908,8 +2908,10 @@ display: none;
   justify-content: center;
 }
 .dashwrapper{
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
 
 }
 .admin-finance-dashboard-wrapper {
@@ -2922,6 +2924,7 @@ display: none;
 }
 .admin-finance-dashboard {
  width: 55%; /* Takes more space */
+ margin-left: 0;
 }
 .finance1, .finance2 {
   flex: 1;
