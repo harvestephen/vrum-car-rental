@@ -3,7 +3,7 @@
 <div id="addCarModal" class="modal" style="display: none">
     <div class="addCarModalBox">
         <h2 class="termsModalHeader">Add Car</h2>
-        <form class="modalForm" id="addCarForm" action="<?php echo $rootDirectory ."/addcar"?>" method="post">
+        <form class="modalForm" id="addCarForm" action="<?php echo $rootDirectory ."/addcar"?>" method="post" enctype="multipart/form-data">
             <div>
                 <input class="carName" type="text" placeholder="Car Name" name="carName"/>
             </div>
@@ -33,6 +33,9 @@
             </div>
             <div>
                 <input class="carName" type="number" placeholder="Capacity" name="carCapacity"/>
+            </div>
+            <div>
+                <input type="file" name="carImage" />
             </div>
             <div class="modalFooter">
                 <button class="addBtn" type="submit" name="addcarsubmit">Add</button>
