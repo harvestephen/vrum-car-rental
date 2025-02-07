@@ -2614,8 +2614,9 @@ hr {
   display: flex;
   flex-direction: row;
   width: 250px;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  gap: 5px;
 }
 .admincarsoptions button {
   padding: 4px 6px;
@@ -2984,7 +2985,11 @@ display: none;
   padding: 20px;
   width:300px;
 }
-
+.admincarscard {
+  font-size: 3vw;
+}
+.admincarscard p {
+  text-align: start;
 }
 
-
+}
