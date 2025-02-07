@@ -2797,7 +2797,7 @@ background-color: #FF5E57;
   }
   .openspan{
     display: inline;
-    margin-top: 76px;
+    margin-top: 86px;
     pointer-events: auto;
     border: none;
     background-color: #959595;
@@ -2946,7 +2946,7 @@ display: none;
 }
 .dashwrapper{
   display: grid;
-  margin-top: 20px;
+  margin-top: 50px;
   align-items: center;
   justify-content: center;
 
@@ -3019,7 +3019,7 @@ display: none;
 .adminUsersWrapper,
 .admincarswrapper,
 .appointmentlistwrapper{
-  margin-top: 120px;
+  margin-top: 150px;
 }
 
 
