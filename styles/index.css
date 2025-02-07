@@ -2313,9 +2313,11 @@ hr {
   height: 100vh;
   background: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 75px;
   margin-bottom: 20px;
   padding: 20px;
+}
+.admin-sidebar-card-container-2 {
+  margin-top: 75px;
 }
 .AdminWrapper {
   display: flex;
@@ -2543,6 +2545,8 @@ hr {
 }
 .appointmentcardlist {
   padding: 15px 20px;
+  overflow-y: auto;
+  height: 70vh;
 }
 .appointmentcard {
   display: flex;
@@ -2557,6 +2561,12 @@ hr {
 .appointmentinfo p{
   color: #474747;
   margin-bottom: 10px;
+}
+.appointmentoptions {
+  display: flex;
+  justify-content: row;
+  width: 130px;
+  gap: 15px;
 }
 .appointmentoptions button {
   padding: 4px 6px;
@@ -2588,6 +2598,8 @@ background-color: #FF5E57;
 }
 .adminusercontents {
   padding: 15px 20px;
+  height: 70vh;
+  overflow-y: auto;
 }
 .usersearch {
   background-color: rgb(197, 197, 197);
