@@ -2949,6 +2949,7 @@ display: none;
   margin-top: 50px;
   align-items: center;
   justify-content: center;
+  margin-left: 0;
 
 }
 .admin-finance-dashboard-wrapper {
@@ -3020,6 +3021,7 @@ display: none;
 .admincarswrapper,
 .appointmentlistwrapper{
   margin-top: 150px;
+  margin-left: 0;
 }
 
 
