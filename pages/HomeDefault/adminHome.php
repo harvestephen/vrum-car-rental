@@ -42,8 +42,7 @@ $resultSuspendedUsers= $conn -> query($sqlSuspendedUsers);
                     <li class="navSelectionadmincurrent"><a
                             href="<?php echo $rootDirectory . '/adminHome'; ?>">Dashboard</a></li>
                     <hr id="admin-divider" />
-                    <li class="navSelectionadmin"><a href="<?php echo $rootDirectory . '/adminUsers'; ?>">User
-                            Accounts</a>
+                    <li class="navSelectionadmin"><a href="<?php echo $rootDirectory . '/adminUsers'; ?>">User Accounts</a>
                     </li>
                     <li class="navSelectionadmin"><a href="<?php echo $rootDirectory . '/adminCars'; ?>">Cars</a></li>
                     <li class="navSelectionadmin"><a
@@ -52,7 +51,35 @@ $resultSuspendedUsers= $conn -> query($sqlSuspendedUsers);
                 </ul>
             </div>
         </div>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="<?php echo $rootDirectory . '/adminHome'; ?>">Dashboard</a>
+    <hr id="admin-divider" />
+    <a href="<?php echo $rootDirectory . '/adminUsers'; ?>">User Accounts</a>
+    <a href="<?php echo $rootDirectory . '/adminCars'; ?>">Cars</a>
+    <a href="<?php echo $rootDirectory . '/adminAppointments'; ?>">Appointments</a>
+  </div>
+  
+</div>
+
+
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+window.addEventListener("load", function () {
+  document.getElementById("myNav").style.width = "0%";
+});
+
+</script>
+<span class="openspan" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<div class="dashwrapper">
         <div class="admin-cars-user">
+            
             <div class="admin-cars-dashboard">
                 <h1>Cars Count</h1>
                 <h3>Total Cars:</h3>
@@ -178,7 +205,7 @@ $resultSuspendedUsers= $conn -> query($sqlSuspendedUsers);
             </div>
         </div>
     </div>
-
+    </div>
 </div>
 
 

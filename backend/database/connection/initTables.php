@@ -102,23 +102,22 @@ if (count($missingTables) > 0) {
       PRIMARY KEY (`user_id`)
     );");
     } else if ($missingTable === "appointments") {
-      createTables($missingTable, "(appointment_id INT PRIMARY KEY auto_increment, appointment_title VARCHAR(50) NOT NULL, appointment_toDate DATE NOT NULL, appointment_fromDate DATE NOT NULL, appointor_id INT NOT NULL, car_rented_id INT NOT NULL, payment_info VARCHAR(200) NOT NULL, gov_id MEDIUMBLOB NOT NULL)");
+      createTables($missingTable, "(appointment_id INT PRIMARY KEY auto_increment, appointment_title VARCHAR(50) NOT NULL, appointment_toDate DATE NOT NULL, appointment_fromDate DATE NOT NULL, appointor_id INT NOT NULL, car_rented_id INT NOT NULL, payment_info VARCHAR(200) NOT NULL, gov_id MEDIUMBLOB NOT NULL, appointment_done INT);");
     } else if ($missingTable === "cars") {
       createTables($missingTable, "(
-      `car_id` int NOT NULL AUTO_INCREMENT,
+      `car_id` int(11) NOT NULL PRIMARY KEY auto_increment,
       `car_name` varchar(50) NOT NULL,
-      `renter_id` int DEFAULT NULL,
+      `renter_id` int(11) DEFAULT NULL,
       `type` varchar(50) NOT NULL,
       `transmission` varchar(50) NOT NULL,
       `capacity` varchar(50) NOT NULL,
-      `luggage` varchar(50) NOT NULL,
+      `luggage` varchar(255) NOT NULL,
       `review` varchar(50) DEFAULT NULL,
-      `car_image` varchar(50) DEFAULT NULL,
-      `car_image_mime` varchar(50) DEFAULT NULL,
+      `car_image` mediumblob DEFAULT NULL,
+      `car_image_mime` varchar(255) NOT NULL,
       `brand` varchar(45) DEFAULT NULL,
-      `Qnty` int DEFAULT NULL,
-      `available` int DEFAULT NULL,
-      PRIMARY KEY (`car_id`)
+      `Qnty` int(11) DEFAULT NULL,
+      `available` int(11) DEFAULT NULL
     );");
     } else if ($missingTable === "reviews") {
       createTables($missingTable, "(review_id INT PRIMARY KEY auto_increment, review_content varchar(1000) NOT NULL, reviewer_id INT NOT NULL)");
