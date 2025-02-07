@@ -1,3 +1,22 @@
+<?php
+$userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
+include "./pages/Modal/Register.php";
+if (isset($_POST["isLogged"])) {
+	$userId = $_POST["userId"];
+	if ($userId == "") {
+		echo "<script>
+		$('#register_Modal').css('display', 'flex');
+		$('#register_Modal').fadeIn(100);
+		setInterval(()=>{
+			$('#register_Modal').fadeOut(100);
+		},1000);
+		
+		</script>";
+	} else {
+		echo "<script>window.location.href='./cars';</script>";
+	}
+}
+?>
 <div class="<?php if (isset($_SESSION['role']) && $_SESSION['role'] === "admin") {
     echo "AdminnavBar navContent";
 } else {
@@ -22,7 +41,12 @@
             } else if (!isset($_SESSION['role'])) {
                 echo '<ul class="navOption">';
                 echo '<li class="navOption">';
-                echo '<a class="navSelection" href=' . $rootDirectory . '/cars >Car</a>';
+                echo <<<HTML
+                        <form action="" method="POST">
+                            <input name="userId" type="text" hidden value="{$userId}"/>
+                            <button name="isLogged" class="navSelection">Cars</button>
+                        </form>
+                        HTML;
                 echo '</li>';
                 echo '<li class="navOption">';
                 echo '<a class="navSelection" href=' . $rootDirectory . '/about>About</a>';
