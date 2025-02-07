@@ -2424,7 +2424,7 @@ hr {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 80px;
-  margin-left: 20px;
+  
   margin-bottom: 20px;
   padding: 20px;
   width: 100%;
@@ -2546,7 +2546,7 @@ hr {
 /** ADMIN CARS CSS*/
 .admincarswrapper {
   background-color: rgb(255, 255, 255);
-  margin-top: 120px;
+  margin-top: 100px;
   max-height: 80%;
   border-radius: 5px;
   margin-left: 20px;
@@ -2682,7 +2682,7 @@ background-color: #FF5E57;
 }
 .adminUsersWrapper {
   background-color: rgb(255, 255, 255);
-  margin-top: 120px;
+  margin-top: 100px;
   max-height: 80%;
   border-radius: 5px;
   margin-left: 20px;
@@ -2788,6 +2788,12 @@ background-color: #FF5E57;
   gap: 20px; /* Adds spacing between sections */
   width: 100%;
   padding: 20px;
+    max-height: 80%;
+    border-radius: 5px;
+    margin-left: 20px;
+    width: 80%;
+
+    margin-right: 10px; 
 }
 @media screen and (max-height: 450px) {
   .overlay a {font-size: 20px}
@@ -2981,7 +2987,6 @@ display: none;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   min-height: 200px;
-  margin-left: 20px;
   margin-bottom: 20px;
   padding: 20px;
   width:300px;
@@ -3005,6 +3010,11 @@ display: none;
 }
 .userlistcard {
   flex-wrap: wrap;
+}
+.adminUsersWrapper,
+.admincarswrapper,
+.appointmentlistwrapper{
+  margin-top: 120px;
 }
 
 
