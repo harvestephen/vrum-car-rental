@@ -1232,9 +1232,10 @@ iframe {
 }
 .img-card {
   position: relative;
-  margin-top: 20px;
+  margin-top: 60px;
+  margin-bottom: 40px;
   width: 70%;
-  height: 60%;
+  height: 40%;
 }
 .slider {
   display: grid;
