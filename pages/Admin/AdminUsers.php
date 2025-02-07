@@ -52,7 +52,7 @@ window.addEventListener("load", function () {
 });
 
 </script>
-<span class="openspan" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<button class="openspan" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</button>
         <div class="adminUsersWrapper">
             <h1>User List</h1>
             <div class="adminusercontents">
