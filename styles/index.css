@@ -2398,10 +2398,9 @@ hr {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 80px;
-  
   margin-bottom: 20px;
-  padding: 20px;
-  width: 100%;
+  padding: 15px;
+  width: 70%;
 }
 .admin-cars-user {
   display: flex;
@@ -2457,9 +2456,10 @@ hr {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-left: 20px;
+  padding: 15px;
   margin-bottom: 20px;
-  padding: 20px;
+  margin-left: -70px;
+  
   
 }
 
@@ -2498,14 +2498,17 @@ hr {
 .finance1 h2, .finance1 p{
   color: #313131;
 }
+.finance1 h2{
+  font-size: 0.9rem;
+}
 .topfinance h1  {
   color: #313131;
   text-align: center;
   margin-bottom: 12px;
 }
 .finance2 {
-  width: 70%;
-  height: 100%;
+  width: 100%;
+  height: 400px;
 }
 .finance-contents {
   display: flex;
@@ -2513,7 +2516,7 @@ hr {
 }
 #myChart {
   width: 100%;
-  height: 100%;
+  height: 100px;
 
 }
 
@@ -2762,7 +2765,7 @@ background-color: #FF5E57;
   gap: 20px; /* Adds spacing between sections */
   width: 100%;
   padding: 20px;
-    max-height: 80%;
+    
     border-radius: 5px;
     margin-left: 20px;
     width: 80%;
@@ -2794,8 +2797,12 @@ background-color: #FF5E57;
   .openspan{
     display: inline;
     margin-top: 76px;
-
     pointer-events: auto;
+    border: none;
+    background-color: #959595;
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
 }}
 /*responsive to mobile*/
 @media screen and (max-width: 768px) {
@@ -2936,15 +2943,16 @@ display: none;
   flex-grow: 1; /* Expands to fill available space */ 
 }
 .admin-finance-dashboard {
-font-size: 1rem;
+
  width: 55%; /* Takes more space */
  margin-left: -10px;
  margin-top: -100px
 }
 .finance1, .finance2 {
-  flex: 1;
+  flex: 2;
   min-width: 250px;
 }
+
 
 .finance2 {
 
@@ -2969,6 +2977,7 @@ font-size: 1rem;
   margin-bottom: 20px;
   padding: 20px;
   width:300px;
+  font-size: 1rem;
 }
 .admincarscard {
   font-size: 3vw;

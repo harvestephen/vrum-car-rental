@@ -76,7 +76,7 @@ window.addEventListener("load", function () {
 });
 
 </script>
-<span class="openspan" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<button class="openspan" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</button>
 <div class="dashwrapper">
         <div class="admin-cars-user">
             
@@ -196,7 +196,7 @@ window.addEventListener("load", function () {
                         </p>
                     </div>
                     <div class="finance2">
-                        <div>        
+                        <div>
                             <canvas id="myChart"></canvas>
                         </div>
                     </div>
