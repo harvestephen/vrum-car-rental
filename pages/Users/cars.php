@@ -46,149 +46,18 @@
 				echo "<input type='hidden' id='appointorId' value=''>";
 				// echo "<script>console.log('User ID not set');</script>";
 			}
+			echo  "<input type='hidden' id='car_rented_id' value=''>";	
 			?>
 				<div class="car-selection-filter-Container">
 					<div class="car-selection-filter-buttons">
 						<button class="car-selection-filter-btn active" onclick="filterCars('all')">All</button>
-						<button class="car-selection-filter-btn" onclick="filterCars('sedan')">Sedan</button>
-						<button class="car-selection-filter-btn" onclick="filterCars('suv')">SUV</button>
-						<button class="car-selection-filter-btn" onclick="filterCars('van')">Van</button>
+						<button class="car-selection-filter-btn" onclick="filterCars('Sedan')">Sedan</button>
+						<button class="car-selection-filter-btn" onclick="filterCars('Suv')">SUV</button>
+						<button class="car-selection-filter-btn" onclick="filterCars('Van')">Van</button>
 					</div>
 				</div>
 				<div class="car-rental-selection">
-					<div class="car-selection-grid">
-
-						<div class="car-selection-card sedan">
-							<div class="car-selection-carName">
-								<h2>Car Name</h2>
-								<h3>Description</h3>
-							</div>
-							<div class="car-selection-icons">
-								<img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
-								<p>4</p>
-								<img src="./assets/icons/CarCards/luggage.png" alt="Capacity">
-								<p>1</p>
-								<img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
-								<p>Manual</p>
-							</div>
-							<div class="car-selection-img">
-								<img src="./assets/images/cars/sedan/toyota/gr86.png" alt="Sedan">
-							</div>
-							<div class="car-selection-select">
-								<p>₱10000.00</p>
-								<a name="carToRent" class="carToRent">Select</a>
-							</div>
-						</div>
-
-						<div class="car-selection-card suv">
-							<div class="car-selection-carName">
-								<h2>Car Name</h2>
-								<h3>Description</h3>
-							</div>
-							<div class="car-selection-icons">
-								<img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
-								<p>4</p>
-								<img src="./assets/icons/CarCards/luggage.png" alt="Luggage">
-								<p>1</p>
-								<img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
-								<p>Manual</p>
-							</div>
-							<div class="car-selection-img">
-								<img src="./assets/images/cars/sedan/toyota/gr86.png" alt="Sedan">
-							</div>
-							<div class="car-selection-select">
-								<p>₱10000.00</p>
-								<button class="carToRent">Select</button>
-							</div>
-						</div>
-
-						<div class="car-selection-card suv">
-							<div class="car-selection-carName">
-								<h2>Car Name</h2>
-								<h3>Description</h3>
-							</div>
-							<div class="car-selection-icons">
-								<img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
-								<p>4</p>
-								<img src="./assets/icons/CarCards/luggage.png" alt="Luggage">
-								<p>1</p>
-								<img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
-								<p>Manual</p>
-							</div>
-							<div class="car-selection-img">
-								<img src="./assets/images/cars/sedan/toyota/gr86.png" alt="Sedan">
-							</div>
-							<div class="car-selection-select">
-								<p>₱10000.00</p>
-								<button class="carToRent">Select</button>
-							</div>
-						</div>
-
-						<div class="car-selection-card sedan">
-							<div class="car-selection-carName">
-								<h2>Car Name</h2>
-								<h3>Description</h3>
-							</div>
-							<div class="car-selection-icons">
-								<img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
-								<p>4</p>
-								<img src="./assets/icons/CarCards/luggage.png" alt="Luggage">
-								<p>1</p>
-								<img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
-								<p>Manual</p>
-							</div>
-							<div class="car-selection-img">
-								<img src="./assets/images/cars/sedan/toyota/gr86.png" alt="Sedan">
-							</div>
-							<div class="car-selection-select">
-								<p>₱10000.00</p>
-								<button class="carToRent">Select</button>
-							</div>
-						</div>
-
-						<div class="car-selection-card sedan">
-							<div class="car-selection-carName">
-								<h2>Car Name</h2>
-								<h3>Description</h3>
-							</div>
-							<div class="car-selection-icons">
-								<img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
-								<p>4</p>
-								<img src="./assets/icons/CarCards/luggage.png" alt="Luggage">
-								<p>1</p>
-								<img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
-								<p>Manual</p>
-							</div>
-							<div class="car-selection-img">
-								<img src="./assets/images/cars/sedan/toyota/gr86.png" alt="Sedan">
-							</div>
-							<div class="car-selection-select">
-								<p>₱10000.00</p>
-								<button class="carToRent">Select</button>
-							</div>
-						</div>
-
-						<div class="car-selection-card van">
-							<div class="car-selection-carName">
-								<h2>Car Name</h2>
-								<h3>Description</h3>
-							</div>
-							<div class="car-selection-icons">
-								<img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
-								<p>4</p>
-								<img src="./assets/icons/CarCards/luggage.png" alt="Luggage">
-								<p>1</p>
-								<img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
-								<p>Manual</p>
-							</div>
-							<div class="car-selection-img">
-								<img src="./assets/images/cars/sedan/toyota/gr86.png" alt="Sedan">
-							</div>
-							<div class="car-selection-select">
-								<p>₱10000.00</p>
-								<button name="carToRent" class="carToRent">Select</button>
-							</div>
-						</div>
+					<div class="car-selection-grid" id="car-selection-grid">
 					</div>
 				</div>
 			</div>

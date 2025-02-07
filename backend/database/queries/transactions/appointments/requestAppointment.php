@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $appointment_fromDate = $_POST["fromDate"];
   $appointment_toDate = $_POST["toDate"];
   $appointor_id = $_POST["appointorId"];
-  $car_rented_id = 1;
+  $car_rented_id = $_POST["car_rented_id"];
 
   // Payment Info Array
   $payment_info_array = array(

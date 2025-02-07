@@ -166,7 +166,63 @@ $(document).ready(function () {
     $("#userMenuModal").fadeOut(100);
   });
 
-  $(".carToRent").on("click", function () {
+  fetch('getCarInfo.php', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    }
+  })
+
+  const currentPage = window.location.pathname;
+
+  if (currentPage.includes("/vrum-car-rental/cars")) {
+    fetch('./backend/database/queries/database/getCarInfo.php', {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+      }
+    })
+    .then(response => response.json())
+    .then(carInfo => {
+      carInfo.forEach(car => {
+        var imgSrc = car.car_image ? `data:${car.car_image_mime};base64,${car.car_image}` : 'default-image.png';
+        var carCard = `
+                <div class="car-selection-card ${car.car_type}">
+                    <div class="car-selection-carName">
+                        <h2>${car.car_name}</h2>
+                        <h3>${car.brand}</h3>
+                    </div>
+                    <div class="car-selection-icons">
+                        <img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
+                        <p>${car.capacity}</p>
+                        <img src="./assets/icons/CarCards/luggage.png" alt="Capacity">
+                        <p>${car.luggage}</p>
+                        <img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
+                        <p>${car.transmission}</p>
+                    </div>
+                    <div class="car-selection-img">
+                        <img src="${imgSrc}" alt="${car.car_name}">
+                    </div>
+                    <div class="car-selection-select">
+                        <p>₱10,000.00</p>
+                        <a name="carToRent" class="carToRent" data-id="${car.car_id}">Select</a>
+                    </div>
+                </div>
+            `;
+          console.log(carCard);
+          document.getElementById('car-selection-grid').innerHTML += carCard;
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching car data:', error);
+    });
+  };
+
+
+  $(document).on("click", ".carToRent", function() {
+    let carId = $(this).attr("data-id"); // Get the car ID
+    $("#car_rented_id").val(carId);
+    console.log(document.getElementById("car_rented_id").value);
     $("#carSelectionTab").removeClass("active");
     $("#carSelection").css("display", "none");
     $("#carInfoTab").addClass("active");
@@ -453,6 +509,7 @@ const validateLoginForm = async () => {
 const reqAppointmentForm = async () => {
   event.preventDefault();
   const appointorId = document.getElementById("appointorId").value;
+  const car_rented_id = document.getElementById("car_rented_id").value;
   const formData = $("#reqAppointmentForm").serializeArray();
   const fromDate = formData[0].value;
   const toDate = formData[1].value;
@@ -465,6 +522,7 @@ const reqAppointmentForm = async () => {
 
   const formDataToSend = new FormData();
   formDataToSend.append("appointorId", appointorId);
+  formDataToSend.append("car_rented_id", car_rented_id);
   formDataToSend.append("fromDate", fromDate);
   formDataToSend.append("toDate", toDate);
   formDataToSend.append("cardHolderName", cardHolderName);
