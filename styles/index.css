@@ -2793,7 +2793,17 @@ background-color: #FF5E57;
     height: 50px;
     width: 50px;
     border-radius: 10px;
-}}
+    
+}
+  .openspan:hover{
+    background: #918e89;
+    transform: scale(1.1);
+
+  }
+  .openspan.hidden{
+    visibility: hidden;
+  }
+}
 /*responsive to mobile*/
 @media screen and (max-width: 768px) {
   .nav-links {
