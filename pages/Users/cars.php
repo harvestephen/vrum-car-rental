@@ -88,7 +88,7 @@ if (isset($_POST["infoBack"])) {
 		</div>
 
 		<?php
-		if (isset($_POST["selectCarBtn"])) {
+		if (isset($_POST["selectCarBtn"]) || isset($_POST["isLoggedf"])) {
 			$_SESSION["carSelectedId"] = $_POST["carId"];
 			echo <<<HTML
 						<!-- Information Tab -->
@@ -152,7 +152,7 @@ if (isset($_POST["infoBack"])) {
 								<img src="./assets/icons/okay.png" alt="Done">
 								<h3>Your request has been processed.</h3>
 								<h3>Wait within 24 hours for your request to be approved. Thank you!</h3>
-								<a href="<?php echo $rootDirectory ?>">Home</a>
+								<a id="backHome">Home</a>
 							</div>
 							HTML;
 

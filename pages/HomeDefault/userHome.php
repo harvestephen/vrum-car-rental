@@ -1,9 +1,56 @@
+<?php
+$userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
+include "./pages/Modal/Register.php";
+if (isset($_POST["isLogged"])) {
+	$userId = $_POST["userId"];
+	if ($userId == "") {
+		echo "<script>
+		$('#register_Modal').css('display', 'flex');
+		$('#register_Modal').fadeIn(100);
+		setInterval(()=>{
+			$('#register_Modal').fadeOut(100);
+		},1000);
+		
+		</script>";
+	} else {
+		echo "<script>window.location.href='./cars';</script>";
+	}
+}
+if (isset($_POST["isLoggedf"])) {
+	$userId = $_POST["carId"];
+	if ($userId == "") {
+		echo "<script>
+		$('#register_Modal').css('display', 'flex');
+		$('#register_Modal').fadeIn(100);
+		setInterval(()=>{
+			$('#register_Modal').fadeOut(100);
+		},1000);
+		
+		</script>";
+	} else {
+		$carId = $_POST["carId"];
+		echo <<<HTML
+						<form action="{$rootDirectory}/cars" method="POST" >
+							<input name="carId" type="text" hidden value="{$carId}"/>
+							<button name="isLoggedf" id="isLoggedf" hidden class="more-btn">RENT NOW!</button>
+						</form>
+					HTML;
+		echo "<script>$('#isLoggedf').click();</script>";
+	}
+}
+
+$sql = "SELECT * FROM cars ORDER BY num_pick DESC LIMIT 6;";
+$res = $conn -> query($sql)
+?>
 <div class="wrapper">
 	<div class="MainContent">
 		<div class="homepage">
 			<div class="homepageTitle MainContent">
 				<h1>RENT TODAY, MAKE MEMORIES TOMORROW</h1>
-				<a href=<?php echo $rootDirectory . "/cars" ?> class="rent">RENT NOW!</a>
+				<form action="" method="POST">
+					<input name="userId" type="text" hidden value="<?php echo $_SESSION ? $_SESSION["user_id"] : "" ?>"/>
+					<button name="isLogged" class="rent">RENT NOW!</button>
+				</form>
 			</div>
 			<div class="new-header">
 			</div>
@@ -31,311 +78,64 @@
 							</path>
 						</svg>
 					</button>
-					<div class="card">
-						<img class="img-card" src="<?php echo $rootDirectory . "/assets/images/cars/suv/honda/crv.png" ?>"
-							alt="car image" />
-						<div class="card-text">
-							<h2>Car Name</h2>
-							<div class="car-card-icons">
-								<svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve"
-									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<g id="info"></g>
-									<g id="icons">
-										<g id="user">
-											<ellipse cx="12" cy="8" rx="5" ry="6" />
-											<path
-												d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9 C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
-										</g>
-									</g>
-								</svg>
+					<?php 
+						while ($row = $res -> fetch_assoc()) {
+							  if ($row["transmission"] == "Automatic"){
+									$transmission = "A";
+								} else if ($row["transmission"] == "manual") {
+									$transmission = "M";
+								} else {
+									$transmission = "M/A";
+								}
+								$imgSrc = 'data:' . $row['car_image_mime'] . ';base64,' . base64_encode($row['car_image']);
+							echo <<<HTML
+												<div class="card">
+											<img class="img-card" src="$imgSrc" alt="car image" />
+											<div class="card-text">
+												<h2>{$row['car_name']}</h2>
+												<div class="car-card-icons">
+													{$row["capacity"]}
+													<svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve"
+														xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+														<g id="info"></g>
+														<g id="icons">
+															<g id="user">
+																<ellipse cx="12" cy="8" rx="5" ry="6" />
+																<path
+																	d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9 C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
+															</g>
+														</g>
+													</svg>
 
-								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-									<g>
-										<path d="M0 0H24V24H0z" fill="none" />
-										<path d="M3 21v-2h2V4c0-.552.448-1 1-1h12c.552 0 1 .448 1 1v15h2v2H3zm12-10h-2v2h2v-2z" />
-									</g>
-								</svg>
+													{$transmission}
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+														stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+														<path d="M5 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+														<path d="M12 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+														<path d="M19 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+														<path d="M5 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+														<path d="M12 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+														<path d="M5 8l0 8" />
+														<path d="M12 8l0 8" />
+														<path d="M19 8v2a3 2 0 0 1 -2 2h-11" />
+													</svg>
+													{$row["luggage"]}
+													<svg viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><rect class="cls-1" x="4.36" y="5.32" width="15.27" height="17.18" rx="2.86"></rect><line class="cls-1" x1="8.18" y1="8.18" x2="8.18" y2="19.64"></line><line class="cls-1" x1="15.82" y1="8.18" x2="15.82" y2="19.64"></line><line class="cls-1" x1="12" y1="8.18" x2="12" y2="19.64"></line><rect class="cls-1" x="9.14" y="1.5" width="5.73" height="3.82"></rect><line class="cls-1" x1="7.23" y1="1.5" x2="16.77" y2="1.5"></line></g></svg>
 
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M5 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M19 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 8l0 8" />
-									<path d="M12 8l0 8" />
-									<path d="M19 8v2a3 2 0 0 1 -2 2h-11" />
-								</svg>
+												</div>
+												<div class="card-subtext">
+													<p class="price"><span>₱</span> {$row["price"]}</p>
+													<form action="" method="POST">
+															<input name="carId" type="text" hidden value="{$row['car_id']}"/>
+															<button name="isLoggedf" class="more-btn">RENT NOW!</button>
+													</form>
+												</div>
+											</div>
 
-								<svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-									<path clip-rule="evenodd"
-										d="M10.7631 1.78588L8.99997 2.80383V5.11323L9.99999 5.69059L12 4.53591L12 2.50001L14 2.50001L14 4.53589L15.7631 5.55385L14.7631 7.2859L13 6.26795L11 7.42265V8.57735L13 9.73205L14.7631 8.7141L15.7631 10.4461L14 11.4641V13.5H12V11.4641L9.99997 10.3094L8.99997 10.8867V13.1961L10.7631 14.2141L9.76311 15.9461L7.99999 14.9282L6.23683 15.9462L5.23683 14.2141L6.99997 13.1962V10.8867L5.99999 10.3094L3.99997 11.4641L3.99997 13.5H1.99997L1.99997 11.4641L0.236816 10.4462L1.23682 8.71411L2.99995 9.73206L4.99997 8.57735V7.42264L2.99999 6.26795L1.23685 7.2859L0.236847 5.55385L1.99997 4.53591L1.99997 2.5H3.99997L3.99997 4.53589L5.99997 5.69059L6.99997 5.11324V2.80385L5.23684 1.7859L6.23684 0.0538512L7.99996 1.07179L9.76311 0.053833L10.7631 1.78588ZM8.99997 8C8.99997 8.55228 8.55225 9 7.99997 9C7.44768 9 6.99997 8.55228 6.99997 8C6.99997 7.44771 7.44768 7 7.99997 7C8.55225 7 8.99997 7.44771 8.99997 8Z"
-										fill="#fff" fill-rule="evenodd" />
-								</svg>
-
-							</div>
-							<div class="card-subtext">
-								<p class="price"><span>₱</span> 1,120/Day</p>
-								<a href="#" class="more-btn">RENT</a>
-							</div>
-						</div>
-
-					</div>
-					<div class="card">
-						<img class="img-card" src="<?php echo $rootDirectory . "/assets/images/cars/suv/honda/crv.png" ?>"
-							alt="car image" />
-						<div class="card-text">
-							<h2>Car Name</h2>
-							<div class="car-card-icons">
-								<svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve"
-									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<g id="info"></g>
-									<g id="icons">
-										<g id="user">
-											<ellipse cx="12" cy="8" rx="5" ry="6" />
-											<path
-												d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9 C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
-										</g>
-									</g>
-								</svg>
-
-								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-									<g>
-										<path d="M0 0H24V24H0z" fill="none" />
-										<path d="M3 21v-2h2V4c0-.552.448-1 1-1h12c.552 0 1 .448 1 1v15h2v2H3zm12-10h-2v2h2v-2z" />
-									</g>
-								</svg>
-
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M5 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M19 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 8l0 8" />
-									<path d="M12 8l0 8" />
-									<path d="M19 8v2a3 2 0 0 1 -2 2h-11" />
-								</svg>
-
-								<svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-									<path clip-rule="evenodd"
-										d="M10.7631 1.78588L8.99997 2.80383V5.11323L9.99999 5.69059L12 4.53591L12 2.50001L14 2.50001L14 4.53589L15.7631 5.55385L14.7631 7.2859L13 6.26795L11 7.42265V8.57735L13 9.73205L14.7631 8.7141L15.7631 10.4461L14 11.4641V13.5H12V11.4641L9.99997 10.3094L8.99997 10.8867V13.1961L10.7631 14.2141L9.76311 15.9461L7.99999 14.9282L6.23683 15.9462L5.23683 14.2141L6.99997 13.1962V10.8867L5.99999 10.3094L3.99997 11.4641L3.99997 13.5H1.99997L1.99997 11.4641L0.236816 10.4462L1.23682 8.71411L2.99995 9.73206L4.99997 8.57735V7.42264L2.99999 6.26795L1.23685 7.2859L0.236847 5.55385L1.99997 4.53591L1.99997 2.5H3.99997L3.99997 4.53589L5.99997 5.69059L6.99997 5.11324V2.80385L5.23684 1.7859L6.23684 0.0538512L7.99996 1.07179L9.76311 0.053833L10.7631 1.78588ZM8.99997 8C8.99997 8.55228 8.55225 9 7.99997 9C7.44768 9 6.99997 8.55228 6.99997 8C6.99997 7.44771 7.44768 7 7.99997 7C8.55225 7 8.99997 7.44771 8.99997 8Z"
-										fill="#fff" fill-rule="evenodd" />
-								</svg>
-
-							</div>
-							<div class="card-subtext">
-								<p class="price"><span>₱</span> 1,120/Day</p>
-								<a href="#" class="more-btn">RENT</a>
-							</div>
-						</div>
-
-					</div>
-					<div class="card">
-						<img class="img-card" src="<?php echo $rootDirectory . "/assets/images/cars/suv/honda/crv.png" ?>"
-							alt="car image" />
-						<div class="card-text">
-							<h2>Car Name</h2>
-							<div class="car-card-icons">
-								<svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve"
-									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<g id="info"></g>
-									<g id="icons">
-										<g id="user">
-											<ellipse cx="12" cy="8" rx="5" ry="6" />
-											<path
-												d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9 C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
-										</g>
-									</g>
-								</svg>
-
-								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-									<g>
-										<path d="M0 0H24V24H0z" fill="none" />
-										<path d="M3 21v-2h2V4c0-.552.448-1 1-1h12c.552 0 1 .448 1 1v15h2v2H3zm12-10h-2v2h2v-2z" />
-									</g>
-								</svg>
-
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M5 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M19 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 8l0 8" />
-									<path d="M12 8l0 8" />
-									<path d="M19 8v2a3 2 0 0 1 -2 2h-11" />
-								</svg>
-
-								<svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-									<path clip-rule="evenodd"
-										d="M10.7631 1.78588L8.99997 2.80383V5.11323L9.99999 5.69059L12 4.53591L12 2.50001L14 2.50001L14 4.53589L15.7631 5.55385L14.7631 7.2859L13 6.26795L11 7.42265V8.57735L13 9.73205L14.7631 8.7141L15.7631 10.4461L14 11.4641V13.5H12V11.4641L9.99997 10.3094L8.99997 10.8867V13.1961L10.7631 14.2141L9.76311 15.9461L7.99999 14.9282L6.23683 15.9462L5.23683 14.2141L6.99997 13.1962V10.8867L5.99999 10.3094L3.99997 11.4641L3.99997 13.5H1.99997L1.99997 11.4641L0.236816 10.4462L1.23682 8.71411L2.99995 9.73206L4.99997 8.57735V7.42264L2.99999 6.26795L1.23685 7.2859L0.236847 5.55385L1.99997 4.53591L1.99997 2.5H3.99997L3.99997 4.53589L5.99997 5.69059L6.99997 5.11324V2.80385L5.23684 1.7859L6.23684 0.0538512L7.99996 1.07179L9.76311 0.053833L10.7631 1.78588ZM8.99997 8C8.99997 8.55228 8.55225 9 7.99997 9C7.44768 9 6.99997 8.55228 6.99997 8C6.99997 7.44771 7.44768 7 7.99997 7C8.55225 7 8.99997 7.44771 8.99997 8Z"
-										fill="#fff" fill-rule="evenodd" />
-								</svg>
-
-							</div>
-							<div class="card-subtext">
-								<p class="price"><span>₱</span> 1,120/Day</p>
-								<a href="#" class="more-btn">RENT</a>
-							</div>
-						</div>
-
-					</div>
-					<div class="card">
-						<img class="img-card" src="<?php echo $rootDirectory . "/assets/images/cars/suv/honda/crv.png" ?>"
-							alt="car image" />
-						<div class="card-text">
-							<h2>Car Name</h2>
-							<div class="car-card-icons">
-								<svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve"
-									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<g id="info"></g>
-									<g id="icons">
-										<g id="user">
-											<ellipse cx="12" cy="8" rx="5" ry="6" />
-											<path
-												d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9 C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
-										</g>
-									</g>
-								</svg>
-
-								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-									<g>
-										<path d="M0 0H24V24H0z" fill="none" />
-										<path d="M3 21v-2h2V4c0-.552.448-1 1-1h12c.552 0 1 .448 1 1v15h2v2H3zm12-10h-2v2h2v-2z" />
-									</g>
-								</svg>
-
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M5 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M19 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 8l0 8" />
-									<path d="M12 8l0 8" />
-									<path d="M19 8v2a3 2 0 0 1 -2 2h-11" />
-								</svg>
-
-								<svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-									<path clip-rule="evenodd"
-										d="M10.7631 1.78588L8.99997 2.80383V5.11323L9.99999 5.69059L12 4.53591L12 2.50001L14 2.50001L14 4.53589L15.7631 5.55385L14.7631 7.2859L13 6.26795L11 7.42265V8.57735L13 9.73205L14.7631 8.7141L15.7631 10.4461L14 11.4641V13.5H12V11.4641L9.99997 10.3094L8.99997 10.8867V13.1961L10.7631 14.2141L9.76311 15.9461L7.99999 14.9282L6.23683 15.9462L5.23683 14.2141L6.99997 13.1962V10.8867L5.99999 10.3094L3.99997 11.4641L3.99997 13.5H1.99997L1.99997 11.4641L0.236816 10.4462L1.23682 8.71411L2.99995 9.73206L4.99997 8.57735V7.42264L2.99999 6.26795L1.23685 7.2859L0.236847 5.55385L1.99997 4.53591L1.99997 2.5H3.99997L3.99997 4.53589L5.99997 5.69059L6.99997 5.11324V2.80385L5.23684 1.7859L6.23684 0.0538512L7.99996 1.07179L9.76311 0.053833L10.7631 1.78588ZM8.99997 8C8.99997 8.55228 8.55225 9 7.99997 9C7.44768 9 6.99997 8.55228 6.99997 8C6.99997 7.44771 7.44768 7 7.99997 7C8.55225 7 8.99997 7.44771 8.99997 8Z"
-										fill="#fff" fill-rule="evenodd" />
-								</svg>
-
-							</div>
-							<div class="card-subtext">
-								<p class="price"><span>₱</span> 1,120/Day</p>
-								<a href="#" class="more-btn">RENT</a>
-							</div>
-						</div>
-
-					</div>
-					<div class="card">
-						<img class="img-card" src="<?php echo $rootDirectory . "/assets/images/cars/suv/honda/crv.png" ?>"
-							alt="car image" />
-						<div class="card-text">
-							<h2>Car Name</h2>
-							<div class="car-card-icons">
-								<svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve"
-									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<g id="info"></g>
-									<g id="icons">
-										<g id="user">
-											<ellipse cx="12" cy="8" rx="5" ry="6" />
-											<path
-												d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9 C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
-										</g>
-									</g>
-								</svg>
-
-								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-									<g>
-										<path d="M0 0H24V24H0z" fill="none" />
-										<path d="M3 21v-2h2V4c0-.552.448-1 1-1h12c.552 0 1 .448 1 1v15h2v2H3zm12-10h-2v2h2v-2z" />
-									</g>
-								</svg>
-
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M5 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M19 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 8l0 8" />
-									<path d="M12 8l0 8" />
-									<path d="M19 8v2a3 2 0 0 1 -2 2h-11" />
-								</svg>
-
-								<svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-									<path clip-rule="evenodd"
-										d="M10.7631 1.78588L8.99997 2.80383V5.11323L9.99999 5.69059L12 4.53591L12 2.50001L14 2.50001L14 4.53589L15.7631 5.55385L14.7631 7.2859L13 6.26795L11 7.42265V8.57735L13 9.73205L14.7631 8.7141L15.7631 10.4461L14 11.4641V13.5H12V11.4641L9.99997 10.3094L8.99997 10.8867V13.1961L10.7631 14.2141L9.76311 15.9461L7.99999 14.9282L6.23683 15.9462L5.23683 14.2141L6.99997 13.1962V10.8867L5.99999 10.3094L3.99997 11.4641L3.99997 13.5H1.99997L1.99997 11.4641L0.236816 10.4462L1.23682 8.71411L2.99995 9.73206L4.99997 8.57735V7.42264L2.99999 6.26795L1.23685 7.2859L0.236847 5.55385L1.99997 4.53591L1.99997 2.5H3.99997L3.99997 4.53589L5.99997 5.69059L6.99997 5.11324V2.80385L5.23684 1.7859L6.23684 0.0538512L7.99996 1.07179L9.76311 0.053833L10.7631 1.78588ZM8.99997 8C8.99997 8.55228 8.55225 9 7.99997 9C7.44768 9 6.99997 8.55228 6.99997 8C6.99997 7.44771 7.44768 7 7.99997 7C8.55225 7 8.99997 7.44771 8.99997 8Z"
-										fill="#fff" fill-rule="evenodd" />
-								</svg>
-
-							</div>
-							<div class="card-subtext">
-								<p class="price"><span>₱</span> 1,120/Day</p>
-								<a href="#" class="more-btn">RENT</a>
-							</div>
-						</div>
-
-					</div>
-					<div class="card">
-						<img class="img-card" src="<?php echo $rootDirectory . "/assets/images/cars/suv/honda/crv.png" ?>"
-							alt="car image" />
-						<div class="card-text">
-							<h2>Car Name</h2>
-							<div class="car-card-icons">
-								<svg style="enable-background:new 0 0 24 24;" version="1.1" viewBox="0 0 24 24" xml:space="preserve"
-									xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-									<g id="info"></g>
-									<g id="icons">
-										<g id="user">
-											<ellipse cx="12" cy="8" rx="5" ry="6" />
-											<path
-												d="M21.8,19.1c-0.9-1.8-2.6-3.3-4.8-4.2c-0.6-0.2-1.3-0.2-1.8,0.1c-1,0.6-2,0.9-3.2,0.9s-2.2-0.3-3.2-0.9 C8.3,14.8,7.6,14.7,7,15c-2.2,0.9-3.9,2.4-4.8,4.2C1.5,20.5,2.6,22,4.1,22h15.8C21.4,22,22.5,20.5,21.8,19.1z" />
-										</g>
-									</g>
-								</svg>
-
-								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-									<g>
-										<path d="M0 0H24V24H0z" fill="none" />
-										<path d="M3 21v-2h2V4c0-.552.448-1 1-1h12c.552 0 1 .448 1 1v15h2v2H3zm12-10h-2v2h2v-2z" />
-									</g>
-								</svg>
-
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-									stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-									<path d="M5 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M19 6m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M12 18m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-									<path d="M5 8l0 8" />
-									<path d="M12 8l0 8" />
-									<path d="M19 8v2a3 2 0 0 1 -2 2h-11" />
-								</svg>
-
-								<svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-									<path clip-rule="evenodd"
-										d="M10.7631 1.78588L8.99997 2.80383V5.11323L9.99999 5.69059L12 4.53591L12 2.50001L14 2.50001L14 4.53589L15.7631 5.55385L14.7631 7.2859L13 6.26795L11 7.42265V8.57735L13 9.73205L14.7631 8.7141L15.7631 10.4461L14 11.4641V13.5H12V11.4641L9.99997 10.3094L8.99997 10.8867V13.1961L10.7631 14.2141L9.76311 15.9461L7.99999 14.9282L6.23683 15.9462L5.23683 14.2141L6.99997 13.1962V10.8867L5.99999 10.3094L3.99997 11.4641L3.99997 13.5H1.99997L1.99997 11.4641L0.236816 10.4462L1.23682 8.71411L2.99995 9.73206L4.99997 8.57735V7.42264L2.99999 6.26795L1.23685 7.2859L0.236847 5.55385L1.99997 4.53591L1.99997 2.5H3.99997L3.99997 4.53589L5.99997 5.69059L6.99997 5.11324V2.80385L5.23684 1.7859L6.23684 0.0538512L7.99996 1.07179L9.76311 0.053833L10.7631 1.78588ZM8.99997 8C8.99997 8.55228 8.55225 9 7.99997 9C7.44768 9 6.99997 8.55228 6.99997 8C6.99997 7.44771 7.44768 7 7.99997 7C8.55225 7 8.99997 7.44771 8.99997 8Z"
-										fill="#fff" fill-rule="evenodd" />
-								</svg>
-
-							</div>
-							<div class="card-subtext">
-								<p class="price"><span>₱</span> 1,120/Day</p>
-								<a href="#" class="more-btn">RENT</a>
-							</div>
-						</div>
-					</div>
+										</div>
+										HTML;
+						}
+					?>
 					</button>
 				</div>
 				<!-- 

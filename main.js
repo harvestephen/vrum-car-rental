@@ -34,6 +34,9 @@ $(document).ready(function () {
     });
   }
 
+  $("#backHome").click(function() {
+    window.location.href='./index.php';
+  });
   $(".accordion").click(function () {
     $(this).toggleClass("active");
     let panel = $(this).next(".panel");
