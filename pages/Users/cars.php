@@ -52,7 +52,7 @@
 					<div class="car-selection-filter-buttons">
 						<button class="car-selection-filter-btn active" onclick="filterCars('all')">All</button>
 						<button class="car-selection-filter-btn" onclick="filterCars('Sedan')">Sedan</button>
-						<button class="car-selection-filter-btn" onclick="filterCars('Suv')">SUV</button>
+						<button class="car-selection-filter-btn" onclick="filterCars('SUV')">SUV</button>
 						<button class="car-selection-filter-btn" onclick="filterCars('Van')">Van</button>
 					</div>
 				</div>
