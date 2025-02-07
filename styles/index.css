@@ -2328,7 +2328,7 @@ hr {
 }
 .admin-cars-dashboard,
 .admin-user-dashboard {
-  width: 300px;
+
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -2336,9 +2336,13 @@ hr {
   margin-left: 20px;
   margin-bottom: 20px;
   padding: 20px;
+  width: 100%;
 }
 .admin-cars-user {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* Stack Cars on top of Users */
+  gap: 20px;
+  width: 40%;
 }
 .navSelectionadmin {
   color :#000;
@@ -2375,10 +2379,11 @@ hr {
   border-color: #bbbbbb;
 }
 .admin-finance-dashboard-wrapper {
-  width: 60%;
+  width: 55%;
   height: 90%;
-  margin-top: 100px;
+  margin-top: 80px;
   margin-right: 20px;
+  align-self: flex-start; /* Ensures sales stays at the top */
 }
 .admin-finance-dashboard {
   display: flex;
@@ -2390,6 +2395,7 @@ hr {
   margin-left: 20px;
   margin-bottom: 20px;
   padding: 20px;
+  
 }
 
 /** DASHBOARD CONTENTS ADMIN CSS*/
@@ -2684,7 +2690,14 @@ background-color: #FF5E57;
 
   pointer-events: none;
 }
-
+.dashwrapper{
+  display: flex;
+  justify-content: space-between; /* Space between left & right */
+  align-items: flex-start; /* Aligns all items to the top */
+  gap: 20px; /* Adds spacing between sections */
+  width: 100%;
+  padding: 20px;
+}
 @media screen and (max-height: 450px) {
   .overlay a {font-size: 20px}
   .overlay .closebtn {
@@ -2712,7 +2725,7 @@ background-color: #FF5E57;
     margin-top: 76px;
 
     pointer-events: auto;
-}
+}}
 /*responsive to mobile*/
 @media screen and (max-width: 768px) {
   .nav-links {
@@ -2840,6 +2853,48 @@ display: none;
   display: flex;
   flex-direction: column;
 }
+.admin-finance-dashboard-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 100px;
+  margin-right: 20px;
+  flex-grow: 1; /* Expands to fill available space */ 
+}
+.admin-finance-dashboard {
+ width: 55%; /* Takes more space */
+}
+.finance1, .finance2 {
+  flex: 1;
+  min-width: 250px;
+}
+
+.finance2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finance-contents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.admin-cars-dashboard,
+.admin-user-dashboard,
+.admin-finance-dashboard {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 200px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width:300px;
+}
+
 }
 
 
