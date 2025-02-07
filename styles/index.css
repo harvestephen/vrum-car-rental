@@ -1224,7 +1224,7 @@ iframe {
 
 .card {
   background-color: #a5b4c2;
-  height: 400px;
+  height: 420px;
   border-radius: 4px;
   min-width: 0;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
@@ -1302,6 +1302,7 @@ button.slider-leftBtn {
   align-items: center;
   gap: 28%;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 .offer-grad {
   position: absolute;
@@ -1353,8 +1354,10 @@ li.adminNavOption {
 }
 .car-rental-tabContainer {
   display: flex;
-  overflow: hidden;
+  overflow: visible;
   width: 85vw;
+  justify-content: center;
+    align-items: center;
 }
 .car-rental-tabs {
   flex: 1;
@@ -2385,7 +2388,7 @@ hr {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 80px;
-  margin-left: 20px;
+  
   margin-bottom: 20px;
   padding: 20px;
   width: 100%;
@@ -2501,13 +2504,13 @@ hr {
 #myChart {
   width: 100%;
   height: 100%;
-  margin-left: 20px;
+
 }
 
 /** ADMIN CARS CSS*/
 .admincarswrapper {
   background-color: rgb(255, 255, 255);
-  margin-top: 120px;
+  margin-top: 100px;
   max-height: 80%;
   border-radius: 5px;
   margin-left: 20px;
@@ -2643,7 +2646,7 @@ background-color: #FF5E57;
 }
 .adminUsersWrapper {
   background-color: rgb(255, 255, 255);
-  margin-top: 120px;
+  margin-top: 100px;
   max-height: 80%;
   border-radius: 5px;
   margin-left: 20px;
@@ -2749,6 +2752,12 @@ background-color: #FF5E57;
   gap: 20px; /* Adds spacing between sections */
   width: 100%;
   padding: 20px;
+    max-height: 80%;
+    border-radius: 5px;
+    margin-left: 20px;
+    width: 80%;
+    margin-right: 10px;
+    
 }
 @media screen and (max-height: 450px) {
   .overlay a {font-size: 20px}
@@ -2902,8 +2911,10 @@ display: none;
   justify-content: center;
 }
 .dashwrapper{
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
 
 }
 .admin-finance-dashboard-wrapper {
@@ -2916,6 +2927,7 @@ display: none;
 }
 .admin-finance-dashboard {
  width: 55%; /* Takes more space */
+ margin-left: 0;
 }
 .finance1, .finance2 {
   flex: 1;
@@ -2923,7 +2935,7 @@ display: none;
 }
 
 .finance2 {
-  display: flex;
+
   align-items: center;
   justify-content: center;
 }
@@ -2942,7 +2954,6 @@ display: none;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   min-height: 200px;
-  margin-left: 20px;
   margin-bottom: 20px;
   padding: 20px;
   width:300px;
@@ -2967,6 +2978,23 @@ display: none;
 .userlistcard {
   flex-wrap: wrap;
 }
+.adminUsersWrapper,
+.admincarswrapper,
+.appointmentlistwrapper{
+  margin-top: 120px;
+}
 
 
 }
+
+@media screen and (max-width: 359px) {
+  button.navSelection {
+
+    font-size: 5vw;
+
+  }
+  a.pageTitle {
+
+    font-size: 10vw;
+
+}}
