@@ -5,7 +5,7 @@
 }
 ?>">
 
-    <div class="pageNav navContent">
+<div class="pageNav navContent <?php echo (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') ? 'admin-navbar' : ''; ?>">
         <div class="navOption navContent">
         <a class="pageTitle" href="<?php echo $rootDirectory ?>">Vrum</a>
         <div class="nav-links">

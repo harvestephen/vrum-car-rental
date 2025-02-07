@@ -40,7 +40,7 @@ if (isset($_POST["deny"])) {
             </div>
         </div>
         <div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
   <div class="overlay-content">
     <a href="<?php echo $rootDirectory . '/adminHome'; ?>">Dashboard</a>
     <hr id="admin-divider" />
@@ -56,25 +56,26 @@ if (isset($_POST["deny"])) {
 function openNav() {
     const sidebar = document.getElementById("myNav");
     const menuButton = document.getElementById("menuButton");
+    const icon = menuButton.querySelector("i");
 
-    // Open sidebar
-    sidebar.style.width = "100%";
-    sidebar.classList.add("active");
+    // Check if the sidebar is open
+    if (sidebar.classList.contains("active")) {
+        // Close sidebar
+        sidebar.style.width = "0%";
+        sidebar.classList.remove("active");
 
-    // Hide the button when sidebar is open
-    menuButton.classList.add("hidden");
-}
+        // Change button back to moon icon
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-moon");
+    } else {
+        // Open sidebar
+        sidebar.style.width = "100%";
+        sidebar.classList.add("active");
 
-function closeNav() {
-    const sidebar = document.getElementById("myNav");
-    const menuButton = document.getElementById("menuButton");
-
-    // Close sidebar
-    sidebar.style.width = "0%";
-    sidebar.classList.remove("active");
-
-    // Show the button again when sidebar is closed
-    menuButton.classList.remove("hidden");
+        // Change button to close (X) icon
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-xmark");
+    }
 }
 
 // Ensure sidebar is closed when the page loads
