@@ -1353,8 +1353,10 @@ li.adminNavOption {
 }
 .car-rental-tabContainer {
   display: flex;
-  overflow: hidden;
+  overflow: visible;
   width: 85vw;
+  justify-content: center;
+    align-items: center;
 }
 .car-rental-tabs {
   flex: 1;
