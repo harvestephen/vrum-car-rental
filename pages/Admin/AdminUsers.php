@@ -42,17 +42,36 @@ $result = $conn -> query($sql);
 
 <script>
 function openNav() {
-  document.getElementById("myNav").style.width = "100%";
+    const sidebar = document.getElementById("myNav");
+    const menuButton = document.getElementById("menuButton");
+
+    // Open sidebar
+    sidebar.style.width = "100%";
+    sidebar.classList.add("active");
+
+    // Hide the button when sidebar is open
+    menuButton.classList.add("hidden");
 }
+
 function closeNav() {
-  document.getElementById("myNav").style.width = "0%";
+    const sidebar = document.getElementById("myNav");
+    const menuButton = document.getElementById("menuButton");
+
+    // Close sidebar
+    sidebar.style.width = "0%";
+    sidebar.classList.remove("active");
+
+    // Show the button again when sidebar is closed
+    menuButton.classList.remove("hidden");
 }
+
+// Ensure sidebar is closed when the page loads
 window.addEventListener("load", function () {
-  document.getElementById("myNav").style.width = "0%";
+    document.getElementById("myNav").style.width = "0%";
 });
 
 </script>
-<span class="openspan" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<button class="openspan" id="menuButton" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</button>
         <div class="adminUsersWrapper">
             <h1>User List</h1>
             <div class="adminusercontents">

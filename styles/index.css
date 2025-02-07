@@ -1481,8 +1481,9 @@ tabIndicator.active {
 }
 .car-selection-carName h2 {
   font-family: Inter_18pt-Regular;
-  font-size: 24px;
-  color: #000;
+  font-size: 28px;
+  color: #cf8250;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 .car-selection-carName h3 {
   font-family: Fustat-Light;
@@ -1518,6 +1519,9 @@ tabIndicator.active {
   font-size: 20px;
   color: #000;
 }
+.car-selection-select p {
+  font-family: Abel-Regular;
+}
 .car-selection-select button {
   display: block;
   width: 100%;
@@ -1529,6 +1533,12 @@ tabIndicator.active {
   font-size: 16px;
   color: #fff;
   text-align: center;
+  cursor: pointer;
+}
+.car-selection-select button:hover {
+  background-color: #cf8250;
+  border: none;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -1950,7 +1960,7 @@ select#carType option {
 }
 
 .userMenuList li {
-  font-family: Inter_28pt-Regular;
+  font-family: Fustat-Light;
   margin: 10px 0;
 }
 
@@ -2407,10 +2417,9 @@ hr {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 80px;
-  
   margin-bottom: 20px;
-  padding: 20px;
-  width: 100%;
+  padding: 15px;
+  width: 70%;
 }
 .admin-cars-user {
   display: flex;
@@ -2466,9 +2475,10 @@ hr {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-left: 20px;
+  padding: 15px;
   margin-bottom: 20px;
-  padding: 20px;
+  margin-left: -70px;
+  
   
 }
 
@@ -2507,14 +2517,17 @@ hr {
 .finance1 h2, .finance1 p{
   color: #313131;
 }
+.finance1 h2{
+  font-size: 0.9rem;
+}
 .topfinance h1  {
   color: #313131;
   text-align: center;
   margin-bottom: 12px;
 }
 .finance2 {
-  width: 70%;
-  height: 100%;
+  width: 100%;
+  height: 400px;
 }
 .finance-contents {
   display: flex;
@@ -2522,7 +2535,7 @@ hr {
 }
 #myChart {
   width: 100%;
-  height: 100%;
+  height: 100px;
 
 }
 
@@ -2727,6 +2740,7 @@ background-color: #FF5E57;
   overflow-x: hidden;
   transition: 0.5s;
   position: fixed;
+  opacity: 0;
 }
 
 .overlay-content {
@@ -2771,7 +2785,7 @@ background-color: #FF5E57;
   gap: 20px; /* Adds spacing between sections */
   width: 100%;
   padding: 20px;
-    max-height: 80%;
+    
     border-radius: 5px;
     margin-left: 20px;
     width: 80%;
@@ -2802,10 +2816,30 @@ background-color: #FF5E57;
   }
   .openspan{
     display: inline;
-    margin-top: 76px;
-
+    margin-top: 86px;
     pointer-events: auto;
-}}
+    border: none;
+    background-color: #959595;
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    
+}
+
+  .openspan:hover{
+    background: #918e89;
+    transform: scale(1.1);
+
+  }
+  .openspan.hidden{
+    visibility: hidden;
+  }
+  .overlay{
+    opacity: 1;
+    overflow: hidden;
+    width: 0%;
+  }
+}
 /*responsive to mobile*/
 @media screen and (max-width: 768px) {
   .nav-links {
@@ -2931,9 +2965,10 @@ display: none;
 }
 .dashwrapper{
   display: grid;
-  margin-top: 20px;
+  margin-top: 50px;
   align-items: center;
   justify-content: center;
+  margin-left: 0;
 
 }
 .admin-finance-dashboard-wrapper {
@@ -2945,15 +2980,16 @@ display: none;
   flex-grow: 1; /* Expands to fill available space */ 
 }
 .admin-finance-dashboard {
-font-size: 1rem;
+
  width: 55%; /* Takes more space */
  margin-left: -10px;
  margin-top: -100px
 }
 .finance1, .finance2 {
-  flex: 1;
+  flex: 2;
   min-width: 250px;
 }
+
 
 .finance2 {
 
@@ -2978,6 +3014,7 @@ font-size: 1rem;
   margin-bottom: 20px;
   padding: 20px;
   width:300px;
+  font-size: 1rem;
 }
 .admincarscard {
   font-size: 3vw;
@@ -3002,7 +3039,8 @@ font-size: 1rem;
 .adminUsersWrapper,
 .admincarswrapper,
 .appointmentlistwrapper{
-  margin-top: 120px;
+  margin-top: 150px;
+  margin-left: 0;
 }
 
 
