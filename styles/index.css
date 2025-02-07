@@ -62,9 +62,7 @@
   .slider {
     grid-auto-columns: calc((100% / 2) - 35px) !important;
   }
-  .card {
-    height: 310px !important;
-  }
+  
   .slider-rightBtn {
     right: 0 !important;
   }
@@ -101,11 +99,16 @@
   .slider-rightBtn {
     margin-right: 20px !important;
   }
-  .slider {
-    grid-auto-columns: calc((100% / 1) - 35px) !important;
+  .card {
+    width: 230px !important;
   }
+  
   .car-slider-wrapper {
     margin-left: 50px;
+  }
+  .slider-rightBtn {
+    margin-right: 0px !important;
+    right: -20px !important;
   }
 }
 
@@ -120,17 +123,18 @@
   .about-page header {
     height: 300px !important;
   }
-  .slider-rightBtn {
-    margin-right: 20px !important;
-  }
   .card {
     width: 230px !important;
   }
   .slider-rightBtn {
     margin-right: 0px !important;
     right: -20px !important;
-  }.car-slider-wrapper {
+  }
+    .car-slider-wrapper {
     margin-left: 0px;
+  }
+  .slider {
+    grid-auto-columns: calc((100% / 1) - 5px) !important;
   }
 }
 
