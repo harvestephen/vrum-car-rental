@@ -2926,8 +2926,10 @@ display: none;
   flex-grow: 1; /* Expands to fill available space */ 
 }
 .admin-finance-dashboard {
+font-size: 1rem;
  width: 55%; /* Takes more space */
- margin-left: 0;
+ margin-left: -10px;
+ margin-top: -100px
 }
 .finance1, .finance2 {
   flex: 1;
