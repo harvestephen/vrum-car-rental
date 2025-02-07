@@ -1480,8 +1480,9 @@ tabIndicator.active {
 }
 .car-selection-carName h2 {
   font-family: Inter_18pt-Regular;
-  font-size: 24px;
-  color: #000;
+  font-size: 28px;
+  color: #cf8250;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 .car-selection-carName h3 {
   font-family: Fustat-Light;
@@ -1517,6 +1518,9 @@ tabIndicator.active {
   font-size: 20px;
   color: #000;
 }
+.car-selection-select p {
+  font-family: Abel-Regular;
+}
 .car-selection-select button {
   display: block;
   width: 100%;
@@ -1528,6 +1532,12 @@ tabIndicator.active {
   font-size: 16px;
   color: #fff;
   text-align: center;
+  cursor: pointer;
+}
+.car-selection-select button:hover {
+  background-color: #cf8250;
+  border: none;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -1949,7 +1959,7 @@ select#carType option {
 }
 
 .userMenuList li {
-  font-family: Inter_28pt-Regular;
+  font-family: Fustat-Light;
   margin: 10px 0;
 }
 
