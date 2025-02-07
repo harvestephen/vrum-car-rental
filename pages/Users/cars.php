@@ -1,4 +1,7 @@
-
+<?php
+$sql = "SELECT * from cars";
+$result = $conn -> query($sql);
+?>
 	<!-- Header -->
 	<div></div>
 	<!-- Container -->
@@ -58,6 +61,46 @@
 				</div>
 				<div class="car-rental-selection">
 					<div class="car-selection-grid" id="car-selection-grid">
+
+					<?php
+					if ($result->num_rows > 0) {
+						while($row = $result -> fetch_assoc()) {
+							if ($row['available'] != 0) {
+								
+								echo '
+								<div class="car-selection-card ' . htmlspecialchars($row["type"], ENT_QUOTES, 'UTF-8') .' ">
+									<div class="car-selection-carName">
+										<h2>' . htmlspecialchars($row["car_name"], ENT_QUOTES, 'UTF-8') . '</h2>
+										<h3>' . htmlspecialchars($row["brand"], ENT_QUOTES, 'UTF-8') . '</h3>
+									</div>
+									<div class="car-selection-icons">
+										<img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
+										<p>' . htmlspecialchars($row["capacity"], ENT_QUOTES, 'UTF-8')  . '</p>
+										<img src="./assets/icons/CarCards/luggage.png" alt="Capacity">
+										<p>' . htmlspecialchars($row["luggage"], ENT_QUOTES, 'UTF-8') . '</p>
+										<img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
+										<p>' . htmlspecialchars($row["transmission"], ENT_QUOTES, 'UTF-8') . '</p>
+									</div>
+									<div class="car-selection-img">
+										<img src="data:' . htmlspecialchars($row["car_image_mime"], ENT_QUOTES, 'UTF-8') . 
+										';base64,' . htmlspecialchars(base64_encode($row["car_image"]), ENT_QUOTES, 'UTF-8') . 
+										'" alt="' .  htmlspecialchars($row["car_name"], ENT_QUOTES, 'UTF-8') . '">
+									</div>
+									<div class="car-selection-select">
+										<p>₱10,000.00</p>
+										<a name="carToRent" class="carToRent" data-id="' . htmlspecialchars($row["car_id"], ENT_QUOTES, 'UTF-8') . '">Select</a>
+									</div>
+								</div>
+								';
+							} else {
+								echo $row['car_id'] . "is not Available";
+							}
+						}
+					} else {
+						echo "no results found";
+					}
+					?>
+
 					</div>
 				</div>
 			</div>
