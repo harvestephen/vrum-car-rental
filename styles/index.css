@@ -1514,7 +1514,7 @@ tabIndicator.active {
   font-size: 20px;
   color: #000;
 }
-.car-selection-select a {
+.car-selection-select button {
   display: block;
   width: 100%;
   margin: 5px 0px 0px 0px;
@@ -1525,10 +1525,11 @@ tabIndicator.active {
   font-size: 16px;
   color: #fff;
   text-align: center;
+  cursor: pointer;
 }
 
 .car-rental-info-container {
-  display: none;
+  display: block;
   justify-items: center;
   height: 75vh;
   margin-top: 50px;
@@ -1595,7 +1596,6 @@ tabIndicator.active {
   text-align: center;
 }
 .car-rental-checkout-container {
-  display: none;
   justify-items: center;
   margin-top: 50px;
 }
@@ -1671,11 +1671,11 @@ tabIndicator.active {
 }
 
 .car-rental-approval-container {
+  display: flex;
   width: 100%;
   max-width: 85vw;
   margin: 50px auto;
   height: calc(90vh - 20px);
-  display: none;
   flex-direction: column;
   background: linear-gradient(
     rgba(115, 115, 115, 0.7),
