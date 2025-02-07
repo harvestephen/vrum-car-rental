@@ -89,7 +89,7 @@ if (isset($_POST["infoBack"])) {
 
 		<?php
 		if (isset($_POST["selectCarBtn"])) {
-			$carSelectedId = $_POST["carId"];
+			$_SESSION["carSelectedId"] = $_POST["carId"];
 			echo <<<HTML
 						<!-- Information Tab -->
 						<div class="car-rental-info-container" id="carInfo">
@@ -101,18 +101,12 @@ if (isset($_POST["infoBack"])) {
 									<div class="car-rental-info-content">
 										<h2>Rent Period</h2>
 										<div>
-											<input name="fromDate" class="formInput" id="fromDate" type="date" placeholder="From: mm/dd/yyyy"
+											<input required name="fromDate" class="formInput" id="fromDate" type="date" placeholder="From: mm/dd/yyyy"
 												noautocomplete>
-											<input name="toDate" class="formInput" id="toDate" type="date" placeholder="To: mm/dd/yyyy"
+											<input required name="toDate" class="formInput" id="toDate" type="date" placeholder="To: mm/dd/yyyy"
 												noautocomplete>
 										</div>
-										<h2>Government Issued ID</h2>
-										<div style="display: flex; align-items: center;">
-											<div class="file-upload">
-												<span>Choose a File</span>
-												<input name="gov_ID" type="file" id="gov_ID">
-											</div>
-											<span id="govID-file-name">File Name</span>
+										
 										</div>
 
 										<p id="car-rental-info-fillOutSpacer" style="opacity: 0;">SPACE</p>
@@ -133,7 +127,25 @@ if (isset($_POST["infoBack"])) {
 			$cardNumber = $_POST["cardNumber"];
 			$cardExp = $_POST["expiryDate"];
 			$cardCode = $_POST["cvv_cvc"];
-			$cardBIlling = $_POST["billAddress"];
+			$cardBilling = $_POST["billAddress"];
+			$paymentInfo = [$cardName, $cardNumber, $cardExp, $cardCode, $cardBilling];
+			$payment = json_encode($paymentInfo);
+			$fromDate =  $_SESSION["fromDate"];
+			$toDate = $_SESSION["toDate"];
+			$carId = $_SESSION["carSelectedId"];
+			
+
+			$appointmentStmt = $conn -> prepare("INSERT INTO appointments (appointment_toDate, appointment_fromDate, appointor_id, car_rented_id, payment_info) VALUES (?, ?, ?, ?, ?);");
+			if (!$appointmentStmt) {
+				die("Prepare failed: " . $conn->error);
+			}
+			$appointmentStmt -> bind_param("ssiis", $toDate, $fromDate, $userId, $carId, $payment);
+
+			$appointmentStmt->execute();
+		
+			$appointmentStmt->close();
+			
+			
 			echo <<<HTML
 								<!-- Approval Tab -->
 							<div class="car-rental-approval-container" id="carApproval">
@@ -145,9 +157,8 @@ if (isset($_POST["infoBack"])) {
 							HTML;
 
 		} else if (isset($_POST["infoProceed"])) {
-			$fromDate = $_POST["fromDate"];
-			$toDate = $_POST["toDate"];
-			$gov_Id = $_POST["gov_ID"];
+			$_SESSION["fromDate"] = $_POST["fromDate"];
+			$_SESSION["toDate"] = $_POST["toDate"];
 
 			echo <<<HTML
 							<!-- Checkout Tab -->
@@ -159,18 +170,18 @@ if (isset($_POST["infoBack"])) {
 								<div class="car-rental-card">
 									<div class="car-rental-checkout-content">
 										<label for="cardHolderName">Cardholder Name</label>
-										<input name="cardHolderName" id="cardHolderName" class="formInput" type="text" placeholder="Cardholder Name"
+										<input required name="cardHolderName" id="cardHolderName" class="formInput" type="text" placeholder="Cardholder Name"
 											noautocomplete>
 										<label for="cardNumber">Card Number</label>
-										<input name="cardNumber" id="cardNumber" class="formInput" type="text" placeholder="Card Number"
+										<input required name="cardNumber" id="cardNumber" class="formInput" type="number" placeholder="Card Number"
 											noautocomplete>
 										<label for="expiryDate">Expiration Date</label>
-										<input name="expiryDate" id="expiryDate" class="formInput" type="date" placeholder="Expiration Date"
+										<input required name="expiryDate" id="expiryDate" class="formInput" type="date" placeholder="Expiration Date"
 											noautocomplete>
 										<label for="cvv_cvc">CVV/CVC Code</label>
-										<input name="cvv_cvc" id="cvv_cvc" class="formInput" type="text" placeholder="CVV/CVC Code" noautocomplete>
+										<input required name="cvv_cvc" id="cvv_cvc" class="formInput" type="number" placeholder="CVV/CVC Code" noautocomplete>
 										<label for="billAddress">Billing Address</label>
-										<input name="billAddress" id="billAddress" class="formInput" type="text" placeholder="Billing Address"
+										<input required name="billAddress" id="billAddress" class="formInput" type="text" placeholder="Billing Address"
 											noautocomplete>
 										<p id="car-rental-info-fillOutSpacer" style="opacity: 0;">SPACE</p>
 										<p id="car-rental-info-fillOut" style="display: none;">Please fill out the form!</p>
