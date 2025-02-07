@@ -83,7 +83,7 @@ window.addEventListener("load", function () {
 });
 
 </script>
-<button class="openspan" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</button>
+<button class="openspan" id="menuButton" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</button>
         <div class="appointmentlistwrapper">
             <div class="adminappointmenttitlebar">
                 <h1>Appointment List</h1>
