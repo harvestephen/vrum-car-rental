@@ -24,7 +24,7 @@ $rootURL = dirname('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']);
     case "{$rootDirectory}/":
     case "{$rootDirectory}/index.php":
     case "{$rootDirectory}/index.php":
-      if ( isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+      if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
         include './pages/HomeDefault/adminHome.php';
       } else {
         include './pages/HomeDefault/userHome.php';
@@ -38,16 +38,34 @@ $rootURL = dirname('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']);
     //Footer Links
     case "{$rootDirectory}/cars":
     case "{$rootDirectory}/cars/":
-      include './pages/Users/cars.php';
-      break;
+      if (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
+        include './pages/Users/cars.php';
+        break;
+      } else {
+        echo "Error 404";
+        break;
+      }
+
     case "{$rootDirectory}/book":
     case "{$rootDirectory}/book/":
-      include './pages/Users/BookedCars.php';
-      break;
+      if (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
+        include './pages/Users/BookedCars.php';
+        break;
+      } else {
+        echo "Error 404";
+        break;
+      }
+
     case "{$rootDirectory}/about":
     case "{$rootDirectory}/about/":
-      include './pages/Users/AboutUs.php';
-      break;
+      if (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
+        include './pages/Users/AboutUs.php';
+        break;
+      } else {
+        echo "Error 404";
+        break;
+      }
+
     case "{$rootDirectory}/terms":
     case "{$rootDirectory}/terms/":
       include './pages/Users/Terms.php';
@@ -62,8 +80,14 @@ $rootURL = dirname('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']);
       break;
     case "{$rootDirectory}/":
     case "{$rootDirectory}/index.php/":
-      include './pages/HomeDefault/userHome.php';
-      break;
+      if (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
+        include './pages/HomeDefault/userHome.php';
+        break;
+      } else {
+        echo "Error 404";
+        break;
+      }
+
 
     //Modal Links
     case "{$rootDirectory}/termsModal":
@@ -79,14 +103,32 @@ $rootURL = dirname('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']);
       include './backend/database/queries/accounts/register.php';
       break;
     case "{$rootDirectory}/adminCars":
-      include './pages/Admin/AdminCars.php';
-      break;
+      if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+        include './pages/Admin/AdminCars.php';
+        break;
+      } else {
+        echo "Error 404";
+        break;
+      }
+
     case "{$rootDirectory}/adminUsers":
-      include './pages/Admin/AdminUsers.php';
-      break;
+      if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+        include './pages/Admin/AdminUsers.php';
+        break;
+      } else {
+        echo "Error 404";
+        break;
+      }
+
     case "{$rootDirectory}/adminAppointments":
-      include './pages/Admin/Appointments.php';
-      break;
+      if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+        include './pages/Admin/Appointments.php';
+        break;
+      } else {
+        echo "Error 404";
+        break;
+      }
+
     case "{$rootDirectory}/addcar":
       include './backend/database/queries/carCatalog/addCar.php';
       break;
@@ -94,14 +136,12 @@ $rootURL = dirname('http://' . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME']);
       echo "error 404";
   }
 
-  if ( isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
+  if (isset($_SESSION['role']) && $_SESSION['role'] === 'user') {
     include './pages/Template/footer.php';
   } else if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
     //
-  } else {
-    include './pages/Template/footer.php';
-  }
-  
+  } 
+
   ?>
   <script src="<?php echo $rootDirectory . "/main.js" ?>"></script>
 </body>

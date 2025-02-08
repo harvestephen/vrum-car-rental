@@ -221,7 +221,7 @@ if (isset($_POST["infoBack"])) {
 				$imgSrc = 'data:' . $row['car_image_mime'] . ';base64,' . base64_encode($row['car_image']);
 
 				echo <<<HTML
-									<div class="car-selection-card {$row['type']}">
+									<div class="car-selection-card">
 											<div class="car-selection-carName">
 													<h2>{$row["car_name"]}</h2>
 													<h3>{$row["brand"]}</h3>
