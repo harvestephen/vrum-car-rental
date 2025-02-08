@@ -51,7 +51,7 @@ if (isset($_POST["return"])) {
                                         
                                     </div>
                                     HTML;
-                            } else if ($row["appointment_done"] === 2) {
+                            } else if ($row["appointment_done"] === 2 || $row["appointmentStatus"]) {
                                 echo <<<HTML
                                     <div class="booking-car-card pending">
                                         <div class="booking-car-row">
@@ -60,11 +60,11 @@ if (isset($_POST["return"])) {
                                             <div class="booking-car-right">₱{$price}</div>
                                             <div class="booking-car-right">{$row["priceMultiplyer"]}</div>
                                            
-                                            <div class="booking-car-right">Returned</div>
+                                            <div class="booking-car-right">Done</div>
                                         </div>
                                     </div>
                                     HTML;
-                            } else {
+                            } else if ($row["appointment_done"] === 1) {
                                 echo <<<HTML
                                 <div class="booking-car-card pending">
                                 <form action="" method="POST">

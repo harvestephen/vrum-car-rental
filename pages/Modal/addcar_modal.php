@@ -35,6 +35,12 @@
                 <input class="carName" type="number" placeholder="Capacity" name="carCapacity"/>
             </div>
             <div>
+                <input class="carName" type="number" placeholder="Luggage" name="Luggage"/>
+            </div>
+            <div>
+                <input class="carName" type="number" placeholder="Price" name="Price"/>
+            </div>
+            <div>
                 <input type="file" name="carImage" />
             </div>
             <div class="modalFooter">

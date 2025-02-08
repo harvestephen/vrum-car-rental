@@ -119,12 +119,12 @@ $res = $conn -> query($sql)
 														<path d="M12 8l0 8" />
 														<path d="M19 8v2a3 2 0 0 1 -2 2h-11" />
 													</svg>
-													{$row["luggage"]}
+													{$row["luggage"]} kg
 													<svg viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><rect class="cls-1" x="4.36" y="5.32" width="15.27" height="17.18" rx="2.86"></rect><line class="cls-1" x1="8.18" y1="8.18" x2="8.18" y2="19.64"></line><line class="cls-1" x1="15.82" y1="8.18" x2="15.82" y2="19.64"></line><line class="cls-1" x1="12" y1="8.18" x2="12" y2="19.64"></line><rect class="cls-1" x="9.14" y="1.5" width="5.73" height="3.82"></rect><line class="cls-1" x1="7.23" y1="1.5" x2="16.77" y2="1.5"></line></g></svg>
 
 												</div>
 												<div class="card-subtext">
-													<p class="price"><span>₱</span> {$row["price"]}</p>
+													<p class="price"><span>₱</span> {$row["price"]}/day</p>
 													<form action="" method="POST">
 															<input name="carId" type="text" hidden value="{$row['car_id']}"/>
 															<button name="isLoggedf" class="more-btn">RENT NOW!</button>

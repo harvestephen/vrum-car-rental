@@ -230,7 +230,7 @@ if (isset($_POST["infoBack"])) {
 													<img src="./assets/icons/CarCards/car-seat.png" alt="Seat">
 													<p>{$row["capacity"]}</p>
 													<img src="./assets/icons/CarCards/luggage.png" alt="Capacity">
-													<p>{$row["luggage"]}</p>
+													<p>{$row["luggage"]} kg</p>
 													<img src="./assets/icons/CarCards/manual-transmission.png" alt="Transmission">
 													<p>{$row["transmission"]}</p>
 											</div>

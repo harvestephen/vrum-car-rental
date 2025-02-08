@@ -10,6 +10,8 @@ if (isset($_POST["addcarsubmit"])) {
   $carQnty         = $_POST["carQuantity"];
   $carBrand        = $_POST["carBrand"];
   $carCapacity     = $_POST["carCapacity"];
+  $luggage = $_POST["Luggage"];
+  $price = $_POST["Price"];
   
   // Use the correct superglobal $_FILES
   // Get the image's MIME type and temporary file path
@@ -20,7 +22,7 @@ if (isset($_POST["addcarsubmit"])) {
   $carImageData    = file_get_contents($carImageTmp);
   
   // Prepare an SQL statement to store the image as binary data (BLOB)
-  $stmt = $conn->prepare("INSERT INTO cars (car_name, type, transmission, capacity, brand, Qnty, car_image, car_image_mime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+  $stmt = $conn->prepare("INSERT INTO cars (car_name, type, transmission, capacity, brand, Qnty, car_image, car_image_mime, luggage, price, available) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
   if (!$stmt) {
       die("Prepare failed: " . $conn->error);
   }
@@ -29,7 +31,7 @@ if (isset($_POST["addcarsubmit"])) {
   // Here, the order of type specifiers is:
   // s (car_name), s (type), s (transmission), i (capacity), s (brand), i (Qnty), b (car_image), s (image_type)
   $null = NULL;  // a placeholder for the blob data
-  $stmt->bind_param("sssissbs", $carName, $carType, $carTransmission, $carCapacity, $carBrand, $carQnty, $null, $carImageType);
+  $stmt->bind_param("sssissbsiii", $carName, $carType, $carTransmission, $carCapacity, $carBrand, $carQnty, $null, $carImageType, $luggage, $price, $carCapacity);
   
   // Use send_long_data() for the BLOB parameter (the parameter index is 6, since it's the 7th parameter, 0-indexed)
   $stmt->send_long_data(6, $carImageData);

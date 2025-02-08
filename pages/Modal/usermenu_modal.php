@@ -19,9 +19,7 @@ if (isset($_GET['logout']) && $_GET['logout'] === 'true') {
       if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
         echo '<li><a href="?logout=true" class="sign-out">Sign Out</a></li>';
       } else {
-        echo '<li><a href="#">Profile</a></li>';
         echo '<li><a href="' . $rootDirectory . '/book">Booked Cars</a></li>';
-        echo '<li><a href="#">History</a></li>';
         echo '<hr />';
         echo '<li><a href="?logout=true" class="sign-out">Sign Out</a></li>';
       }
