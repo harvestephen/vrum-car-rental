@@ -178,9 +178,8 @@ window.addEventListener("load", function () {
                                     <p>{$row['car_name']}</p>
                                     <div class="admincarsoptions">
                                     Qnty: {$row["Qnty"]} &nbsp;
-                                    $brand
+                                    Avail: {$row["available"]} &nbsp;
                                         <p>Available</p>
-                                        <button>Edit</button>
                                     </div>
                                 </div>
                                 HTML;
@@ -191,9 +190,8 @@ window.addEventListener("load", function () {
                                     <p>{$row['car_name']}</p>
                                     <div class="admincarsoptions">
                                         Qnty: {$row["Qnty"]} &nbsp;
-                                        $brand
+                                        Avail: {$row["available"]} &nbsp;
                                         <p class="badstat">Not Available</p>
-                                        <button>Edit</button>
                                     </div>
                                 </div>
                                 HTML;
@@ -215,9 +213,8 @@ window.addEventListener("load", function () {
                                     <p>{$row['car_name']}</p>
                                     <div class="admincarsoptions">
                                     Qnty: {$row["Qnty"]} &nbsp;
-                                    $brand
+                                    Avail: {$row["available"]} &nbsp;
                                         <p>Available</p>
-                                        <button>Edit</button>
                                     </div>
                                 </div>
                                 HTML;
@@ -228,9 +225,8 @@ window.addEventListener("load", function () {
                                     <p>{$row['car_name']}</p>
                                     <div class="admincarsoptions">
                                         Qnty: {$row["Qnty"]} &nbsp;
-                                        $brand
+                                        Avail: {$row["available"]} &nbsp;
                                         <p class="badstat">Not Available</p>
-                                        <button>Edit</button>
                                     </div>
                                 </div>
                                 HTML;
@@ -250,9 +246,8 @@ window.addEventListener("load", function () {
                                     <p>{$row['car_name']}</p>
                                     <div class="admincarsoptions">
                                     Qnty: {$row["Qnty"]} &nbsp;
-                                    $brand
+                                    Avail: {$row["available"]} &nbsp;
                                         <p>Available</p>
-                                        <button>Edit</button>
                                     </div>
                                 </div>
                                 HTML;
@@ -263,9 +258,8 @@ window.addEventListener("load", function () {
                                     <p>{$row['car_name']}</p>
                                     <div class="admincarsoptions">
                                         Qnty: {$row["Qnty"]} &nbsp;
-                                        $brand
+                                        Avail: {$row["available"]} &nbsp;
                                         <p class="badstat">Not Available</p>
-                                        <button>Edit</button>
                                     </div>
                                 </div>
                                 HTML;

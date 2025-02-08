@@ -133,13 +133,19 @@ if (isset($_POST["infoBack"])) {
 			$fromDate =  $_SESSION["fromDate"];
 			$toDate = $_SESSION["toDate"];
 			$carId = $_SESSION["carSelectedId"];
+			$status = "Pending";
+			$date1 = new DateTime($fromDate);
+			$date2 = new DateTime($toDate);
+			$interval = $date1->diff($date2);
+			$daysRented = (int)  $interval->format('%a');
+
 			
 
-			$appointmentStmt = $conn -> prepare("INSERT INTO appointments (appointment_toDate, appointment_fromDate, appointor_id, car_rented_id, payment_info) VALUES (?, ?, ?, ?, ?);");
+			$appointmentStmt = $conn -> prepare("INSERT INTO appointments (appointment_toDate, appointment_fromDate, appointor_id, car_rented_id, payment_info, appointmentStatus, priceMultiplyer) VALUES (?, ?, ?, ?, ?, ?, ?);");
 			if (!$appointmentStmt) {
 				die("Prepare failed: " . $conn->error);
 			}
-			$appointmentStmt -> bind_param("ssiis", $toDate, $fromDate, $userId, $carId, $payment);
+			$appointmentStmt -> bind_param("ssiissi", $toDate, $fromDate, $userId, $carId, $payment, $status, $daysRented);
 
 			$appointmentStmt->execute();
 		
@@ -232,7 +238,7 @@ if (isset($_POST["infoBack"])) {
 													<img src="$imgSrc" alt="{$row['car_name']}">
 											</div>
 											<div class="car-selection-select">
-													<p>₱120,000.00</p>
+													<p>₱{$row['price']}</p>
 													<form action="" method="post">
 														<input type="number" name="carId" value="{$row['car_id']}" hidden/>
 														<button type="submit" name="selectCarBtn">Select</button>

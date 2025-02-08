@@ -28,7 +28,7 @@ $(document).ready(function () {
       options: {
         legend: { display: false },
         scales: {
-          yAxes: [{ ticks: { min: 1000, max: 20000 } }],
+          yAxes: [{ ticks: { min: 1000, max: 100000 } }],
         },
       },
     });

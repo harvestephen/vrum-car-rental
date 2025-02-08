@@ -9,15 +9,34 @@ $resultAppointmentsSql = $conn -> query($getAppointmentsSql);
 
 if (isset($_POST["approve"])) {
     $appointment_id = $_POST["appointmentId"];
-    $stmt = $conn -> prepare("UPDATE `appointments` SET `appointment_done` = '1' WHERE (`appointment_id` = ?);");
-    $stmt -> bind_param('i', $appointment_id);
+    $appointor_id = $_POST["appointor_id"];
+    $car_rented_id = $_POST["car_rented_id"];
+    $appointmentStatus = $_POST["appointmentStatus"];
+    $price = $_POST["price"];
+    $num_pick = $_POST["num_pick"] + 1;
+    $available = $_POST["available"] - 1;
+    $appointment_fromDate = $_POST["appointment_fromDate"];
+    $approve = "Approved";
+    
+
+    $stmtUpdateSales = $conn -> prepare("INSERT INTO sales (sales, sales_date_made) VALUES (?, ?);");
+    $stmtUpdateSales -> bind_param("is", $price, $appointment_fromDate);
+    $stmtUpdateSales -> execute();
+
+    $stmt = $conn -> prepare("UPDATE `appointments` SET `appointment_done` = '1', `appointmentStatus` = ? WHERE (`appointment_id` = ?);");
+    $stmt -> bind_param('si', $approve, $appointment_id);
+    $stmt->execute();
+
+    $stmt = $conn -> prepare("UPDATE `cars` SET `available` = ?, `num_pick` = ? WHERE `car_id` = ?;");
+    $stmt -> bind_param('iii', $available, $num_pick, $car_rented_id);
     $stmt->execute();
     echo "<script>window.location.href='./adminAppointments';</script>";
 }
 if (isset($_POST["deny"])) {
+    $deny = "Denied";
     $appointment_id = $_POST["appointmentId"];
-    $stmt = $conn -> prepare("UPDATE `appointments` SET `appointment_done` = '1' WHERE (`appointment_id` = ?);");
-    $stmt -> bind_param('i', $appointment_id);
+    $stmt = $conn -> prepare("UPDATE `appointments` SET `appointment_done` = '1', `appointmentStatus` = ? WHERE (`appointment_id` = ?);");
+    $stmt -> bind_param('si',  $deny, $appointment_id);
     $stmt->execute();
     echo "<script>window.location.href='./adminAppointments';</script>";
 }
@@ -91,6 +110,7 @@ window.addEventListener("load", function () {
             <div class="appointmentcardlist">
                 <?php
                 while ($row = $resultAppointmentsSql -> fetch_assoc()){
+                    $price = $row["price"] * $row["priceMultiplyer"];
                     echo <<<HTML
                          <div class="appointmentcard">
                             <div class="appointmentinfo">
@@ -101,7 +121,14 @@ window.addEventListener("load", function () {
                             <div class="appointmentoptions">
                                 <form action="" method="post">
                                     <button name="approve" class="appointmentoptionsapprove" type="submit">Approve</button>
-                                    <input type="text" hidden value="{$row['appointment_id']}" name="appointmentId">
+                                    <input type="number" hidden value="{$row['appointment_id']}" name="appointmentId"/>
+                                    <input type="number" hidden value="{$row['appointor_id']}" name="appointor_id"/>
+                                    <input type="number" hidden value="{$row['car_rented_id']}" name="car_rented_id"/>
+                                    <input type="text" hidden value="{$row['appointmentStatus']}" name="appointmentStatus"/>
+                                    <input type="number" hidden value="{$price}" name="price"/>
+                                    <input type="text" hidden value="{$row['appointment_fromDate']}" name="appointment_fromDate"/>
+                                    <input type="number" hidden value="{$row['available']}" name="available"/>
+                                    <input type="number" hidden value="{$row['num_pick']}" name="num_pick"/>
                                 </form>
                                 <form action="" method="post">
                                     <button name="deny" type="submit" class="appointmentoptionsdeny">Deny</button>

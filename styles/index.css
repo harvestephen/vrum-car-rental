@@ -2267,9 +2267,23 @@ hr {
   text-align: center;
   font-size: 20px;
 }
+.booking-car-columns {
+  flex: 1;
+  font-family: "Inter_18pt-Regular";
+  text-align: center;
+  font-size: 20px;
+}
 .booking-car-column button {
   padding: 8px 16px;
   background-color: #cfb284;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.booking-car-columns button {
+  padding: 8px 16px;
+  background-color: #8f887d;
   border: none;
   color: #fff;
   border-radius: 4px;

@@ -129,6 +129,8 @@ if (count($missingTables) > 0) {
         `car_rented_id` int NOT NULL,
         `payment_info` varchar(200) NOT NULL,
         `appointment_done` tinyint DEFAULT '0',
+        `appointmentStatus` varchar(45) DEFAULT NULL,
+        `priceMultiplyer` int DEFAULT NULL,
         PRIMARY KEY (`appointment_id`),
         KEY `fk.user_idx` (`appointor_id`),
         KEY `fk.car_idx` (`car_rented_id`),
