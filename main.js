@@ -169,12 +169,6 @@ $(document).ready(function () {
     $("#userMenuModal").fadeOut(100);
   });
 
-  fetch('getCarInfo.php', {
-    method: 'GET',
-    headers: {
-        'Content-Type': 'application/json',
-    }
-  })
 
 });
 
@@ -390,8 +384,6 @@ const validateLoginForm = async () => {
     });
 };
 
-
-
 function filterCars(carType) {
   const buttons = document.querySelectorAll(".car-selection-filter-btn");
   const cards = document.querySelectorAll(".car-selection-card");
@@ -428,10 +420,8 @@ toDate.setAttribute("min", todayString);
 function validateDates() {
   const from = new Date(fromDate.value);
   const to = new Date(toDate.value);
-  const toChangeSpacer = document.getElementById(
-    "car-rental-info-fillOutSpacer"
-  );
-  const toChangeError = document.getElementById("car-rental-info-fillOut");
+  const toChangeSpacer = document.getElementById("car-rental-info-fillOutSpacer");
+  const toChangeError = document.getElementById("error-message");
 
   if (fromDate.value && toDate.value) {
     if (to >= from) {
@@ -439,9 +429,8 @@ function validateDates() {
       toChangeSpacer.style.display = "block";
       document.getElementById("submitCarInfo").disabled = false;  
     } else {
-      errorMessage.style.display = "block";
       toChangeSpacer.style.display = "none";
-      toChangeError.style.display = "none";
+      toChangeError.style.display = "block";
       document.getElementById("submitCarInfo").disabled = true;
     }
   } else {

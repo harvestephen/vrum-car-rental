@@ -3,7 +3,7 @@
 		<a href="#">Reservations</a> |
 		<a href="<?php echo $rootDirectory . "/"?>">Home</a> |
 		<a href="<?php echo $rootDirectory . "/about"?>">About Us</a> |
-		<a href="<?php echo $rootDirectory . "/adminHome"?>">Location</a> | 
+		<a href="<?php echo $rootDirectory . "/contacts"?>">Location</a> | 
 		<a href="<?php echo $rootDirectory . "/terms"?>">Terms and Condition</a> |
 		<a href="<?php echo $rootDirectory . "/privacy"?>">Privacy Policy</a> |
 		<a href="<?php echo $rootDirectory . "/contacts"?>">Contacts</a>

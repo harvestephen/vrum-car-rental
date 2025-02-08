@@ -1549,66 +1549,29 @@ tabIndicator.active {
   justify-items: center;
   height: 75vh;
   margin-top: 50px;
- 
 }
 .car-rental-info-container h2 {
-  margin: 10px 0px;
+  margin: 10px 0px 0px;
   font-family: Inter_18pt-Regular;
   font-size: 22px;
   font-weight: 100;
   color: #fff;
 }
-.file-upload {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 15px;
-  padding: 8px 15px;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.file-upload span {
-  font-size: 16px;
-  color: black;
+.car-rental-info-content label {
+  display: block;
+  margin: 5px 0px;
+  font-size: 18px;
+  color: white;
+  font-weight: 100;
   font-family: Fustat-Light;
 }
-.file-upload input[type="file"] {
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  cursor: pointer;
-  height: 100%;
-  width: 100%;
-}
-.file-upload:hover {
-  background-color: #fafafa;
-  outline: 2px solid #cfb284;
-  border-color: #cfb284;
-  border-style: solid;
-}
-.file-upload.has-file {
-  background-color: #e0e0e0;
-  border-color: #cfb284;
-}
-.file-upload.has-file span {
-  color: black;
-}
-#govID-file-name {
-  margin-left: 10px;
-  font-size: 14px;
-  font-family: 'Fustat-Light';
-  color: black;
-}
+
 .car-rental-card p {
   margin: 15px 0px;
   font-family: Fustat-Light;
   font-size: 14px;
   font-weight: 100;
-  color: #000;
+  color: white;
   text-align: center;
 }
 .car-rental-checkout-container {
@@ -1620,7 +1583,7 @@ tabIndicator.active {
 }
 .car-rental-checkout-content label {
   display: block;
-  margin: 5px 0px;
+  margin: 10px 0px 0px;
   font-size: 20px;
   color: white;
   font-weight: 100;

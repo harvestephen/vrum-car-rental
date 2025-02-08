@@ -101,8 +101,10 @@ if (isset($_POST["infoBack"])) {
 									<div class="car-rental-info-content">
 										<h2>Rent Period</h2>
 										<div>
+											<label for="fromDate">From:</label>
 											<input required name="fromDate" class="formInput" id="fromDate" type="date" placeholder="From: mm/dd/yyyy"
 												noautocomplete>
+											<label for="toDate">To:</label>
 											<input required name="toDate" class="formInput" id="toDate" type="date" placeholder="To: mm/dd/yyyy"
 												noautocomplete>
 										</div>
@@ -110,14 +112,15 @@ if (isset($_POST["infoBack"])) {
 										</div>
 
 										<p id="car-rental-info-fillOutSpacer" style="opacity: 0;">SPACE</p>
-										<p class="error" id="error-message" style="display: none;">The "To" date must be later than or equal to the
+										<p class="error" id="error-message" style="display: none;">The "To" date must be later than the
 											"From" date.</p>
-										<p id="car-rental-info-fillOut" style="display: none;">Please fill out the form!</p>
+										
+										<div class="car-rental-footer">
+											<button type="button" id="returnCarSelection" name="infoBack" onclick="window.location.href='./cars'">Back</button>
+											<button type="submit" id="submitCarInfo" name="infoProceed">Proceed</button>
+										</div>
 									</div>
-									<div class="car-rental-footer">
-										<button type="submit" id="returnCarSelection" name="infoBack">Back</button>
-										<button type="submit" id="submitCarInfo" name="infoProceed">Proceed</button>
-									</div>
+									
 								</form>
 							</div>
 						</div>
@@ -193,7 +196,7 @@ if (isset($_POST["infoBack"])) {
 										<p id="car-rental-info-fillOut" style="display: none;">Please fill out the form!</p>
 									</div>
 									<div class="car-rental-footer">
-										<button type="submit" name="paymentBack" id="returnCarInfo">Back</button>
+										<button type="button" name="paymentBack" id="returnCarInfo" onclick="window.location.href='./cars'">Back</button>
 										<button type="submit" name="paymentConfirm" id="confirmCheckout">Confirm</button>
 									</div>
 								</div>
