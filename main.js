@@ -176,80 +176,6 @@ $(document).ready(function () {
     }
   })
 
-  $(document).on("click", ".carToRent", function() {
-    let carId = $(this).attr("data-id"); // Get the car ID
-    $("#car_rented_id").val(carId);
-    console.log(document.getElementById("car_rented_id").value);
-    $("#carSelectionTab").removeClass("active");
-    $("#carSelection").css("display", "none");
-    $("#carInfoTab").addClass("active");
-    $("#carInfo").css("display", "block");
-  });
-
-  $("#submitCarInfo").on("click", function () {
-    const fromDateValue = document.getElementById("fromDate").value.trim();
-    const toDateValue = document.getElementById("toDate").value.trim();
-    const gov_IDValue = document.getElementById("gov_ID").value.trim();
-
-    if (fromDateValue !== "" && toDateValue !== "" && gov_IDValue !== "") {
-      $("#carInfoTab").removeClass("active");
-      $("#carInfo").css("display", "none");
-      $("#carCheckoutTab").addClass("active");
-      $("#carCheckout").css("display", "block");
-      $("#car-rental-info-fillOut").css("display", "none");
-      $("#car-rental-info-fillOutSpacer").css("display", "block");
-      $("#error-message").css("display", "none");
-    } else {
-      $("#car-rental-info-fillOut").css("display", "block");
-      $("#car-rental-info-fillOutSpacer").css("display", "none");
-      $("#error-message").css("display", "none");
-    }
-  });
-
-  document.getElementById("gov_ID").addEventListener("change", function() {
-    var fileName = document.getElementById("gov_ID").files[0].name;
-    document.getElementById("govID-file-name").textContent = fileName;
-  });
-
-  $("#returnCarSelection").on("click", function () {
-    $("#carInfoTab").removeClass("active");
-    $("#carInfo").css("display", "none");
-    $("#carSelectionTab").addClass("active");
-    $("#carSelection").css("display", "flex");
-  });
-
-  $("#confirmCheckout").on("click", function () {
-    const CHNameValue = document.getElementById("cardHolderName").value.trim();
-    const cardNumberValue = document.getElementById("cardNumber").value.trim();
-    const expiryDateValue = document.getElementById("expiryDate").value.trim();
-    const codeValue = document.getElementById("cvv_cvc").value.trim();
-    const billAddressValue = document
-      .getElementById("billAddress")
-      .value.trim();
-
-    if (
-      CHNameValue !== "" &&
-      cardNumberValue !== "" &&
-      expiryDateValue !== "" &&
-      codeValue !== "" &&
-      billAddressValue !== ""
-    ) {
-      $("#carCheckoutTab").removeClass("active");
-      $("#carCheckout").css("display", "none");
-      $("#carApprovalTab").addClass("active");
-      $("#carApproval").css("display", "flex");
-    } else {
-      $("#car-rental-info-fillOut").css("display", "block");
-      $("#car-rental-info-fillOutSpacer").css("display", "none");
-    }
-  });
-
-  $("#returnCarInfo").on("click", function () {
-    $("#carCheckoutTab").removeClass("active");
-    $("#carCheckout").css("display", "none");
-    $("#carInfoTab").addClass("active");
-    $("#carInfo").css("display", "block");
-  });
 });
 
 /**
@@ -463,48 +389,7 @@ const validateLoginForm = async () => {
       }
     });
 };
-const reqAppointmentForm = async () => {
-  event.preventDefault();
-  const appointorId = document.getElementById("appointorId").value;
-  const car_rented_id = document.getElementById("car_rented_id").value;
-  const formData = $("#reqAppointmentForm").serializeArray();
-  const fromDate = formData[0].value;
-  const toDate = formData[1].value;
-  const cardHolderName = formData[2].value;
-  const cardNumber = formData[3].value;
-  const expiryDate = formData[4].value;
-  const cvv_cvc = formData[5].value;
-  const billAddress = formData[6].value;
-  const gov_ID = document.getElementById("gov_ID").files[0];
 
-  const formDataToSend = new FormData();
-  formDataToSend.append("appointorId", appointorId);
-  formDataToSend.append("car_rented_id", car_rented_id);
-  formDataToSend.append("fromDate", fromDate);
-  formDataToSend.append("toDate", toDate);
-  formDataToSend.append("cardHolderName", cardHolderName);
-  formDataToSend.append("cardNumber", cardNumber);
-  formDataToSend.append("expiryDate", expiryDate);
-  formDataToSend.append("cvv_cvc", cvv_cvc);
-  formDataToSend.append("billAddress", billAddress);
-  formDataToSend.append("gov_ID", gov_ID);
-
-  // for (let pair of formDataToSend.entries()) {
-  //   console.log(pair[0] + ": " + pair[1]);
-  // }
-
-  try {
-    const response = await fetch("./backend/database/queries/transactions/appointments/requestAppointment.php", {
-      method: "POST",
-      body: formDataToSend, // Use FormData instead of JSON
-    });
-
-    const data = await response.text();
-    console.log(data);
-  } catch (error) {
-    console.error("Error:", error);
-  }
-};
 
 
 function filterCars(carType) {
@@ -566,10 +451,6 @@ function validateDates() {
 
 fromDate.addEventListener("input", validateDates);
 toDate.addEventListener("input", validateDates);
-
-document.getElementById("submitCarInfo").addEventListener("click", function () {
-  alert(`Rental period: From ${fromDate.value} to ${toDate.value}`);
-});
 
 function filterBookingCars(status) {
   const buttons = document.querySelectorAll(".booking-car-filter-btn");
