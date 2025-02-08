@@ -155,6 +155,7 @@ a.pageTitle {
   font-family: Kalam-Regular;
   color: #cfb284;
   background-color: transparent;
+
 }
 
 div.pageNav {
@@ -2780,17 +2781,9 @@ background-color: #FF5E57;
   color: #f1f1f1;
 }
 
-.overlay .closebtn {
-  position: absolute;
-  top: 76px;
-  right: 45px;
-  font-size: 60px;
-}
 
 .openspan{
   display: none;
-  margin-top: 76px;
-
   pointer-events: none;
 }
 .dashwrapper{
@@ -2831,21 +2824,19 @@ background-color: #FF5E57;
   }
   .openspan{
     display: inline;
-    margin-top: 86px;
+    margin-top: 10px;
     pointer-events: auto;
     border: none;
-    background-color: #959595;
+    background-color: #95959500;
     height: 50px;
     width: 50px;
     border-radius: 10px;
-    
+    z-index: 1001;
+    color:#b6b6b6;
 }
+.admin-navbar .pageTitle {
+  display: none;}
 
-  .openspan:hover{
-    background: #918e89;
-    transform: scale(1.1);
-
-  }
   .openspan.hidden{
     visibility: hidden;
   }
@@ -2980,12 +2971,13 @@ display: none;
 }
 .dashwrapper{
   display: grid;
-  margin-top: 50px;
+  margin-top: 20px;
   align-items: center;
   justify-content: center;
   margin-left: 0;
 
 }
+
 .admin-finance-dashboard-wrapper {
   display: flex;
   justify-content: center;
@@ -3054,11 +3046,9 @@ display: none;
 .adminUsersWrapper,
 .admincarswrapper,
 .appointmentlistwrapper{
-  margin-top: 150px;
+  
   margin-left: 0;
 }
-
-
 }
 
 @media screen and (max-width: 359px) {
@@ -3068,7 +3058,6 @@ display: none;
 
   }
   a.pageTitle {
-
     font-size: 10vw;
 
 }}
